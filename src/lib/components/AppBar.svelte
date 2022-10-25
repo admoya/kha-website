@@ -42,7 +42,7 @@
 <style>
   .app-bar {
     height: 66px;
-    width: 100vw;
+    width: 100%;
     background-color: seashell;
     display: flex;
     flex-direction: row;
@@ -53,7 +53,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: .5rem;
+    margin-left: 7%;
     text-align: center;
     gap: .75rem;
     max-width: 156px;
@@ -67,14 +67,13 @@
   .nav-links {
     flex-grow: 1;
     display: flex;
-    flex-direction: row-reverse;
-    margin-right: 2rem;
-    font-family: Overpass;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 26px;
+    align-items: center;
+    justify-content: end;
+    margin-right: 7%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
     letter-spacing: 0em;
-    text-align: center;
     list-style-type: none;
     gap: 1rem;
   }

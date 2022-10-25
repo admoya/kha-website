@@ -1,8 +1,63 @@
 :root {
   font-size: 100%;
+  font-family: 'Roboto';
+  --primary-green: #30813f;
+  --gray-green: #3e5c50;
+  --offset-gray-green: #cecece;
+  --mobile: 480px;
+  --tablet: 768px;
 }
 
 body {
   margin: 0;
   background-color: seashell;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  max-width: min(70%, 1000px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+}
+
+.primary-button:hover {
+  background-color: #489fd9;
+}
+
+.primary-button {
+  background-color: var(--primary-green);
+  min-width: 140px;
+  color: white;
+  border: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1rem;
+  font-family: 'roboto slab';
+}
+
+.secondary-button {
+  background-color: white;
+  min-width: 140px;
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1rem;
+  font-family: 'roboto slab';
+}
+
+.secondary-button:hover {
+  background-color: #489fd9;
+  color: white;
 }
