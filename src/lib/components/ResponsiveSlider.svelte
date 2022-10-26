@@ -5,8 +5,6 @@
 -->
 <script lang="ts">
   export let title = '';
-  console.log($$slots);
-
   const numSlots = Object.keys($$slots).length;
   let activeSlide = 0;
 
