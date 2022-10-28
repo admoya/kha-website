@@ -7,3 +7,4 @@ declare namespace App {
 	// interface Error {}
 	// interface Platform {}
 }
+type FormStatus = "active" | "success" | "error";
