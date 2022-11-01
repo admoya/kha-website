@@ -3,28 +3,20 @@
   import elRinconcito from '$lib/assets/businesses/el-rinconcito.jpg';
   import killianGreens from '$lib/assets/businesses/killian-greens.jpg';
   import text from './text';
-  import { getErrorMessage } from '$lib/utils';
+  import { submitFormToNetlify } from '$lib/utils';
   import byLaws from '$lib/assets/documents/KHA_By-laws.pdf'
   import kendaleSouthSection1 from '$lib/assets/documents/KHA_COVN_KS_Sec_1.pdf';
   import kendaleSouthSection2Part1 from '$lib/assets/documents/KHA_COVN_KS_2_1.pdf';
   import kendaleSouthSection2Part2 from '$lib/assets/documents/KHA_COVN_KS_2_2.pdf';
+  import FormContainer from '$lib/components/FormContainer.svelte';
 
-  let formSubmitted = false;
-  let submissionError = false;
+  let formStatus:FormStatus = 'active';
   const onSubscribe = async (e: SubmitEvent) => {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
-    try {
-      await fetch('/', {
-        method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-      formSubmitted = true;
-      submissionError = false;
-    } catch (err) {
-      submissionError = true;
-      console.error(getErrorMessage(err));
+    const error = await submitFormToNetlify(e);
+    if (error) {
+      formStatus = 'error';
+    } else {
+      formStatus = 'success';
     }
   }
 </script>
@@ -40,29 +32,23 @@
     Our quarterly community newsletter keeps KHA members informed on local events, introduces them to their neighbors, and offers exclusive discounts to local businesses!
     <br>If you are up to date on your membership dues, you can sign up for the newsletter by submitting your name and email below.
   </p>
-  {#if !formSubmitted}
+  <FormContainer
+    {formStatus}
+    successMessage="Thank you for subscribing! If you are a paid member, you will be added to our mailing list."
+    errorMessage="Sorry, there was an error subscribing to the newsletter. Please try again later."
+  >
     <form on:submit={onSubscribe} class="newsletter-form" data-netlify="true">
       <label>
         Name
-        <input name="name" required />
+        <input class="form-text-input" name="name" required />
       </label>
       <label>
         Email
-        <input name="email" required type="email" />
+        <input class="form-text-input" name="email" required type="email" />
       </label>
       <button class="primary-button">Submit</button>
     </form>
-  {:else} 
-    {#if !submissionError}
-      <div class="form-submission-message submission-success">
-        <p>Thank you for subscribing! If you are a paid member, you will be added to our mailing list.</p>
-      </div>
-    {:else}
-      <div class="form-submission-message submission-error">
-        <p>Sorry, there was an error subscribing to the newsletter. Please try again later.</p>
-      </div>
-    {/if}
-  {/if}
+  </FormContainer>
 </section>
 <section class="container">
   <h2 class="page-subheading">Member Discounts</h2>
@@ -109,14 +95,8 @@
   font-weight: 700;
   }
   .newsletter-form input {
-  margin: 0.3rem auto;
-  display: block;
-  width: 100%;
-  max-width: 25rem;
-  padding: 0.5rem 0;
-  font-size: 1rem;
-  border: 1px solid #cccccc;
-  text-align: center;
+    
+    max-width: 25rem;
   }
 
   .newsletter-form button {
@@ -147,19 +127,5 @@
     display: block;
     margin: 1rem 0;
     text-align: left;
-  }
-  .form-submission-message {
-    width: 100%;
-  }
-  .form-submission-message p {
-    padding: 1rem 0;
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
-  .submission-success {
-    background-color: rgba(0, 128, 0, 0.5);
-  }
-  .submission-error {
-    background-color: rgba(255, 0, 0, 0.5);
   }
 </style>
