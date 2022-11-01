@@ -24,6 +24,7 @@
   <p>We'd love to hear from you! Use the below form to send us a message, and someone from the board will get back to you shortly.</p>
   <FormContainer {formStatus}>
     <form on:submit={onSubmit} class="contact-form" data-netlify="true" name="contact-form">
+      <input type='hidden' name='form-name' value='contact-form' />
       <div class="form-row">
         <label>
           Name

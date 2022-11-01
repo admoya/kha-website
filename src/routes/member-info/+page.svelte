@@ -37,7 +37,8 @@
     successMessage="Thank you for subscribing! If you are a paid member, you will be added to our mailing list."
     errorMessage="Sorry, there was an error subscribing to the newsletter. Please try again later."
   >
-    <form on:submit={onSubscribe} class="newsletter-form" method="post" data-netlify="true" name="newsletter-form">
+    <form on:submit={onSubscribe} class="newsletter-form" data-netlify="true" name="newsletter-form">
+      <input type='hidden' name='form-name' value='newsletter-form' />
       <label>
         Name
         <input class="form-text-input" name="name" required />
