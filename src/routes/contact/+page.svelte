@@ -23,7 +23,7 @@
   <h2 class="page-subheading">Send Us an Email</h2>
   <p>We'd love to hear from you! Use the below form to send us a message, and someone from the board will get back to you shortly.</p>
   <FormContainer {formStatus}>
-    <form on:submit={onSubmit} class="contact-form" data-netlify="true">
+    <form on:submit={onSubmit} class="contact-form" data-netlify="true" name="contact-form">
       <div class="form-row">
         <label>
           Name
