@@ -21,6 +21,11 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+  }
+}
 
 button {
   cursor: pointer;
@@ -115,4 +120,8 @@ form label {
   color: #333333;
   background-color: #f3f3f3;
   border: 1px solid #cccccc;
+}
+
+.hidden {
+  visibility: none !important;
 }
