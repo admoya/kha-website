@@ -26,17 +26,17 @@
     <form on:submit={onSubmit} class="contact-form" data-netlify="true" name="contact-form">
       <input type='hidden' name='form-name' value='contact-form' />
       <div class="form-row">
-        <label>
+        <label class="form-label">
           Name
           <input class="form-text-input" required name="name" />
         </label>
-        <label>
+        <label class="form-label">
           Email
           <input class="form-text-input" type="email" required name="email" />
         </label>
       </div>
       <div class="form-row">
-        <label>
+        <label class="form-label">
           Category
           <select name="category" class="form-select">
             <option>General Question</option>
@@ -47,7 +47,7 @@
         </label>
       </div>
       <div class="form-row">
-        <label>
+        <label class="form-label">
           Your Message
           <textarea class="form-text-input" name="message" />
         </label>
@@ -62,12 +62,6 @@
 <style>
   .contact-form {
     margin: 0 auto;
-  }
-  label {
-    flex-grow: 1;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-align: left;
   }
   select {
     margin-top: 0.5rem;
