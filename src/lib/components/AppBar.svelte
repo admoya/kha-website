@@ -85,6 +85,7 @@
 
   .hamburger-button {
     display: none;
+    border: none;
   }
 
   @media (max-width: 640px) {
