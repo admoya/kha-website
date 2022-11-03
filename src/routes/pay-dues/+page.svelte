@@ -8,7 +8,8 @@
   import Checkout from '$lib/components/payments/Checkout.svelte';
   import Success from '$lib/components/payments/Success.svelte';
   import Error from '$lib/components/payments/Error.svelte';
-  import { onMount } from 'svelte';
+  import khaMembershipForm from '$lib/assets/kha-membership-form.jpg';
+  import { submitFormToNetlify } from '$lib/utils';
   
 
   let isCheckingOut = false;
@@ -37,6 +38,10 @@
   };
 
   let paymentFormSubmitEvent:SubmitEvent;
+  const handlePaymentCompleted = () => {
+    submitFormToNetlify(paymentFormSubmitEvent);
+    showSuccess = true;
+  };
 </script>
 
 <h1 class="page-heading">Pay Dues</h1>
@@ -49,13 +54,20 @@
       <Success />
     {:else if !isCheckingOut}
       <div class="fixedGridItem" in:fly={{ x: -100, duration: 400, delay: 150 }} out:fly={{ x: -100, duration: 400 }}>
-        <PaymentForm bind:paymentChoice bind:donationAmount bind:name bind:email bind:address on:nextPressed={({ detail }) => { isCheckingOut = true; paymentFormSubmitEvent = detail; }} />
+        <PaymentForm
+          bind:paymentChoice
+          bind:donationAmount
+          bind:name
+          bind:email
+          bind:address
+          on:nextPressed={({ detail }) => { isCheckingOut = true; paymentFormSubmitEvent = detail; }}
+        />
       </div>
     {:else}
       <div class="fixedGridItem" in:fly={{ x: 100, duration: 400, delay: 150 }} out:fly={{ x: 100, duration: 400 }}>
         <Checkout
           on:paymentError={() => { showError = true; }}
-          on:paymentCompleted={() => { showSuccess = true; }}
+          on:paymentCompleted={handlePaymentCompleted}
           on:backPressed={() => { isCheckingOut = false; }}
           includesDues={paymentChoice === 'dues'}
           {paypalTokenData}
@@ -67,6 +79,11 @@
       </div>
     {/if}
   </div>
+</section>
+<section style={`margin-bottom: 2rem;`}>
+  <h2 class="page-subheading">Pay by Check</h2>
+  <p>If you prefer to pay by check, please print and mail the below form.</p>
+  <a href={khaMembershipForm} rel="noreferrer" target="_blank">Click here to open the membership form in a new tab.</a>
 </section>
 
 <style>

@@ -20,21 +20,22 @@
   };
 </script>
 
-<form on:submit={handleSubmit}>
+<form on:submit={handleSubmit} name="payments-form" data-netlify>
+  <input type='hidden' name='form-name' value='payments-form' />
   <div class="form-row">
     <label class="form-label">
       Name(s):
-      <input class="form-text-input" placeholder="John Doe, Jane Doe" bind:value={name} type="text" required />
+      <input name="Name(s)" class="form-text-input" placeholder="John Doe, Jane Doe" bind:value={name} type="text" required />
     </label>
     <label class="form-label">
       Email:
-      <input autocomplete="email" class="form-text-input" placeholder="jdoe@example.com" bind:value={email} type="email" required />
+      <input name="Email" autocomplete="email" class="form-text-input" placeholder="jdoe@example.com" bind:value={email} type="email" required />
     </label>
   </div>
   <div class="form-row">
     <label class="form-label">
       Address:
-      <input class="form-text-input" placeholder="123 Main Street" bind:value={address} type="text" />
+      <input name="Address" class="form-text-input" placeholder="123 Main Street" bind:value={address} type="text" />
     </label>
   </div>
   <div class="form-row">
@@ -49,13 +50,14 @@
       <label class="form-inline-label"  for="duesInput">Dues:</label>
       <span  class="form-currency-container">
         <input class="form-currency-input" id="duesInput" value="45.00" disabled style="border: none" />
+        <input type="hidden" name="Dues" value="45" />
       </span>
     </div>
   {/if}
   <div class="form-row">
     <label class="form-inline-label" for="donationInput">Donation:</label>
     <span class="form-currency-container">
-      <input class="form-currency-input" id="donationInput" on:blur={cleanDonation} step="0.01" type='number' placeholder='0.00' bind:value={donationAmount} />
+      <input name="Donation" class="form-currency-input" id="donationInput" on:blur={cleanDonation} step="0.01" type='number' placeholder='0.00' bind:value={donationAmount} />
     </span>
   </div>
   <button class="primary-button" id="nextBtn">Next</button>
