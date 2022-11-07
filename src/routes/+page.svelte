@@ -24,15 +24,30 @@
   <h2 class="offerings-title">Services to the Community</h2>
   <div class="offerings">
     <div class="offering">
-      <h3 class="offering-title">Community Maintenance</h3>
+      <span class="offering-headline">
+        <span class="offering-icon material-symbols-outlined material-symbols-filled">
+          potted_plant
+        </span>
+        <h3 class="offering-title">Community Maintenance</h3>
+      </span>
       <p class="offering-description">Keeping all community entrances and common areas landscaped, well maintained, and uniform in appearance.</p>
     </div>
     <div class="offering">
-      <h3 class="offering-title">Local Events</h3>
+      <span class="offering-headline">
+        <span class="offering-icon material-symbols-outlined material-symbols-filled">
+          celebration
+        </span>
+        <h3 class="offering-title">Local Events</h3>
+      </span>
       <p class="offering-description">Community Movie Nights, Annual Festival, and much more to come!</p>
     </div>
     <div class="offering">
-      <h3 class="offering-title">Community Information</h3>
+      <span class="offering-headline">
+        <span class="offering-icon material-symbols-outlined material-symbols-filled">
+          newspaper
+        </span>
+        <h3 class="offering-title">Community Information</h3>
+      </span>
       <p class="offering-description">Keeping neighbors informed of issues affecting the community, and acting as a liaison between residents and County Departments.</p>
     </div>
   </div>
@@ -99,10 +114,22 @@
     margin-bottom: 0.5rem;
   }
 
+  .offering-headline {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .offering-icon {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+    margin-top: 0.4rem;
+  }
+
   .offerings {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 
   .offering {
