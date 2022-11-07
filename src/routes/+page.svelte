@@ -119,7 +119,7 @@
 
   .offerings-container {
     background-color: var(--gray-green);
-    color: var(--offset-gray-green);
+    color: white;
     padding: 1rem;
   }
 
