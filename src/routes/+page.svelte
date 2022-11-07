@@ -1,10 +1,11 @@
 <script>
-  import homeBanner from '$lib/assets/home-banner.jpeg'
+  import homeBanner from '$lib/assets/golf-course.png'
   import ResponsiveSlider from '$lib/components/ResponsiveSlider.svelte';
   import Testimonial from '$lib/components/Testimonial.svelte';
-  import rando1 from '$lib/assets/people/rando-1.jpeg';
-  import rando2 from '$lib/assets/people/rando-2.jpeg';
-  import rando3 from '$lib/assets/people/rando-3.jpeg';
+  import Slide from '$lib/components/Slide.svelte';
+  import testimonials from '$lib/testimonials';
+
+  console.log(testimonials);
 </script>
 <head>
   <title>KHA Home</title>
@@ -12,55 +13,44 @@
 
 <section class="banner" style="background-image: url({homeBanner})">
   <div class="container">
-    <h1 class="banner-title">Kendale HOA</h1>
-    <p class="banner-subtitle">Three Neighborhoods, One Community</p>
-    <p class="banner-description">A voluntary HOA proudly serving the Village of Kendale, Kendale Country Club Estates, and Kendale South</p>
+    <h1 class="banner-title">Kendale Homeowners Association</h1>
+    <p class="banner-subtitle">Three Neighborhoods — One Community</p>
+    <p class="banner-description">The Village of Kendale, Kendale South and Kendale Country Club Estates</p>
     <div class="banner-buttons">
-      <button class="primary-button">Sign Up</button>
-      <button class="secondary-button">Learn More</button>
+      <a href="/pay-dues"><button class="primary-button">Sign Up</button></a>
+      <a href="/about"><button class="secondary-button">Learn More</button></a>
     </div>
   </div>
 </section>
 <section class="offerings-container">
-  <h2 class="offerings-title">What we Offer</h2>
+  <h2 class="offerings-title">Services to the Community</h2>
   <div class="offerings">
     <div class="offering">
       <h3 class="offering-title">Community Maintenance</h3>
-      <p class="offering-description">We keep all common areas in our neighborhoods maintained and manicured.</p>
+      <p class="offering-description">Keeping all community entrances and common areas landscaped, well maintained, and uniform in appearance.</p>
     </div>
     <div class="offering">
       <h3 class="offering-title">Local Events</h3>
-      <p class="offering-description">We host movie nights, holiday parties, and more!</p>
+      <p class="offering-description">Community Movie Nights, Annual Festival, and much more to come!</p>
     </div>
     <div class="offering">
-      <h3 class="offering-title">Newsletter</h3>
-      <p class="offering-description">We send out a quarterly newsletter to keep the whole neighborhood informed on community events.</p>
+      <h3 class="offering-title">Community Information</h3>
+      <p class="offering-description">Keeping neighbors informed of issues affecting the community, and acting as a liaison between residents and Country Departments.</p>
     </div>
   </div>
 </section>
 <section>
-  <ResponsiveSlider title="What People Say About Us">
-    <Testimonial
-      slot="0"
-      img={rando1}
-      description="Incredible value, they keep our neighborhood beautiful!"
-      author="Kyle Killit"
-      role="Your Neighbor"
-    />
-    <Testimonial
-      slot="1"
-      img={rando3}
-      description="Very responsive to my concerns, a big part of this community."
-      author="Sergie Kalashnikov"
-      role="Your Neighbor"
-    />
-    <Testimonial
-      slot="2"
-      img={rando2}
-      description="I love the events they throw, they bring the whole neighborhood together!"
-      author="Bryant Chou"
-      role="Your Neighbor"
-    />
+  <ResponsiveSlider title="What People Say About Us" numSlots={testimonials.length}>
+    {#each testimonials as { name, photo, testimony} }
+    <Slide>
+      <Testimonial
+        img={photo}
+        description={testimony}
+        author={name}
+        role="Your Neighbor"
+      />
+    </Slide>
+    {/each}
   </ResponsiveSlider>
 </section>
 
@@ -71,7 +61,8 @@
     padding-bottom: 30px;
     text-shadow: 0px 0px 20px #000;
     background-size: cover;
-    background-position-y: center;
+    background-position-y: top;
+    background-position-x: center;
   }
   .banner-title {
     font-family: 'montserrat';
@@ -101,6 +92,7 @@
     margin: 0;
     font-family: lato;
     font-weight: 400;
+    font-size: 2rem;
   }
 
   .offering-title {
@@ -127,7 +119,11 @@
 
   .offerings-container {
     background-color: var(--gray-green);
-    color: var(--offset-gray-green);
+    color: white;
     padding: 1rem;
+  }
+
+  .primary-button {
+    height: 100%;
   }
 </style>

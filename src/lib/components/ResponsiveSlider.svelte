@@ -5,19 +5,19 @@
 -->
 <script lang="ts">
   export let title = '';
-  const numSlots = Object.keys($$slots).length;
+  export let numSlots = 1;
   let activeSlide = 0;
 
   let slideshowEl: HTMLDivElement;
   let margin = 0;
   const onLeftSlide = () => {
-    margin += 30;
-    slideshowEl.style.marginLeft = `${margin}rem`;
+    margin += 95;
+    slideshowEl.style.marginLeft = `${margin}vw`;
     activeSlide--;
   }
   const onRightSlide = () => {
-    margin -= 30;
-    slideshowEl.style.marginLeft = `${margin}rem`;
+    margin -= 95;
+    slideshowEl.style.marginLeft = `${margin}vw`;
     activeSlide++;
   }
 </script>
@@ -26,14 +26,7 @@
 <div class="slideshow">
   <button class="slide-control-button" disabled={activeSlide === 0} on:click={onLeftSlide}>&lt</button>
   <div bind:this={slideshowEl} class="slides reset-margin-left">
-    <slot name="0"></slot>
-    <slot name="1"></slot>
-    <slot name="2"></slot>
-    <slot name="3"></slot>
-    <slot name="4"></slot>
-    <slot name="5"></slot>
-    <slot name="6"></slot>
-    <slot name="7"></slot>
+    <slot></slot>
   </div>
   <button class="slide-control-button" disabled={activeSlide === numSlots - 1} on:click={onRightSlide}>&gt</button>
 </div>
@@ -56,10 +49,11 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
     justify-content: space-evenly;
     margin-bottom: 1rem;
     transition: margin-left 300ms ease-in-out;
+    align-items: center;
+    row-gap: 2rem;
   }
 
   h2 {
@@ -84,12 +78,13 @@
     .slides {
       width: auto;
       flex-wrap: nowrap;
-      gap: 10rem;
+      gap: 5vw;
       justify-content: flex-start;
       overflow: hidden;
       margin-left: initial;
     }
     .slide-control-button {
+      width: 5vw;
       z-index: 10;
       display: block;
     }

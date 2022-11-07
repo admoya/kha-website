@@ -26,7 +26,7 @@
 </head>
 
 <h1 class="page-heading">Member Info</h1>
-<section class="container">
+<!-- <section class="container">
   <h2 class="page-subheading">KHA Newsletter</h2>
   <p class="newsletter-text">
     Our quarterly community newsletter keeps KHA members informed on local events, introduces them to their neighbors, and offers exclusive discounts to local businesses!
@@ -50,7 +50,7 @@
       <button class="primary-button">Submit</button>
     </form>
   </FormContainer>
-</section>
+</section> -->
 <section class="container">
   <h2 class="page-subheading">Member Discounts</h2>
   <p>Stop into any of the below businesses and show proof of your KHA membership for an exclusive discount!</p>
@@ -80,7 +80,7 @@
 </section>
 
 <style>
-  .newsletter-text {
+  /* .newsletter-text {
     line-height: 1.5rem;
   }
   .newsletter-form {
@@ -102,7 +102,7 @@
 
   .newsletter-form button {
     margin: 1rem auto;
-  }
+  } */
   .discounts {
     display: flex;
     flex-direction: row;

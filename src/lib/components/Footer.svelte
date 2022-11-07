@@ -1,6 +1,5 @@
 <script lang="ts">
   import facebookLogo from '$lib/assets/facebook-logo.svg';
-  import twitterLogo from '$lib/assets/twitter-logo.svg';
   import linkedInLogo from '$lib/assets/linkedin-logo.svg';
   import emailLogo from '$lib/assets/email-logo.svg';
 </script>
@@ -11,9 +10,6 @@
     <ul class="footer-social-links">
       <li>
         <img alt="Facebook logo" class="social-logo" src={facebookLogo}/>
-      </li>
-      <li>
-        <img alt="Twitter logo" class="social-logo" src={twitterLogo}/>
       </li>
       <li>
         <img alt="LinkedIn logo" class="social-logo" src={linkedInLogo}/>
