@@ -1,4 +1,5 @@
 import defaultPhoto from '../assets/avatars/avatar-placeholder.png';
+import danielEchague from './assets/daniel-echague.jpg';
 export default [
   {
     name: "Joanna D.",
@@ -8,7 +9,7 @@ export default [
   {
     name: "Daniel Echagüe",
     testimony: `The dedication and diligent efforts of KHA are evident, and have created a wonderful sense of community for all of us, residents.`,
-    photo: await (await import('./assets/daniel-echague.jpg')).default,
+    photo: danielEchague,
   },
   {
     name: "Ossie and Harry Hanauer",
