@@ -52,7 +52,7 @@
     justify-content: space-evenly;
     margin-bottom: 1rem;
     transition: margin-left 300ms ease-in-out;
-    align-items: center;
+    align-items: top;
     row-gap: 2rem;
   }
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import placeholder from '$lib/assets/avatars/avatar-placeholder.png';
-    import TeamMember from '$lib/components/TeamMember.svelte';
+  import TeamMember from '$lib/components/TeamMember.svelte';
 </script>
 
 <head>
@@ -47,6 +47,11 @@
       img={placeholder}
       position="Corresponding Secretary"
       name="Patty Gonzalez"
+    />
+    <TeamMember
+      img={placeholder}
+      position="Recording Secretary"
+      name="Monica Scudieri"
     />
     <TeamMember
       img={placeholder}

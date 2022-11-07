@@ -2,13 +2,15 @@
   export let description:string;
   export let author:string;
   export let role:string;
-  export let img:string;
+  export let img:string = '';
 
   const shrinkText = description.length > 128;
 </script>
 
 <div class='testimonial'>
-  <img alt="headshot of the testimonial speaker" class="testimonial-photo" src={img} />
+  {#if img}
+    <img alt="headshot of the testimonial speaker" class="testimonial-photo" src={img} />
+  {/if}
   <div class="testimony">
     <p class={`testimony-text ${shrinkText ? 'shrink-text' : ''}`}>“{description}”</p>
     <p class="speaker">{author}</p>
@@ -21,9 +23,12 @@
   .testimonial {
     display: flex;
     flex-direction: row;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    /* flex-wrap: wrap; */
   }
 
-  @media(min-width: 481px) {
+  @media(min-width: 780px) {
     .testimonial {
       max-width: 30vw;
     }

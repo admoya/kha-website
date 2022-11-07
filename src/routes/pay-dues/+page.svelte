@@ -16,9 +16,6 @@
 
   let paymentChoice = 'dues';
   let donationAmount = '0';
-  let name = '';
-  let email = '';
-  let address = '';
 
   let showSuccess = false;
   let showError = false;
@@ -57,9 +54,6 @@
         <PaymentForm
           bind:paymentChoice
           bind:donationAmount
-          bind:name
-          bind:email
-          bind:address
           on:nextPressed={({ detail }) => { isCheckingOut = true; paymentFormSubmitEvent = detail; }}
         />
       </div>
@@ -72,9 +66,6 @@
           includesDues={paymentChoice === 'dues'}
           {paypalTokenData}
           {donationAmount}
-          {name}
-          {email}
-          {address}
         />
       </div>
     {/if}

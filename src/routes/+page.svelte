@@ -1,11 +1,9 @@
 <script>
-  import homeBanner from '$lib/assets/golf-course.png'
+  import homeBanner from '$lib/assets/park.jpg'
   import ResponsiveSlider from '$lib/components/ResponsiveSlider.svelte';
   import Testimonial from '$lib/components/Testimonial.svelte';
   import Slide from '$lib/components/Slide.svelte';
   import testimonials from '$lib/testimonials';
-
-  console.log(testimonials);
 </script>
 <head>
   <title>KHA Home</title>
@@ -35,7 +33,7 @@
     </div>
     <div class="offering">
       <h3 class="offering-title">Community Information</h3>
-      <p class="offering-description">Keeping neighbors informed of issues affecting the community, and acting as a liaison between residents and Country Departments.</p>
+      <p class="offering-description">Keeping neighbors informed of issues affecting the community, and acting as a liaison between residents and County Departments.</p>
     </div>
   </div>
 </section>
@@ -44,7 +42,6 @@
     {#each testimonials as { name, photo, testimony} }
     <Slide>
       <Testimonial
-        img={photo}
         description={testimony}
         author={name}
         role="Your Neighbor"
@@ -61,8 +58,8 @@
     padding-bottom: 30px;
     text-shadow: 0px 0px 20px #000;
     background-size: cover;
-    background-position-y: top;
-    background-position-x: center;
+    background-position-y: 40%;
+    background-position-x: right;
   }
   .banner-title {
     font-family: 'montserrat';

@@ -5,9 +5,6 @@
 
   export let includesDues:Boolean;
   export let donationAmount:String;
-  export let name:String;
-  export let email:String;
-  export let address:String;
   export let paypalTokenData:any;
 
   const dispatch = createEventDispatcher();

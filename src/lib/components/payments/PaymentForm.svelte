@@ -4,9 +4,12 @@
 
   export let paymentChoice = 'dues';
   export let donationAmount = '0';
-  export let name:String;
-  export let email:String;
-  export let address:String;
+  
+  type Person = {
+    name: string,
+    email: string,
+    phone: string,
+  }
 
   const cleanDonation = () => {
     donationAmount = Number(donationAmount).toFixed(2);
@@ -18,28 +21,43 @@
     e.preventDefault();
     dispatch('nextPressed', e);
   };
+  let people:Person[] = [
+    {
+      name: '',
+      email: '',
+      phone: '', 
+    }
+  ];
 </script>
 
 <form on:submit={handleSubmit} name="payments-form" data-netlify>
   <input type='hidden' name='form-name' value='payments-form' />
-  <div class="form-row">
-    <label class="form-label">
-      Name(s):
-      <input name="Name(s)" class="form-text-input" placeholder="John Doe, Jane Doe" bind:value={name} type="text" required />
-    </label>
-    <label class="form-label">
-      Email:
-      <input name="Email" class="form-text-input" placeholder="jdoe@example.com" bind:value={email} type="email" required />
-    </label>
-    <label class="form-label">
-      Phone:
-      <input name="Phone" type="tel" class="form-text-input" placeholder="305-123-4567"/>
-    </label>
+  {#each people as person, idx}
+    <div class="form-row">
+      <label class="form-label">
+        Name:
+        <input name={`Person[${idx+1}][Name]`} class="form-text-input" placeholder="John Doe" type="text" required />
+      </label>
+      <label class="form-label">
+        Email:
+        <input name={`Person[${idx+1}][Email]`} class="form-text-input" placeholder="jdoe@example.com" type="email" required />
+      </label>
+      <label class="form-label">
+        Phone:
+        <input name={`Person[${idx+1}][Phone]`} type="tel" class="form-text-input" placeholder="305-123-4567"/>
+      </label>
+    </div>
+  {/each}
+  <div style={`display: inline-flex; gap: 1rem;`}>
+    <button class="secondary-button add-person-button" type="button" on:click={() => { people = [...people, { name: '', email: '', phone: ''}] }}>Add Person</button>
+    {#if people.length > 1}
+      <button class="secondary-button remove-person-button" type="button" on:click={() => { people = [...people.slice(0, people.length-1)] }}>Remove Person</button>
+    {/if}
   </div>
   <div class="form-row">
     <label class="form-label">
       Address:
-      <input name="Address" class="form-text-input" placeholder="123 Main Street" bind:value={address} type="text" />
+      <input name="Address" class="form-text-input" placeholder="123 Main Street" type="text" />
     </label>
   </div>
   <div class="form-row">
@@ -68,6 +86,21 @@
 </form>
 
 <style>
+  .add-person-button {
+    width: 5rem;
+    height: 2rem;
+    padding: 0;
+    margin-bottom: 1rem;
+    border-color: black;
+  }
+  .remove-person-button {
+    width: 5rem;
+    height: 2rem;
+    padding: 0;
+    margin-bottom: 1rem;
+    color: rgb(185, 0, 0);
+    border-color: black;
+  }
   form {
     display: flex;
     flex-direction: column;
