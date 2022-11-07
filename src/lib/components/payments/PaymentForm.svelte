@@ -29,7 +29,11 @@
     </label>
     <label class="form-label">
       Email:
-      <input name="Email" autocomplete="email" class="form-text-input" placeholder="jdoe@example.com" bind:value={email} type="email" required />
+      <input name="Email" class="form-text-input" placeholder="jdoe@example.com" bind:value={email} type="email" required />
+    </label>
+    <label class="form-label">
+      Phone:
+      <input name="Phone" type="tel" class="form-text-input" placeholder="305-123-4567"/>
     </label>
   </div>
   <div class="form-row">

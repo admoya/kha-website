@@ -43,6 +43,7 @@
             <option>Maintenance</option>
             <option>Events</option>
             <option>Security</option>
+            <option>Volunteering</option>
           </select>
         </label>
       </div>
