@@ -1,7 +1,7 @@
 <script lang="ts">
   import facebookLogo from '$lib/assets/facebook-logo.svg';
-  import linkedInLogo from '$lib/assets/linkedin-logo.svg';
   import emailLogo from '$lib/assets/email-logo.svg';
+  import instagramLogo from '$lib/assets/social-icons/instagram.webp'
 </script>
 
 <footer>
@@ -11,12 +11,16 @@
       <li>
         <img alt="Facebook logo" class="social-logo" src={facebookLogo}/>
       </li>
-      <li>
-        <img alt="LinkedIn logo" class="social-logo" src={linkedInLogo}/>
-      </li>
-      <li>
-        <img alt="Email icon" class="social-logo" src={emailLogo}/>
-      </li>
+      <a href="https://www.instagram.com/kendale_hoa/" target="_blank" rel="noreferrer">
+        <li>
+          <img style={`filter: invert(); margin-top: 1px;`} alt="LinkedIn logo" class="social-logo" src={instagramLogo}/>
+        </li>
+      </a>
+      <a href="mailto:kha@kendalehoa.org">
+        <li>
+          <img style={`margin-top: 1px;`} alt="Email icon" class="social-logo" src={emailLogo}/>
+        </li>
+      </a>
     </ul>
   </div>
 </footer>
@@ -44,9 +48,13 @@
     padding: 0;
     display: inline-flex;
     list-style-type: none;
-    gap: 10px;
+    gap: 15px;
     margin-top: .5em;
     margin-bottom: .5em;
   }
-
+  .social-logo {
+    width: 25px;
+    height: 25px;
+    /* border-radius: 30%; */
+  }
 </style>

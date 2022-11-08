@@ -51,7 +51,7 @@
     </form>
   </FormContainer>
 </section> -->
-<section class="container">
+<!-- <section class="container">
   <h2 class="page-subheading">Member Discounts</h2>
   <p>Stop into any of the below businesses and show proof of your KHA membership for an exclusive discount!</p>
   <div class="discounts">
@@ -68,7 +68,7 @@
       <p class="business-name">Body and Brain</p>
     </div>
   </div>
-</section>
+</section> -->
 <section class="container">
   <h2 class="page-subheading">Laws and Covenants</h2>
   <p><strong>The state of our neighborhood depends on our knowledge of our rights and our willingness as a community to defend them.</strong></p>
