@@ -107,6 +107,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* margin-bottom: 1.5rem; */
   }
   .business-image {
     width: 150px;
@@ -119,6 +121,7 @@
     font-weight: 700;
     font-size: 1.2rem;
     margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
   .laws-and-covenants {
     text-align: justify;
