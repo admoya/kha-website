@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { slide } from 'svelte/transition';
+  import { slide, fade } from 'svelte/transition';
   import { createEventDispatcher } from 'svelte';
 
   export let paymentChoice = 'dues';
@@ -32,26 +32,28 @@
 
 <form on:submit={handleSubmit} name="payments-form" data-netlify>
   <input type='hidden' name='form-name' value='payments-form' />
+  <h3 style={`margin-top:0`}>Member Information</h3>
   {#each people as person, idx}
-    <div class="form-row">
-      <label class="form-label">
-        Name:
-        <input name={`Person[${idx+1}][Name]`} class="form-text-input" placeholder="John Doe" type="text" required />
-      </label>
-      <label class="form-label">
-        Email:
-        <input name={`Person[${idx+1}][Email]`} class="form-text-input" placeholder="jdoe@example.com" type="email" required />
-      </label>
-      <label class="form-label">
-        Phone:
-        <input name={`Person[${idx+1}][Phone]`} type="tel" class="form-text-input" placeholder="305-123-4567"/>
-      </label>
-    </div>
+      <fieldset transition:slide|local class="form-row members">
+        <legend style={`${people.length === 1 ? 'display:none' : ''}`}><i>Member {idx+1}</i></legend>
+        <label class="form-label">
+          Name:
+          <input name={`Person[${idx+1}][Name]`} class="form-text-input" placeholder="John Doe" type="text" required />
+        </label>
+        <label class="form-label">
+          Email:
+          <input name={`Person[${idx+1}][Email]`} class="form-text-input" placeholder="jdoe@example.com" type="email" required />
+        </label>
+        <label class="form-label">
+          Phone:
+          <input name={`Person[${idx+1}][Phone]`} type="tel" class="form-text-input" placeholder="305-123-4567"/>
+        </label>
+      </fieldset>
   {/each}
   <div style={`display: inline-flex; gap: 1rem;`}>
-    <button class="secondary-button add-person-button" type="button" on:click={() => { people = [...people, { name: '', email: '', phone: ''}] }}>Add Person</button>
+    <button class="secondary-button add-person-button" type="button" on:click={() => { people = [...people, { name: '', email: '', phone: ''}] }}>Add Member</button>
     {#if people.length > 1}
-      <button class="secondary-button remove-person-button" type="button" on:click={() => { people = [...people.slice(0, people.length-1)] }}>Remove Person</button>
+      <button class="secondary-button remove-person-button" type="button" on:click={() => { people = [...people.slice(0, people.length-1)] }}>Remove Member</button>
     {/if}
   </div>
   <div class="form-row">
@@ -112,5 +114,12 @@
     align-self: end;
     width: 200px;
     margin-top: 1rem;
+  }
+  .members {
+    border-left:none;
+    border-right:none;
+    border-bottom:none;
+    border-top:none;
+    padding: 0;
   }
 </style>
