@@ -82,6 +82,12 @@
     font-size: 2.8rem;
     margin-top: 1rem;
   }
+  
+  @media (max-width: 480px) {
+    .banner-title {
+      font-size: 2.3rem;
+    }
+  }
   .banner-subtitle {
     font-family: 'lato';
     font-weight: 400;

@@ -69,8 +69,8 @@ button {
 }
 
 .page-heading {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   margin: 0;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 500;

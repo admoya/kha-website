@@ -24,11 +24,11 @@
 
 <h2>{title}</h2>
 <div class="slideshow">
-  <button class="slide-control-button" disabled={activeSlide === 0} on:click={onLeftSlide}>&lt</button>
+  <button class="slide-control-button" disabled={activeSlide === 0} on:click={onLeftSlide}><span class="material-symbols-outlined">navigate_before</span></button>
   <div bind:this={slideshowEl} class="slides reset-margin-left">
     <slot></slot>
   </div>
-  <button class="slide-control-button" disabled={activeSlide === numSlots - 1} on:click={onRightSlide}>&gt</button>
+  <button class="slide-control-button" disabled={activeSlide === numSlots - 1} on:click={onRightSlide}><span class="material-symbols-outlined">navigate_next</span></button>
 </div>
 
 <style>
@@ -36,10 +36,12 @@
     display: none;
     background: none;
     border: none;
+    font-family: roboto;
     font-size: 2rem;
-    width: 2rem;
+    /* width: 2rem; */
     font-family: cursive;
-    -webkit-tap-highlight-color: transparent
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
   }
   .slide-control-button:active {
     background: none;
@@ -66,6 +68,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100vw;
   }
 
   @media(min-width: 481px) {
@@ -84,7 +87,7 @@
       margin-left: initial;
     }
     .slide-control-button {
-      width: 5vw;
+      /* width: 5vw; */
       z-index: 10;
       display: block;
     }
