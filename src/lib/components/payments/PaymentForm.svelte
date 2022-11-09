@@ -4,7 +4,7 @@
 
   export let paymentChoice = 'dues';
   export let donationAmount = '0';
-  
+
   type Person = {
     name: string,
     email: string,
@@ -25,7 +25,7 @@
     {
       name: '',
       email: '',
-      phone: '', 
+      phone: '',
     }
   ];
 </script>
@@ -73,8 +73,8 @@
     <div transition:slide|local class="form-row">
       <label class="form-inline-label"  for="duesInput">Dues:</label>
       <span  class="form-currency-container">
-        <input class="form-currency-input" id="duesInput" value="45.00" disabled style="border: none" />
-        <input type="hidden" name="Dues" value="45" />
+        <input class="form-currency-input" id="duesInput" value="60.00" disabled style="border: none" />
+        <input type="hidden" name="Dues" value="60" />
       </span>
     </div>
   {/if}

@@ -21,7 +21,8 @@ export async function generateAccessToken() {
 
 // create an order
 export async function createOrder(includesDues:boolean, donationAmount = 0) {
-  const duesAmount = '45.00'; // TODO: pull amount from a database or session
+  console.log('creating paypal order');
+  const duesAmount = '60.00'; // TODO: pull amount from a database or session
   const accessToken = await generateAccessToken();
   const url = `${BASE_URL}/v2/checkout/orders`;
   const response = await fetch(url, {
