@@ -27,7 +27,7 @@
         await paypal.Buttons({
           // style: { color: 'silver' },
           createOrder(data, actions) {
-            return fetch('https://roaring-froyo-7fb53d.netlify.app/.netlify/functions/createPaypalOrder', {
+            return fetch('/api/payments/createOrder', {
               method: 'post',
               body: JSON.stringify({
                 includesDues,
