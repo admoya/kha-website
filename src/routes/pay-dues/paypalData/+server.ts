@@ -3,7 +3,6 @@ import type { RequestHandler } from './$types';
 import { generateAccessToken, CLIENT_ID, BASE_URL } from '$lib/server/paypalutils';
 
 export const GET: RequestHandler = async () => {
-  console.log('generating access token');
   const accessToken = await generateAccessToken();
   // base URL will need to change for production applications
   const response = await fetch(`${BASE_URL}/v1/identity/generate-token`, {

@@ -1,12 +1,13 @@
 // const fetch = require('node-fetch');
 
 // export const { CLIENT_ID, APP_SECRET } = process.env; // pull from environment variables
-import { CLIENT_ID, APP_SECRET } from '$env/static/private';
-export { CLIENT_ID, APP_SECRET };
-export const BASE_URL = 'https://api-m.sandbox.paypal.com';
+import { PAYPAL_CLIENT_ID as CLIENT_ID, PAYPAL_APP_SECRET as APP_SECRET, PAYPAL_BASE_URL as BASE_URL } from '$env/static/private';
+export { CLIENT_ID, APP_SECRET, BASE_URL };
+import type { CreateOrderRequestBody, PurchaseItem } from '@paypal/paypal-js';
 
 // access token is used to authenticate all REST API requests
 export async function generateAccessToken() {
+  console.log('Generating paypal access token');
   const auth = Buffer.from(`${CLIENT_ID}:${APP_SECRET}`).toString('base64');
   const response = await fetch(`${BASE_URL}/v1/oauth2/token`, {
     method: 'post',
@@ -21,43 +22,63 @@ export async function generateAccessToken() {
 
 // create an order
 export async function createOrder(includesDues:boolean, donationAmount = 0) {
-  console.log('creating paypal order');
+  console.log('Creating paypal order');
   const duesAmount = '60.00'; // TODO: pull amount from a database or session
   const accessToken = await generateAccessToken();
   const url = `${BASE_URL}/v2/checkout/orders`;
+  const orderTotal = Number(duesAmount) + donationAmount;
+  const order:CreateOrderRequestBody = {
+    intent: 'CAPTURE',
+    application_context: {
+      brand_name: 'Kendale Homeowners\'s Association',
+      shipping_preference: 'NO_SHIPPING',
+    },
+    purchase_units: [
+      {
+        amount: {
+          currency_code: 'USD',
+          value: String(orderTotal),
+          breakdown: {
+            item_total: {
+              currency_code: 'USD',
+              value: String(orderTotal),
+            }
+          }
+        },
+        description: 'Annual dues and/or donation to Kendale Homeowners Association',
+        soft_descriptor: 'KHA Dues/Donation',
+        items: [
+          includesDues && {
+            name: 'Annual Dues',
+            quantity: "1",
+            unit_amount: {
+              currency_code: 'USD',
+              value: duesAmount,
+            },
+            category: 'DONATION',
+          },
+          donationAmount > 0 && {
+            name: 'Donation',
+            quantity: "1",
+            unit_amount: {
+              currency_code: 'USD',
+              value: String(donationAmount),
+            },
+            category: 'DONATION',
+          },
+        ].filter((item) => item) as PurchaseItem[]
+      } 
+    ],
+  }
+
+
   const response = await fetch(url, {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${accessToken}`,
     },
-    body: JSON.stringify({
-      intent: 'CAPTURE',
-      application_context: {
-        brand_name: 'Kendale Homeowners\'s Association',
-        shipping_preference: 'NO_SHIPPING',
-      },
-      purchase_units: [
-        includesDues && {
-          description: 'KHA membership dues',
-          reference_id: '001',
-          soft_descriptor: 'KHA dues',
-          amount: {
-            currency_code: 'USD',
-            value: duesAmount,
-          },
-        },
-        donationAmount > 0 && {
-          description: 'KHA donation',
-          reference_id: '002',
-          soft_descriptor: 'KHA donation',
-          amount: {
-            currency_code: 'USD',
-            value: String(donationAmount),
-          },
-        },
-      ].filter((pa) => pa),
-    }),
+    body: JSON.stringify(order),
   });
   if (!response.ok) throw new Error(`Error from Paypal: ${response.status}: ${await response.text()}`);
   const data = await response.json();

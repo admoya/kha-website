@@ -26,16 +26,20 @@
       try {
         await paypal.Buttons({
           // style: { color: 'silver' },
-          createOrder(data, actions) {
-            return fetch('/api/payments/createOrder', {
+          async createOrder(data, actions) {
+            const res = await fetch('/api/payments/createOrder', {
               method: 'post',
               body: JSON.stringify({
                 includesDues,
                 donationAmount,
               }),
             })
-              .then((response) => response.json())
-              .then((order) => order.id);
+            if (!res.ok) {
+              dispatch('paymentError');
+              return;
+            } 
+            const order = await res.json();
+            return order.id;
           },
           async onApprove(data, actions) {
             return actions.order?.capture().then((details) => {
@@ -56,7 +60,7 @@
 
   const onBackPressed = () => dispatch('backPressed');
   const totalPayment = includesDues
-    ? (45 + Number(donationAmount)).toFixed(2) : Number(donationAmount).toFixed(2);
+    ? (60 + Number(donationAmount)).toFixed(2) : Number(donationAmount).toFixed(2);
 </script>
 
 <div>
@@ -65,7 +69,7 @@
   {#if includesDues}
   <div class="inlineFlex">
     <p class="item">Dues:</p>
-    <p class="item">$45</p>
+    <p class="item">$60</p>
   </div>
   {/if}
   <div class="inlineFlex">

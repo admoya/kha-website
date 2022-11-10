@@ -5,9 +5,9 @@ import { createOrder } from '$lib/server/paypalutils';
 export const POST: RequestHandler = async ({ request }) => {
   try {
     const { includesDues, donationAmount } = await request.json();
-    const order = await createOrder(includesDues, donationAmount);
+    const order = await createOrder(includesDues, Number(donationAmount));
     return json(order);
   } catch (err:any) {
-    return error(500, err.message);
+    throw error(500, err.message);
   }
 }

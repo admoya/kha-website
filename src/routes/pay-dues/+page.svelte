@@ -16,6 +16,8 @@
 
   let paymentChoice = 'dues';
   let donationAmount = '0';
+  let people: any;
+  let address = '';
 
   let showSuccess = false;
   let showError = false;
@@ -54,6 +56,8 @@
         <PaymentForm
           bind:paymentChoice
           bind:donationAmount
+          bind:people
+          bind:address
           on:nextPressed={({ detail }) => { isCheckingOut = true; paymentFormSubmitEvent = detail; }}
         />
       </div>
