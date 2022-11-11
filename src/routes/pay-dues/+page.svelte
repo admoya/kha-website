@@ -16,6 +16,8 @@
 
   let paymentChoice = 'dues';
   let donationAmount = '0';
+  let people: any;
+  let address = '';
 
   let showSuccess = false;
   let showError = false;
@@ -25,7 +27,7 @@
   const getPaypalToken = async () => {
     if (paypalTokenData === undefined) {
       paypalTokenData = null;
-      const res = await fetch('https://roaring-froyo-7fb53d.netlify.app/.netlify/functions/getPaypalClientToken');
+      const res = await fetch('pay-dues/paypalData');
       if (!res.ok) {
         console.error(`Error fetching paypal token: ${await res.text()}`);
         showError = true;
@@ -50,15 +52,17 @@
     {:else if showSuccess}
       <Success />
     {:else if !isCheckingOut}
-      <div class="fixedGridItem" in:fly|local={{ x: -100, duration: 400, delay: 150 }} out:fly|local={{ x: -100, duration: 400 }}>
+      <div class="fixedGridItem" in:fly={{ x: -100, duration: 400, delay: 150 }} out:fly={{ x: -100, duration: 400 }}>
         <PaymentForm
           bind:paymentChoice
           bind:donationAmount
+          bind:people
+          bind:address
           on:nextPressed={({ detail }) => { isCheckingOut = true; paymentFormSubmitEvent = detail; }}
         />
       </div>
     {:else}
-      <div class="fixedGridItem" in:fly|local={{ x: 100, duration: 400, delay: 150 }} out:fly|local={{ x: 100, duration: 400 }}>
+      <div class="fixedGridItem" in:fly={{ x: 100, duration: 400, delay: 150 }} out:fly={{ x: 100, duration: 400 }}>
         <Checkout
           on:paymentError={() => { showError = true; }}
           on:paymentCompleted={handlePaymentCompleted}
