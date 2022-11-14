@@ -9,11 +9,16 @@
 }
 
 body {
+  font-family: 'Roboto';
   margin: 0;
   background-color: seashell;
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+ul {
+  margin: initial;
 }
 
 .container {

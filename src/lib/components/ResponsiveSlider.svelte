@@ -22,7 +22,7 @@
   }
 </script>
 
-<h2>{title}</h2>
+<h2 class="page-subheading">{title}</h2>
 <div class="slideshow">
   <button class="slide-control-button" disabled={activeSlide === 0} on:click={onLeftSlide}><span class="material-symbols-outlined">navigate_before</span></button>
   <div bind:this={slideshowEl} class="slides reset-margin-left">

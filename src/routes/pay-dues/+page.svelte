@@ -4,7 +4,7 @@
 
 <script lang="ts">
   import { fly } from 'svelte/transition';
-  import PaymentForm from '$lib/components/payments/PaymentForm.svelte';
+  import PaymentForm, { type Person } from '$lib/components/payments/PaymentForm.svelte';
   import Checkout from '$lib/components/payments/Checkout.svelte';
   import Success from '$lib/components/payments/Success.svelte';
   import Error from '$lib/components/payments/Error.svelte';
@@ -16,7 +16,7 @@
 
   let paymentChoice = 'dues';
   let donationAmount = '0';
-  let people: any;
+  let people: Person[];
   let address = '';
 
   let showSuccess = false;
@@ -52,7 +52,7 @@
     {:else if showSuccess}
       <Success />
     {:else if !isCheckingOut}
-      <div class="fixedGridItem" in:fly={{ x: -100, duration: 400, delay: 150 }} out:fly={{ x: -100, duration: 400 }}>
+      <div class="fixedGridItem" in:fly|local={{ x: -100, duration: 400, delay: 150 }} out:fly|local={{ x: -100, duration: 400 }}>
         <PaymentForm
           bind:paymentChoice
           bind:donationAmount
@@ -62,7 +62,7 @@
         />
       </div>
     {:else}
-      <div class="fixedGridItem" in:fly={{ x: 100, duration: 400, delay: 150 }} out:fly={{ x: 100, duration: 400 }}>
+      <div class="fixedGridItem" in:fly|local={{ x: 100, duration: 400, delay: 150 }} out:fly|local={{ x: 100, duration: 400 }}>
         <Checkout
           on:paymentError={() => { showError = true; }}
           on:paymentCompleted={handlePaymentCompleted}

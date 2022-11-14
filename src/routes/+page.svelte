@@ -118,6 +118,7 @@
     font-weight: 500;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    margin-top: 1rem;
   }
 
   .offering-headline {

@@ -1,3 +1,10 @@
+<script lang="ts" context="module">
+  export type Person = {
+    name: string,
+    email: string,
+    phone: string,
+  }
+</script>
 <script lang="ts">
   import { slide, fade } from 'svelte/transition';
   import { createEventDispatcher } from 'svelte';
@@ -5,11 +12,7 @@
   export let paymentChoice = 'dues';
   export let donationAmount = '0';
 
-  type Person = {
-    name: string,
-    email: string,
-    phone: string,
-  }
+
   export let people:Person[] = [
     {
       name: '',
