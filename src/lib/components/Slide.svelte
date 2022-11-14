@@ -1,9 +1,9 @@
 <div class="slide">
-  <slot></slot>
+  <slot />
 </div>
 
 <style>
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     .slide {
       min-width: 90vw;
       max-width: 90vw;

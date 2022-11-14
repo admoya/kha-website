@@ -1,40 +1,45 @@
 <script lang="ts">
-  import khaLogo from '$lib/assets/kha-logo.gif';
+  import khaLogo from "$lib/assets/kha-logo.gif";
 
   var isMenuopen = false;
-  const toggleMenu = () => {isMenuopen = false};
+  const toggleMenu = () => {
+    isMenuopen = false;
+  };
 </script>
 
 <nav class="app-bar">
   <a class="branding" href="/">
-      <img id="csmaLogo" src={khaLogo} alt="The CSMA logo" />
+    <img id="csmaLogo" src={khaLogo} alt="The CSMA logo" />
   </a>
-  <ul on:click={toggleMenu} on:keypress={toggleMenu} class={`nav-links ${isMenuopen ? '' : 'hide-menu'}`}>
+  <ul
+    on:click={toggleMenu}
+    on:keypress={toggleMenu}
+    class={`nav-links ${isMenuopen ? "" : "hide-menu"}`}>
     <li>
-      <a href='/about'>About</a>
+      <a href="/about">About</a>
     </li>
     <li>
-      <a href='/contact'>Contact</a>
+      <a href="/contact">Contact</a>
     </li>
     <li>
-      <a href='/member-info'>Member Info</a>
+      <a href="/member-info">Member Info</a>
     </li>
     <li>
-      <a href='/events'>Events</a>
+      <a href="/events">Events</a>
     </li>
     <li>
-      <a href='/pay-dues'>Pay Dues</a>
+      <a href="/pay-dues">Pay Dues</a>
     </li>
   </ul>
-  <button on:click={() => { isMenuopen = !isMenuopen }} class="hamburger-button">
+  <button
+    on:click={() => {
+      isMenuopen = !isMenuopen;
+    }}
+    class="hamburger-button">
     {#if isMenuopen}
-      <span class="material-symbols-outlined">
-        close
-      </span>
+      <span class="material-symbols-outlined"> close </span>
     {:else}
-      <span class="material-symbols-outlined">
-        menu
-      </span>
+      <span class="material-symbols-outlined"> menu </span>
     {/if}
   </button>
 </nav>
@@ -55,7 +60,7 @@
     align-items: center;
     margin-left: 7%;
     text-align: center;
-    gap: .75rem;
+    gap: 0.75rem;
     max-width: 156px;
   }
 
@@ -123,5 +128,4 @@
       padding-right: 2rem;
     }
   }
-
 </style>

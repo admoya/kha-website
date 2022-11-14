@@ -34,14 +34,14 @@
   }
 
   .name {
-    font-family: 'roboto';
+    font-family: "roboto";
     font-weight: 300;
     font-size: 1.5rem;
     margin-bottom: 0px;
   }
 
   .position {
-    font-family: 'roboto';
+    font-family: "roboto";
     font-weight: 250;
     font-size: 18px;
     margin-top: 0px;

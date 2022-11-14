@@ -1,12 +1,14 @@
 <script lang="ts">
-  export let formStatus:FormStatus = "active";
-  export let successMessage:string = 'Thank you for contacting KHA! You will hear back from us shortly';
-  export let errorMessage:string = 'Sorry, there was an error submitting this form. Please try again later.';
+  export let formStatus: FormStatus = "active";
+  export let successMessage: string =
+    "Thank you for contacting KHA! You will hear back from us shortly";
+  export let errorMessage: string =
+    "Sorry, there was an error submitting this form. Please try again later.";
 </script>
 
 <div>
   <div style={`display: ${formStatus === "active" ? "block" : "none"}`}>
-    <slot></slot>
+    <slot />
   </div>
   <div style={`display: ${formStatus === "success" ? "block" : "none"}`}>
     <slot name="success">

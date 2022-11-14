@@ -1,76 +1,80 @@
 <script lang="ts">
-  import { loadScript } from '@paypal/paypal-js';
-  import type { PayPalNamespace } from '@paypal/paypal-js';
-  import { createEventDispatcher } from 'svelte';
+  import { loadScript } from "@paypal/paypal-js";
+  import type { PayPalNamespace } from "@paypal/paypal-js";
+  import { createEventDispatcher } from "svelte";
 
-  export let includesDues:Boolean;
-  export let donationAmount:String;
-  export let paypalTokenData:any;
+  export let includesDues: Boolean;
+  export let donationAmount: String;
+  export let paypalTokenData: any;
 
   const dispatch = createEventDispatcher();
-  let paypal:PayPalNamespace | null;
+  let paypal: PayPalNamespace | null;
   const loadPaypal = async () => {
     const { clientId, token } = paypalTokenData;
     try {
       paypal = await loadScript({
-        'client-id': clientId,
-        'data-client-token': token,
-        'disable-funding': 'paylater',
-        'enable-funding': 'venmo',
+        "client-id": clientId,
+        "data-client-token": token,
+        "disable-funding": "paylater",
+        "enable-funding": "venmo",
       });
     } catch (error) {
-      console.error('failed to load the PayPal JS SDK script', error);
+      console.error("failed to load the PayPal JS SDK script", error);
     }
 
     if (paypal && paypal.Buttons) {
       try {
-        await paypal.Buttons({
-          // style: { color: 'silver' },
-          async createOrder(data, actions) {
-            const res = await fetch('/api/payments/createOrder', {
-              method: 'post',
-              body: JSON.stringify({
-                includesDues,
-                donationAmount,
-              }),
-            })
-            if (!res.ok) {
-              dispatch('paymentError');
-              return;
-            } 
-            const order = await res.json();
-            return order.id;
-          },
-          async onApprove(data, actions) {
-            return actions.order?.capture().then((details) => {
-              if (details.status === 'COMPLETED') {
-                dispatch('paymentCompleted');
-              } else {
-                dispatch('paymentError');
+        await paypal
+          .Buttons({
+            // style: { color: 'silver' },
+            async createOrder(data, actions) {
+              const res = await fetch("/api/payments/createOrder", {
+                method: "post",
+                body: JSON.stringify({
+                  includesDues,
+                  donationAmount,
+                }),
+              });
+              if (!res.ok) {
+                dispatch("paymentError");
+                return;
               }
-            });
-          },
-        }).render('#paypal-div');
+              const order = await res.json();
+              return order.id;
+            },
+            async onApprove(data, actions) {
+              return actions.order?.capture().then((details) => {
+                if (details.status === "COMPLETED") {
+                  dispatch("paymentCompleted");
+                } else {
+                  dispatch("paymentError");
+                }
+              });
+            },
+          })
+          .render("#paypal-div");
       } catch (error) {
-        console.error('failed to render the PayPal Buttons', error);
+        console.error("failed to render the PayPal Buttons", error);
       }
     }
   };
   loadPaypal();
 
-  const onBackPressed = () => dispatch('backPressed');
+  const onBackPressed = () => dispatch("backPressed");
   const totalPayment = includesDues
-    ? (60 + Number(donationAmount)).toFixed(2) : Number(donationAmount).toFixed(2);
+    ? (60 + Number(donationAmount)).toFixed(2)
+    : Number(donationAmount).toFixed(2);
 </script>
 
 <div>
-  <button class="secondary-button" id="backBtn" on:click={onBackPressed}>&lt Back</button>
+  <button class="secondary-button" id="backBtn" on:click={onBackPressed}
+    >&lt Back</button>
   <h3>Payment Confirmation</h3>
   {#if includesDues}
-  <div class="inlineFlex">
-    <p class="item">Dues:</p>
-    <p class="item">$60</p>
-  </div>
+    <div class="inlineFlex">
+      <p class="item">Dues:</p>
+      <p class="item">$60</p>
+    </div>
   {/if}
   <div class="inlineFlex">
     <p class="item">Donation:</p>
@@ -80,7 +84,7 @@
     <p class="items-total">Total:</p>
     <p class="items-total">${totalPayment}</p>
   </div>
-  <div id="paypal-div"/>
+  <div id="paypal-div" />
 </div>
 
 <style>

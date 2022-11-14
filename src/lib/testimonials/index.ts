@@ -1,5 +1,5 @@
-import defaultPhoto from '../assets/avatars/avatar-placeholder.png';
-import danielEchague from './assets/daniel-echague.jpg';
+import defaultPhoto from "../assets/avatars/avatar-placeholder.png";
+import danielEchague from "./assets/daniel-echague.jpg";
 export default [
   {
     name: "Joanna D.",
@@ -21,4 +21,4 @@ export default [
     testimony: `The events that are put on by KHA to unite families and neighbors are like no other.`,
     photo: defaultPhoto,
   },
-]
+];
