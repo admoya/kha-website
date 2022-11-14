@@ -7,12 +7,13 @@
     username: string;
     permalink: string;
     id: string;
-  }
+  };
 </script>
+
 <script lang="ts">
-  import khaLogo from '$lib/assets/kha-logo.gif';
-  import { Carousel, CarouselControl, CarouselItem } from 'sveltestrap';
-  import { Circle } from 'svelte-loading-spinners';
+  import khaLogo from "$lib/assets/kha-logo.gif";
+  import { Carousel, CarouselControl, CarouselItem } from "sveltestrap";
+  import { Circle } from "svelte-loading-spinners";
   const interval = "5000";
   export let items: Post[] | undefined;
   let activeIndex = 0;
@@ -26,15 +27,21 @@
       <img alt="kha instagram profile" class="avatar" src={khaLogo} />
       <p>{items[0].username}</p>
     </div>
-    <Carousel {items} bind:activeIndex interval={interval}>
+    <Carousel {items} bind:activeIndex {interval}>
       <div class="carousel-inner">
         {#each items as item, index}
           <CarouselItem bind:activeIndex itemIndex={index}>
             <a href={item.permalink} target="_blank" rel="noreferrer">
-              {#if item.media_type=="VIDEO"}
-                <img src={item.thumbnail_url} alt="instagram post" class="d-block w-100" />
+              {#if item.media_type == "VIDEO"}
+                <img
+                  src={item.thumbnail_url}
+                  alt="instagram post"
+                  class="d-block w-100" />
               {:else}
-                <img src={item.media_url} alt="instagram post" class="d-block w-100" />
+                <img
+                  src={item.media_url}
+                  alt="instagram post"
+                  class="d-block w-100" />
               {/if}
             </a>
           </CarouselItem>
@@ -45,7 +52,7 @@
           <CarouselControl direction="prev" bind:activeIndex {items} />
         </div>
         <div class="carousel-control-right">
-          <CarouselControl direction="next" bind:activeIndex {items}  />
+          <CarouselControl direction="next" bind:activeIndex {items} />
         </div>
       </div>
     </Carousel>
@@ -84,7 +91,7 @@
     align-items: center;
     background-color: white;
     margin-bottom: 0px;
-    color: black; 
+    color: black;
     padding: 5px;
     padding: 10px 30px 0px;
   }

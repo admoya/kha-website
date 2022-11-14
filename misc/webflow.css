@@ -81,9 +81,11 @@ p {
   border-radius: 3px;
   background-color: #30813f;
   box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12);
-  -webkit-transition: background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
-  transition: background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
-  font-family: 'Roboto Slab', sans-serif;
+  -webkit-transition: background-color 300ms ease, box-shadow 300ms ease,
+    color 300ms ease;
+  transition: background-color 300ms ease, box-shadow 300ms ease,
+    color 300ms ease;
+  font-family: "Roboto Slab", sans-serif;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -111,7 +113,7 @@ p {
 
 .logo-text {
   margin-top: 24px;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   color: #1c1c1c;
   font-size: 27px;
   font-weight: 500;
@@ -162,7 +164,7 @@ p {
   margin-top: 0px;
   padding-bottom: 0px;
   background-color: #4dbd90;
-  background-image: url('../images/Miami-Family-Street-under-trees-Getty-reduced.jpeg');
+  background-image: url("../images/Miami-Family-Street-under-trees-Getty-reduced.jpeg");
   background-position: 50% 50%;
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.23);
@@ -286,7 +288,7 @@ p {
 
 .testimony-text {
   margin-bottom: 21px;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   font-size: 25px;
   line-height: 31px;
   font-weight: 300;
@@ -449,8 +451,22 @@ p {
 .section-2 {
   margin-top: 73px;
   background-color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(hsla(0, 0%, 100%, 0.48))), -webkit-gradient(linear, left top, left bottom, from(rgba(48, 129, 63, 0.3)), to(rgba(48, 129, 63, 0.3))), radial-gradient(circle farthest-corner at 50% 50%, #fff, #30813f);
-  background-image: linear-gradient(180deg, transparent, hsla(0, 0%, 100%, 0.48)), linear-gradient(180deg, rgba(48, 129, 63, 0.3), rgba(48, 129, 63, 0.3)), radial-gradient(circle farthest-corner at 50% 50%, #fff, #30813f);
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(transparent),
+      to(hsla(0, 0%, 100%, 0.48))
+    ),
+    -webkit-gradient(linear, left top, left bottom, from(rgba(48, 129, 63, 0.3)), to(rgba(48, 129, 63, 0.3))),
+    radial-gradient(circle farthest-corner at 50% 50%, #fff, #30813f);
+  background-image: linear-gradient(
+      180deg,
+      transparent,
+      hsla(0, 0%, 100%, 0.48)
+    ),
+    linear-gradient(180deg, rgba(48, 129, 63, 0.3), rgba(48, 129, 63, 0.3)),
+    radial-gradient(circle farthest-corner at 50% 50%, #fff, #30813f);
 }
 
 .container-3 {
@@ -474,7 +490,7 @@ p {
   margin-bottom: 0px;
   padding-top: 25px;
   padding-bottom: 25px;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   text-align: center;
 }
 
@@ -488,7 +504,8 @@ p {
 }
 
 .grid {
-  grid-template-areas: "Area Area-2 Area-3"
+  grid-template-areas:
+    "Area Area-2 Area-3"
     "Area-4 Area-5 Area-6"
     "Area-7 Area-8 Area-9"
     "Area-10 . Area-11";
@@ -558,7 +575,8 @@ p {
 }
 
 .grid-2 {
-  grid-template-areas: "Area Area-2"
+  grid-template-areas:
+    "Area Area-2"
     "Area-3 Area-3";
 }
 
@@ -747,7 +765,8 @@ p {
 }
 
 .grid-3 {
-  grid-template-areas: "Area Area-2 Area-7"
+  grid-template-areas:
+    "Area Area-2 Area-7"
     "Area-3 Area-3 Area-3"
     "Area-4 Area-4 Area-4"
     "Area-5 Area-5 Area-5"
@@ -1686,7 +1705,8 @@ p {
     -ms-flex-line-pack: start;
     align-content: start;
     grid-auto-flow: row dense;
-    grid-template-areas: "Area Area-2"
+    grid-template-areas:
+      "Area Area-2"
       "Area-4 Area-5"
       "Area-7 Area-8"
       "Area-10 Area-6"
@@ -1813,12 +1833,12 @@ p {
   grid-area: Area;
 }
 
-.grid-2>#w-node-_71423895-dc8c-aad2-18df-8c2a69e3e6d2-38beb7bc {
+.grid-2 > #w-node-_71423895-dc8c-aad2-18df-8c2a69e3e6d2-38beb7bc {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
 }
 
-.grid-3>#w-node-_71423895-dc8c-aad2-18df-8c2a69e3e6d2-38beb7bc {
+.grid-3 > #w-node-_71423895-dc8c-aad2-18df-8c2a69e3e6d2-38beb7bc {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
 }
@@ -1950,13 +1970,13 @@ p {
   grid-area: Area-3;
 }
 
-.grid-2>#w-node-dcc30f6a-4b9b-1db8-ccac-043b147cb1cf-e66434e4 {
+.grid-2 > #w-node-dcc30f6a-4b9b-1db8-ccac-043b147cb1cf-e66434e4 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
 }
 
-.grid-3>#w-node-dcc30f6a-4b9b-1db8-ccac-043b147cb1cf-e66434e4 {
+.grid-3 > #w-node-dcc30f6a-4b9b-1db8-ccac-043b147cb1cf-e66434e4 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -1968,12 +1988,12 @@ p {
   grid-area: Area;
 }
 
-.grid-2>#w-node-_44080a57-9b24-c468-fcd4-aec52414e454-e66434e4 {
+.grid-2 > #w-node-_44080a57-9b24-c468-fcd4-aec52414e454-e66434e4 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
 }
 
-.grid-3>#w-node-_44080a57-9b24-c468-fcd4-aec52414e454-e66434e4 {
+.grid-3 > #w-node-_44080a57-9b24-c468-fcd4-aec52414e454-e66434e4 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
 }
@@ -1984,12 +2004,12 @@ p {
   grid-area: Area-2;
 }
 
-.grid-2>#w-node-d9b9cd3e-1900-0403-2382-99071696310b-e66434e4 {
+.grid-2 > #w-node-d9b9cd3e-1900-0403-2382-99071696310b-e66434e4 {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
 }
 
-.grid-3>#w-node-d9b9cd3e-1900-0403-2382-99071696310b-e66434e4 {
+.grid-3 > #w-node-d9b9cd3e-1900-0403-2382-99071696310b-e66434e4 {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
 }

@@ -4,7 +4,7 @@
   ^ Looking for a better way to do this dynamically.
 -->
 <script lang="ts">
-  export let title = '';
+  export let title = "";
   export let numSlots = 1;
   let activeSlide = 0;
 
@@ -14,21 +14,29 @@
     margin += 95;
     slideshowEl.style.marginLeft = `${margin}vw`;
     activeSlide--;
-  }
+  };
   const onRightSlide = () => {
     margin -= 95;
     slideshowEl.style.marginLeft = `${margin}vw`;
     activeSlide++;
-  }
+  };
 </script>
 
 <h2 class="page-subheading">{title}</h2>
 <div class="slideshow">
-  <button class="slide-control-button" disabled={activeSlide === 0} on:click={onLeftSlide}><span class="material-symbols-outlined">navigate_before</span></button>
+  <button
+    class="slide-control-button"
+    disabled={activeSlide === 0}
+    on:click={onLeftSlide}
+    ><span class="material-symbols-outlined">navigate_before</span></button>
   <div bind:this={slideshowEl} class="slides reset-margin-left">
-    <slot></slot>
+    <slot />
   </div>
-  <button class="slide-control-button" disabled={activeSlide === numSlots - 1} on:click={onRightSlide}><span class="material-symbols-outlined">navigate_next</span></button>
+  <button
+    class="slide-control-button"
+    disabled={activeSlide === numSlots - 1}
+    on:click={onRightSlide}
+    ><span class="material-symbols-outlined">navigate_next</span></button>
 </div>
 
 <style>
@@ -46,7 +54,7 @@
   .slide-control-button:active {
     background: none;
   }
-  .slides{
+  .slides {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -71,13 +79,13 @@
     width: 100vw;
   }
 
-  @media(min-width: 481px) {
+  @media (min-width: 481px) {
     .reset-margin-left {
       margin-left: 0 !important;
     }
   }
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     .slides {
       width: auto;
       flex-wrap: nowrap;

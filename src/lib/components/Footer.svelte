@@ -1,11 +1,11 @@
 <script lang="ts">
-  import facebookLogo from '$lib/assets/facebook-logo.svg';
-  import emailLogo from '$lib/assets/email-logo.svg';
-  import instagramLogo from '$lib/assets/social-icons/instagram.webp'
+  import facebookLogo from "$lib/assets/facebook-logo.svg";
+  import emailLogo from "$lib/assets/email-logo.svg";
+  import instagramLogo from "$lib/assets/social-icons/instagram.webp";
 
-  const facebookUrl = 'https://www.facebook.com/KHAHOME';
-  const instagramUrl = 'https://www.instagram.com/kendale_hoa/';
-  const emailUrl = 'mailto:kha@kendalehoa.org';
+  const facebookUrl = "https://www.facebook.com/KHAHOME";
+  const instagramUrl = "https://www.instagram.com/kendale_hoa/";
+  const emailUrl = "mailto:kha@kendalehoa.org";
 </script>
 
 <footer>
@@ -14,17 +14,25 @@
     <ul class="footer-social-links">
       <a href={facebookUrl} target="_blank" rel="noreferrer">
         <li>
-          <img alt="Facebook logo" class="social-logo" src={facebookLogo}/>
+          <img alt="Facebook logo" class="social-logo" src={facebookLogo} />
         </li>
       </a>
       <a href={instagramUrl} target="_blank" rel="noreferrer">
         <li>
-          <img style={`filter: invert(); margin-top: 1px;`} alt="Instagram logo" class="social-logo" src={instagramLogo}/>
+          <img
+            style={`filter: invert(); margin-top: 1px;`}
+            alt="Instagram logo"
+            class="social-logo"
+            src={instagramLogo} />
         </li>
       </a>
       <a href={emailUrl}>
         <li>
-          <img style={`margin-top: 1px;`} alt="Email icon" class="social-logo" src={emailLogo}/>
+          <img
+            style={`margin-top: 1px;`}
+            alt="Email icon"
+            class="social-logo"
+            src={emailLogo} />
         </li>
       </a>
     </ul>
@@ -55,8 +63,8 @@
     display: inline-flex;
     list-style-type: none;
     gap: 15px;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
   .social-logo {
     width: 25px;

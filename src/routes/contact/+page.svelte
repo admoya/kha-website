@@ -1,17 +1,17 @@
 <script lang="ts">
   import FormContainer from "$lib/components/FormContainer.svelte";
-  import { submitFormToNetlify } from '$lib/utils';
+  import { submitFormToNetlify } from "$lib/utils";
 
-  let formStatus:FormStatus = "active";
+  let formStatus: FormStatus = "active";
 
   const onSubmit = async (e: SubmitEvent) => {
     const error = await submitFormToNetlify(e);
     if (error) {
-      formStatus = 'error';
+      formStatus = "error";
     } else {
-      formStatus = 'success';
+      formStatus = "success";
     }
-  }
+  };
 </script>
 
 <head>
@@ -21,10 +21,17 @@
 <h1 class="page-heading">Contact KHA</h1>
 <section class="container">
   <h2 class="page-subheading">Send Us an Email</h2>
-  <p>We'd love to hear from you! Use the below form to send us a message, and someone from the board will get back to you shortly.</p>
+  <p>
+    We'd love to hear from you! Use the below form to send us a message, and
+    someone from the board will get back to you shortly.
+  </p>
   <FormContainer {formStatus}>
-    <form on:submit={onSubmit} class="contact-form" data-netlify="true" name="contact-form">
-      <input type='hidden' name='form-name' value='contact-form' />
+    <form
+      on:submit={onSubmit}
+      class="contact-form"
+      data-netlify="true"
+      name="contact-form">
+      <input type="hidden" name="form-name" value="contact-form" />
       <div class="form-row">
         <label class="form-label">
           Name

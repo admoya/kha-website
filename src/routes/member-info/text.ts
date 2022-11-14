@@ -9,5 +9,5 @@ export default {
   
   In March of 1984, those landowners hired a public relations firm who mailed out brochures to 418 homeowners offering cash for their signed waivers to rezone the land in order to accommodate 215 tract houses. Fortunately, many of our residents, led by the Kendale Homeowners Association, successfully fought these efforts until the landowners gave up on their mission to overturn a part of our covenants.
   
-  These documents are posted on our website as a service to all who are protected by them. If you are not familiar with them, please take some time to read them. Whether you live in the Village of Kendale, Kendale Country Club Estates or in Kendale South, we undoubtedly all agree the golf course should remain a golf course versus new homes, condominiums or apartments.`
-}
+  These documents are posted on our website as a service to all who are protected by them. If you are not familiar with them, please take some time to read them. Whether you live in the Village of Kendale, Kendale Country Club Estates or in Kendale South, we undoubtedly all agree the golf course should remain a golf course versus new homes, condominiums or apartments.`,
+};
