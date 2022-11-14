@@ -83,6 +83,10 @@
     text-decoration: none;
   }
 
+  .nav-links a:hover {
+    color: var(--primary-green);
+  }
+
   .hamburger-button {
     display: none;
     border: none;

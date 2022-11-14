@@ -75,7 +75,7 @@
     {/if}
   </div>
 </section>
-<section style={`margin-bottom: 2rem;`}>
+<section class="container" style={`margin-bottom: 2rem;`}>
   <h2 class="page-subheading">Pay by Check</h2>
   <p>If you prefer to pay by check, please print and mail the below form.</p>
   <a href={khaMembershipForm} rel="noreferrer" target="_blank">Click here to open the membership form in a new tab.</a>

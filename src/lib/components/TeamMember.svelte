@@ -21,8 +21,8 @@
   }
 
   .member-photo {
-    width: 100px;
-    height: 100px;
+    width: 6rem;
+    height: 6rem;
     border-radius: 100%;
     -o-object-fit: fill;
     object-fit: fill;
@@ -36,7 +36,7 @@
   .name {
     font-family: 'roboto';
     font-weight: 300;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-bottom: 0px;
   }
 

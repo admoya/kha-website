@@ -23,7 +23,10 @@ body {
 }
 @media (max-width: 480px) {
   .container {
-    max-width: 95%;
+    max-width: 90%;
+  }
+  h2 {
+    font-size: 1.5rem !important; 
   }
 }
 

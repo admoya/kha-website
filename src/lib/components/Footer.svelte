@@ -2,21 +2,27 @@
   import facebookLogo from '$lib/assets/facebook-logo.svg';
   import emailLogo from '$lib/assets/email-logo.svg';
   import instagramLogo from '$lib/assets/social-icons/instagram.webp'
+
+  const facebookUrl = 'https://www.facebook.com/KHAHOME';
+  const instagramUrl = 'https://www.instagram.com/kendale_hoa/';
+  const emailUrl = 'mailto:kha@kendalehoa.org';
 </script>
 
 <footer>
   <div class="footer-content">
     <h2 class="footer-title">Kendale HOA</h2>
     <ul class="footer-social-links">
-      <li>
-        <img alt="Facebook logo" class="social-logo" src={facebookLogo}/>
-      </li>
-      <a href="https://www.instagram.com/kendale_hoa/" target="_blank" rel="noreferrer">
+      <a href={facebookUrl} target="_blank" rel="noreferrer">
         <li>
-          <img style={`filter: invert(); margin-top: 1px;`} alt="LinkedIn logo" class="social-logo" src={instagramLogo}/>
+          <img alt="Facebook logo" class="social-logo" src={facebookLogo}/>
         </li>
       </a>
-      <a href="mailto:kha@kendalehoa.org">
+      <a href={instagramUrl} target="_blank" rel="noreferrer">
+        <li>
+          <img style={`filter: invert(); margin-top: 1px;`} alt="Instagram logo" class="social-logo" src={instagramLogo}/>
+        </li>
+      </a>
+      <a href={emailUrl}>
         <li>
           <img style={`margin-top: 1px;`} alt="Email icon" class="social-logo" src={emailLogo}/>
         </li>
