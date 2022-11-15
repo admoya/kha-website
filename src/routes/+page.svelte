@@ -70,12 +70,9 @@
   <ResponsiveSlider
     title="What People Say About Us"
     numSlots={testimonials.length}>
-    {#each testimonials as { name, photo, testimony }}
+    {#each testimonials as { name, photo, testimony, title }}
       <Slide>
-        <Testimonial
-          description={testimony}
-          author={name}
-          role="Your Neighbor" />
+        <Testimonial description={testimony} author={name} role={title} />
       </Slide>
     {/each}
   </ResponsiveSlider>

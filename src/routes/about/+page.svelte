@@ -1,5 +1,9 @@
 <script lang="ts">
   import placeholder from "$lib/assets/avatars/avatar-placeholder.png";
+  import ernestoBascuas from "$lib/assets/avatars/Ernesto_Bascuas.jpeg";
+  import migdyMoya from "$lib/assets/avatars/Migdy_Moya.jpeg";
+  import pattyGonzalez from "$lib/assets/avatars/Patty_Gonzalez.jpg";
+  import zurielCarbo from "$lib/assets/avatars/Zuriel_Carbo.jpg";
   import TeamMember from "$lib/components/TeamMember.svelte";
 </script>
 
@@ -27,14 +31,17 @@
     </p>
     <h2 class="page-subheading">Our Team</h2>
     <div class="team">
-      <TeamMember img={placeholder} position="President" name="Ernie Bascuas" />
       <TeamMember
-        img={placeholder}
+        img={ernestoBascuas}
+        position="President"
+        name="Ernie Bascuas" />
+      <TeamMember
+        img={zurielCarbo}
         position="Vice President"
         name="Zuriel Carbo" />
-      <TeamMember img={placeholder} position="Treasurer" name="Migdy Moya" />
+      <TeamMember img={migdyMoya} position="Treasurer" name="Migdy Moya" />
       <TeamMember
-        img={placeholder}
+        img={pattyGonzalez}
         position="Corresponding Secretary"
         name="Patty Gonzalez" />
       <TeamMember

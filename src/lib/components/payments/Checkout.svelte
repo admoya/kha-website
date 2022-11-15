@@ -2,6 +2,7 @@
   import { loadScript } from "@paypal/paypal-js";
   import type { PayPalNamespace } from "@paypal/paypal-js";
   import { createEventDispatcher } from "svelte";
+  import { browser } from "$app/environment";
 
   export let includesDues: Boolean;
   export let donationAmount: String;
@@ -58,7 +59,9 @@
       }
     }
   };
-  loadPaypal();
+  $: if (browser && paypalTokenData) {
+    loadPaypal();
+  }
 
   const onBackPressed = () => dispatch("backPressed");
   const totalPayment = includesDues
@@ -99,7 +102,7 @@
     margin: 0;
     position: absolute;
     /* background-color: transparent; */
-    transform: translate(-2rem, -3rem);
+    transform: translate(-2rem, -2.2rem);
     background-color: transparent;
   }
   .inlineFlex {

@@ -102,14 +102,14 @@
   <div class="form-row">
     <fieldset>
       <legend>Payment type:</legend>
-      <label
-        ><input type="radio" bind:group={paymentChoice} value="dues" />Annual
-        Dues</label>
-      <label
-        ><input
-          type="radio"
-          bind:group={paymentChoice}
-          value="donation" />Donation Only</label>
+      <label style={`margin-right: 1rem;`}>
+        <input type="radio" bind:group={paymentChoice} value="dues" />
+        Annual Dues
+      </label>
+      <label>
+        <input type="radio" bind:group={paymentChoice} value="donation" />
+        Donation Only
+      </label>
     </fieldset>
   </div>
   {#if paymentChoice === "dues"}
