@@ -8,6 +8,8 @@
     permalink: string;
     id: string;
   };
+
+  const instagramUrl = "https://www.instagram.com/kendale_hoa";
 </script>
 
 <script lang="ts">
@@ -25,7 +27,9 @@
   {:else}
     <div class="username">
       <img alt="kha instagram profile" class="avatar" src={khaLogo} />
-      <p>{items[0].username}</p>
+      <a href={instagramUrl} target="_blank" rel="noreferrer">
+        <p>{items[0].username}</p>
+      </a>
     </div>
     <Carousel {items} bind:activeIndex {interval}>
       <div class="carousel-inner">
@@ -92,13 +96,16 @@
     background-color: white;
     margin-bottom: 0px;
     color: black;
-    padding: 5px;
     padding: 10px 30px 0px;
   }
 
   .username p {
     margin: 0px 5px;
     font-weight: 600;
+  }
+  .username a {
+    text-decoration: none;
+    color: black;
   }
 
   .avatar {
@@ -110,7 +117,7 @@
   }
 
   .caption {
-    margin-top: 0px;
+    margin: 0px;
     background-color: white;
     color: black;
     font-size: 0.8rem;
@@ -126,6 +133,7 @@
   .post {
     margin: 20px auto;
     max-width: 300px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .loading-placeholder {

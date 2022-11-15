@@ -19,7 +19,7 @@
       <a href="/about">About</a>
     </li>
     <li>
-      <a href="/contact">Contact</a>
+      <a href="/stay-connected">Stay Connected</a>
     </li>
     <li>
       <a href="/member-info">Member Info</a>

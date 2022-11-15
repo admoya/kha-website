@@ -1,17 +1,6 @@
 <script lang="ts">
   import placeholder from "$lib/assets/avatars/avatar-placeholder.png";
   import TeamMember from "$lib/components/TeamMember.svelte";
-  import InstagramPreview, {
-    type Post,
-  } from "$lib/components/InstagramPreview.svelte";
-  import { onMount } from "svelte";
-
-  const instagramUrl = "https://www.instagram.com/kendale_hoa";
-  let items: Post[];
-  onMount(async () => {
-    const res = await fetch("/about/instagramData");
-    items = await res.json();
-  });
 </script>
 
 <head>
@@ -58,19 +47,12 @@
         name="Nancy Lyons" />
     </div>
   </section>
-  <section class="instagram">
-    <h2 class="page-subheading">Follow us on Instagram!</h2>
-    <a href={instagramUrl} target="_blank" rel="noreferrer"
-      ><p>@kendale_hoa</p></a>
-    <p>Stay up to date on all of the events around our beautiful community.</p>
-    <InstagramPreview {items} />
-  </section>
 </section>
 <section class="volunteer">
   <h2 class="page-subheading">We need your help!</h2>
   <p>
     There are many positions open! If you wish to volunteer, send us a message
-    from the <a href="/contact">contact</a> page.
+    from the <a href="/stay-connected">contact</a> form.
   </p>
 </section>
 
@@ -82,7 +64,6 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    flex-wrap: wrap;
   }
 
   @media (max-width: 480px) {
@@ -103,9 +84,5 @@
     text-align: left;
     width: 70%;
     padding: 0px 20px;
-  }
-
-  .instagram {
-    margin: 20px auto;
   }
 </style>
