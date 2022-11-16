@@ -3,10 +3,14 @@
   import type { PayPalNamespace } from "@paypal/paypal-js";
   import { createEventDispatcher } from "svelte";
   import { browser } from "$app/environment";
+  import venmoLogo from "$lib/assets/venmo-logo.svg";
+  import type { Person } from "./PaymentForm.svelte";
 
   export let includesDues: Boolean;
   export let donationAmount: String;
   export let paypalTokenData: any;
+  export let address: String;
+  export let people: Person[];
 
   const dispatch = createEventDispatcher();
   let paypal: PayPalNamespace | null;
@@ -17,7 +21,7 @@
         "client-id": clientId,
         "data-client-token": token,
         "disable-funding": "paylater",
-        "enable-funding": "venmo",
+        // "enable-funding": "venmo",
       });
     } catch (error) {
       console.error("failed to load the PayPal JS SDK script", error);
@@ -28,7 +32,7 @@
         await paypal
           .Buttons({
             // style: { color: 'silver' },
-            async createOrder(data, actions) {
+            async createOrder() {
               const res = await fetch("/api/payments/createOrder", {
                 method: "post",
                 body: JSON.stringify({
@@ -52,6 +56,10 @@
                 }
               });
             },
+            onError(err) {
+              console.error(err);
+              dispatch("paymentError");
+            },
           })
           .render("#paypal-div");
       } catch (error) {
@@ -64,9 +72,25 @@
   }
 
   const onBackPressed = () => dispatch("backPressed");
+  const donation = Number(donationAmount);
   const totalPayment = includesDues
-    ? (60 + Number(donationAmount)).toFixed(2)
-    : Number(donationAmount).toFixed(2);
+    ? (60 + donation).toFixed(2)
+    : donation.toFixed(2);
+
+  const onVenmoPressed = () => {
+    const peopleInfo = people
+      .map(({ email, name, phone }) => `${name} (${email},${phone})`)
+      .join(", ");
+    const note = encodeURIComponent(
+      `KHA payment from ${peopleInfo}. Address: ${address}`
+    );
+    const url = `https://venmo.com/KendaleHomeowners-Association?txn=pay&note=${note}&amount=${totalPayment}&audience=private`;
+    window.open(url);
+    dispatch(
+      "paymentOffline",
+      "Venmo should have opened in another window. Please finish your payment there. Thank you for your contribution!"
+    );
+  };
 </script>
 
 <div>
@@ -87,12 +111,39 @@
     <p class="items-total">Total:</p>
     <p class="items-total">${totalPayment}</p>
   </div>
+  <h4>Checkout Options:</h4>
+  <button on:click={onVenmoPressed} type="button" id="venmo-btn">
+    <img alt="Venmo logo" src={venmoLogo} />
+  </button>
   <div id="paypal-div" />
 </div>
 
 <style>
+  #venmo-btn {
+    width: 100%;
+    max-width: 25rem;
+    height: 3rem;
+    margin-bottom: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #f2f9ff;
+  }
+  #venmo-btn:hover {
+    filter: brightness(0.95);
+  }
+  #venmo-btn img {
+    width: 8rem;
+    max-width: 40%;
+  }
+  @media (max-width: 480px) {
+    #venmo-btn {
+      height: 2rem;
+    }
+  }
   #paypal-div {
-    margin-top: 2rem;
+    max-width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
   }
   #backBtn {
     display: block;

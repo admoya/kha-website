@@ -1,3 +1,15 @@
+<script>
+  export let message = "Thank you for your contribution!";
+</script>
+
 <div>
-  <h2>Thank you for your contribution!</h2>
+  <p id="success-message">{message}</p>
 </div>
+
+<style>
+  #success-message {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+</style>
