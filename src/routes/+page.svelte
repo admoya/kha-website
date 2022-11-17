@@ -3,7 +3,7 @@
   import ResponsiveSlider from "$lib/components/ResponsiveSlider.svelte";
   import Testimonial from "$lib/components/Testimonial.svelte";
   import Slide from "$lib/components/Slide.svelte";
-  import testimonials from "$lib/testimonials";
+  import testimonials from "$lib/data/testimonials";
 </script>
 
 <head>
