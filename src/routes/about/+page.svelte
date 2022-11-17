@@ -17,16 +17,15 @@
     <h2 class="page-subheading">Our Mission</h2>
     <p>
       To serve and inform the community of the Village of Kendale, Kendale
-      Country Club Estates and Kendale South, to promote safety, foster social
-      and community activities, to enhance and protect our environment and to
-      further interaction of the Association Membership while preserving the
+      Country Club Estates and Kendale South. To promote safety, foster community activities, 
+      and protect our environment. To further interaction of the Association Membership while preserving the
       quality of life and sense of community in our neighborhood.
     </p>
 
     <h2 class="page-subheading">Our Vision</h2>
     <p>
-      We envision a community that offers an inspiring lifestyle and quality of
-      life, and is a desirable place in which to live and enjoy the benefits of
+      We envision a community that offers an inspiring lifestyle 
+      and is a desirable place to live and enjoy the benefits of
       family, friends and community.
     </p>
     <h2 class="page-subheading">Our Team</h2>
