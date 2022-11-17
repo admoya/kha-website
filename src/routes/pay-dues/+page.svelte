@@ -6,7 +6,7 @@
   import Checkout from "$lib/components/payments/Checkout.svelte";
   import Success from "$lib/components/payments/Success.svelte";
   import Error from "$lib/components/payments/Error.svelte";
-  import khaMembershipForm from "$lib/assets/kha-membership-form.jpg";
+  import khaMembershipForm from "$lib/assets/documents/kha-membership-form.jpg";
   import { submitFormToNetlify } from "$lib/utils";
 
   let isCheckingOut = false;

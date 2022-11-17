@@ -3,7 +3,7 @@
   import type { PayPalNamespace } from "@paypal/paypal-js";
   import { createEventDispatcher } from "svelte";
   import { browser } from "$app/environment";
-  import venmoLogo from "$lib/assets/venmo-logo.svg";
+  import venmoLogo from "$lib/assets/logos/venmo.svg";
   import type { Person } from "./PaymentForm.svelte";
 
   export let includesDues: Boolean;
