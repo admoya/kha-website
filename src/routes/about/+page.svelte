@@ -63,33 +63,6 @@
             members={members}
           />
         {/each}
-        <!-- <div class="column">
-          <Committee
-          name="Membership"
-          members={membershipCommittee} />
-        </div>
-        <div class="column">
-          <Committee
-          name="Grounds"
-          members={groundsCommittee} />
-          <Committee
-          name="Events"
-          members={eventsCommittee} />
-          <Committee
-          name="Festival"
-          members={festivalCommittee} />
-          <Committee
-          name="Movie Night"
-          members={movieNightCommittee} />
-        </div>
-        <div class="column">
-          <Committee
-          name="Public Safety"
-          members={publicSafetyCommittee} />
-          <Committee
-          name="Zoning & Covenants"
-          members={zoningCommittee} />
-        </div> -->
       </div>
     </div>
   </section>
