@@ -4,7 +4,16 @@
   import migdyMoya from "$lib/assets/avatars/Migdy_Moya.jpeg";
   import pattyGonzalez from "$lib/assets/avatars/Patty_Gonzalez.jpg";
   import zurielCarbo from "$lib/assets/avatars/Zuriel_Carbo.jpg";
+  import Committee from "$lib/components/Committee.svelte";
   import TeamMember from "$lib/components/TeamMember.svelte";
+
+  export const membershipCommittee = ['Alain Fernandez',	'Joanna & Victor Davalos',	'Wanda Currea',	'Karol Hochman',	'Dan Miranda',	'Tony Nardo',	'Jorge Labarraque'];
+  const groundsCommittee = ['Ralph Valdes-Brito', 'James Nessl'];
+  const eventsCommittee = ['Ann Lyons'];
+  const festivalCommittee = ['Wanda Currea'];
+  const movieNightCommittee = ['Maritza Pardinas', 'Jan Cox'];
+  const publicSafetyCommittee = ['Manny Garcia',	'James Nessl',	'Jim Cox',	'Wanda Currea'];
+  const zoningCommittee = ['Catherine Christofis'];
 </script>
 
 <head>
@@ -29,7 +38,7 @@
       life, and is a desirable place in which to live and enjoy the benefits of
       family, friends and community.
     </p>
-    <h2 class="page-subheading">Our Team</h2>
+    <h2 class="page-subheading">Our Board</h2>
     <div class="team">
       <TeamMember
         img={ernestoBascuas}
@@ -53,6 +62,38 @@
         position="Past President"
         name="Nancy Lyons" />
     </div>
+    <div class="committees">
+      <h2 class="page-subheading">Our Committees</h2>
+      <div class="commitee-items">
+        <div class="column">
+          <Committee
+          name="Membership"
+          members={membershipCommittee} />
+        </div>
+        <div class="column">
+          <Committee
+          name="Grounds"
+          members={groundsCommittee} />
+          <Committee
+          name="Events"
+          members={eventsCommittee} />
+          <Committee
+          name="Festival"
+          members={festivalCommittee} />
+          <Committee
+          name="Movie Night"
+          members={movieNightCommittee} />
+        </div>
+        <div class="column">
+          <Committee
+          name="Public Safety"
+          members={publicSafetyCommittee} />
+          <Committee
+          name="Zoning & Covenants"
+          members={zoningCommittee} />
+        </div>
+      </div>
+    </div>
   </section>
 </section>
 <section class="volunteer">
@@ -65,7 +106,6 @@
 
 <style>
   .layout {
-    max-width: 80%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -91,5 +131,11 @@
     text-align: left;
     width: 70%;
     padding: 0px 20px;
+  }
+
+  .commitee-items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
 </style>
