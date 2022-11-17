@@ -1,7 +1,7 @@
 <script lang="ts">
-  import facebookLogo from "$lib/assets/facebook-logo.svg";
-  import emailLogo from "$lib/assets/email-logo.svg";
-  import instagramLogo from "$lib/assets/social-icons/instagram.webp";
+  import facebookLogo from "$lib/assets/logos/facebook.svg";
+  import emailLogo from "$lib/assets/logos/email.svg";
+  import instagramLogo from "$lib/assets/logos/instagram.webp";
 
   const facebookUrl = "https://www.facebook.com/KHAHOME";
   const instagramUrl = "https://www.instagram.com/kendale_hoa/";
