@@ -29,7 +29,7 @@
 </head>
 
 <h1 class="page-heading">Connect with Us</h1>
-<section class="container flex-row">
+<section class="flex-row">
   <section class="flex-item">
     <h2 class="page-subheading">Send Us an Email</h2>
   <p>
@@ -79,7 +79,6 @@
   </section>
   <section class="flex-item instagram">
     <h2 class="page-subheading">Follow us on Instagram!</h2>
-    <!-- <p>@kendale_hoa</p></a> -->
     <p class="instagram-subtitle">Stay up to date on all of the events around our beautiful community.</p>
     <InstagramPreview {items} />
   </section>
