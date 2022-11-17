@@ -5,9 +5,11 @@
 
 <div class="committee">
   <h2 class="committee-heading">{name}</h2>
+ <ol>
   {#each members as member}
-    <p>{member}</p>
+    <li>{member}</li>
   {/each}
+ </ol>
 </div>
 
 <style>
@@ -20,5 +22,11 @@
 
   .committee {
     margin: 20px;
+  }
+
+  ol {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
   }
 </style>
