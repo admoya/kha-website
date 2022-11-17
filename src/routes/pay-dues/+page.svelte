@@ -19,6 +19,8 @@
   let showSuccess = false;
   let showError = false;
 
+  let successMessage = "";
+
   let paypalTokenData: any;
 
   const getPaypalToken = async () => {
@@ -38,6 +40,10 @@
     submitFormToNetlify(paymentFormSubmitEvent);
     showSuccess = true;
   };
+  const handlePaymentOffline = (message: string) => {
+    successMessage = message;
+    showSuccess = true;
+  };
 </script>
 
 <head>
@@ -51,7 +57,7 @@
     {#if showError}
       <Error />
     {:else if showSuccess}
-      <Success />
+      <Success message={successMessage} />
     {:else if !isCheckingOut}
       <div
         class="fixedGridItem"
@@ -73,6 +79,8 @@
         in:fly|local={{ x: 100, duration: 400, delay: 150 }}
         out:fly|local={{ x: 100, duration: 400 }}>
         <Checkout
+          {address}
+          {people}
           on:paymentError={() => {
             showError = true;
           }}
@@ -80,6 +88,7 @@
           on:backPressed={() => {
             isCheckingOut = false;
           }}
+          on:paymentOffline={(event) => handlePaymentOffline(event.detail)}
           includesDues={paymentChoice === "dues"}
           {paypalTokenData}
           {donationAmount} />
