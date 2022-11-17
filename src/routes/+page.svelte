@@ -1,5 +1,5 @@
 <script>
-  import homeBanner from "$lib/assets/park.jpg";
+  import homeBanner from "$lib/assets/park.webp";
   import ResponsiveSlider from "$lib/components/ResponsiveSlider.svelte";
   import Testimonial from "$lib/components/Testimonial.svelte";
   import Slide from "$lib/components/Slide.svelte";

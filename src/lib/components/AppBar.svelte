@@ -1,9 +1,31 @@
 <script lang="ts">
   import khaLogo from "$lib/assets/kha-logo.gif";
+  import { slide } from "svelte/transition";
+  import { linear } from "svelte/easing";
+  import { onMount } from "svelte";
 
   var isMenuopen = false;
   const toggleMenu = () => {
     isMenuopen = false;
+  };
+
+  let bannerAlertsDismissed: Set<string>;
+  let showBanner = false;
+  const bannerText = `Attention! The deadline to pay your 2023 dues is January 15th! If you have not paid yet, you can do so <a target="_blank" href="/pay-dues">here.</a>`;
+  onMount(() => {
+    bannerAlertsDismissed = new Set(
+      JSON.parse(localStorage.getItem("bannerAlertsDismissed") || "[]")
+    );
+    showBanner = !bannerAlertsDismissed.has(bannerText);
+  });
+
+  const onBannerAlertClose = () => {
+    bannerAlertsDismissed.add(bannerText);
+    localStorage.setItem(
+      "bannerAlertsDismissed",
+      JSON.stringify(Array.from(bannerAlertsDismissed))
+    );
+    showBanner = false;
   };
 </script>
 
@@ -43,8 +65,49 @@
     {/if}
   </button>
 </nav>
+{#if showBanner}
+  <div
+    in:slide={{ delay: 250, duration: 400, easing: linear }}
+    out:slide={{ delay: 0, duration: 400, easing: linear }}
+    id="banner-alert">
+    <p id="banner-alert-text">
+      {@html bannerText}
+    </p>
+    <button on:click={onBannerAlertClose} id="banner-close-button">
+      <span class="material-symbols-outlined"> close </span>
+    </button>
+  </div>
+{/if}
 
 <style>
+  #banner-alert {
+    width: 100%;
+    /* top: 66px; */
+    background-color: var(--primary-green);
+    text-align: center;
+    position: relative;
+  }
+  #banner-alert-text {
+    font-family: lato;
+    margin: 0.5rem 2rem 0.5rem 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+  }
+  :global(#banner-alert-text a) {
+    color: white;
+  }
+  #banner-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    color: white;
+    border: none;
+    margin: 1rem 0.5rem;
+    height: 1.5rem;
+    padding: 0;
+  }
   .app-bar {
     height: 66px;
     width: 100%;
@@ -98,6 +161,13 @@
   }
 
   @media (max-width: 640px) {
+    #banner-alert-text {
+      margin: 0.5rem 1.5rem 0.5rem 0.5rem;
+      font-size: 1rem;
+    }
+    #banner-close-button {
+      margin: 0.5rem 0.2rem;
+    }
     .hide-menu {
       opacity: 0;
       visibility: hidden;
