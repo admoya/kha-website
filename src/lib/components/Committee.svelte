@@ -21,7 +21,8 @@
   }
 
   .committee {
-    margin: 20px;
+    margin: 10px;
+    flex-basis: 200px;
   }
 
   ol {

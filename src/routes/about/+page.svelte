@@ -6,14 +6,7 @@
   import zurielCarbo from "$lib/assets/avatars/Zuriel_Carbo.jpg";
   import Committee from "$lib/components/Committee.svelte";
   import TeamMember from "$lib/components/TeamMember.svelte";
-
-  export const membershipCommittee = ['Alain Fernandez',	'Joanna & Victor Davalos',	'Wanda Currea',	'Karol Hochman',	'Dan Miranda',	'Tony Nardo',	'Jorge Labarraque'];
-  const groundsCommittee = ['Ralph Valdes-Brito', 'James Nessl'];
-  const eventsCommittee = ['Ann Lyons'];
-  const festivalCommittee = ['Wanda Currea'];
-  const movieNightCommittee = ['Maritza Pardinas', 'Jan Cox'];
-  const publicSafetyCommittee = ['Manny Garcia',	'James Nessl',	'Jim Cox',	'Wanda Currea'];
-  const zoningCommittee = ['Catherine Christofis'];
+  import committees from "$lib/data/committees";
 </script>
 
 <head>
@@ -64,7 +57,13 @@
     <div class="committees">
       <h2 class="page-subheading">Our Committees</h2>
       <div class="commitee-items">
-        <div class="column">
+        {#each committees as { name, members }}
+          <Committee
+            name={name}
+            members={members}
+          />
+        {/each}
+        <!-- <div class="column">
           <Committee
           name="Membership"
           members={membershipCommittee} />
@@ -90,7 +89,7 @@
           <Committee
           name="Zoning & Covenants"
           members={zoningCommittee} />
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
