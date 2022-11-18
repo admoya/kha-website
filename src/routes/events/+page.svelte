@@ -3,9 +3,9 @@
   import Event from "$lib/components/Event.svelte";
 </script>
 
-<head>
+<svelte:head>
   <title>Events - KHA</title>
-</head>
+</svelte:head>
 
 <h1 class="page-heading">Events</h1>
 

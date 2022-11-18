@@ -6,9 +6,9 @@
   import testimonials from "$lib/data/testimonials";
 </script>
 
-<head>
+<svelte:head>
   <title>KHA Home</title>
-</head>
+</svelte:head>
 
 <section class="banner" style="background-image: url({homeBanner})">
   <div class="container">

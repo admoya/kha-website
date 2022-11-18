@@ -9,9 +9,9 @@
   import committees from "$lib/data/committees";
 </script>
 
-<head>
+<svelte:head>
   <title>About - KHA</title>
-</head>
+</svelte:head>
 
 <h1 class="page-heading">About KHA</h1>
 <section class="layout">
@@ -19,16 +19,17 @@
     <h2 class="page-subheading">Our Mission</h2>
     <p>
       To serve and inform the community of the Village of Kendale, Kendale
-      Country Club Estates and Kendale South. To promote safety, foster community activities, 
-      and protect our environment. To further interaction of the Association Membership while preserving the
-      quality of life and sense of community in our neighborhood.
+      Country Club Estates and Kendale South. To promote safety, foster
+      community activities, and protect our environment. To further interaction
+      of the Association Membership while preserving the quality of life and
+      sense of community in our neighborhood.
     </p>
 
     <h2 class="page-subheading">Our Vision</h2>
     <p>
-      We envision a community that offers an inspiring lifestyle 
-      and is a desirable place to live and enjoy the benefits of
-      family, friends and community.
+      We envision a community that offers an inspiring lifestyle and is a
+      desirable place to live and enjoy the benefits of family, friends and
+      community.
     </p>
     <h2 class="page-subheading">Our Board</h2>
     <div class="team">
@@ -58,10 +59,7 @@
       <h2 class="page-subheading">Our Committees</h2>
       <div class="commitee-items">
         {#each committees as { name, members }}
-          <Committee
-            name={name}
-            members={members}
-          />
+          <Committee {name} {members} />
         {/each}
       </div>
     </div>

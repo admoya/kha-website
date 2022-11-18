@@ -21,9 +21,9 @@
   // };
 </script>
 
-<head>
+<svelte:head>
   <title>Member Info - KHA</title>
-</head>
+</svelte:head>
 
 <h1 class="page-heading">Member Info</h1>
 <!-- <section class="container">
