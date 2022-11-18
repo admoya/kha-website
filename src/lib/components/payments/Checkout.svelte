@@ -98,16 +98,16 @@
     >&lt Back</button>
   <h3>Payment Confirmation</h3>
   {#if includesDues}
-    <div class="inlineFlex">
+    <div class="inline-flex">
       <p class="item">Dues:</p>
       <p class="item">$60</p>
     </div>
   {/if}
-  <div class="inlineFlex">
+  <div class="inline-flex">
     <p class="item">Donation:</p>
     <p class="item">${donationAmount}</p>
   </div>
-  <div class="inlineFlex total">
+  <div class="inline-flex total">
     <p class="items-total">Total:</p>
     <p class="items-total">${totalPayment}</p>
   </div>
@@ -156,7 +156,7 @@
     transform: translate(-2rem, -2.2rem);
     background-color: transparent;
   }
-  .inlineFlex {
+  .inline-flex {
     width: 100%;
     display: inline-flex;
     justify-content: space-between;

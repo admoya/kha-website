@@ -1,27 +1,30 @@
-import elfPoster from "$lib/assets/events/elf.jpg";
+import homeAlonePoster from "$lib/assets/events/home-alone.jpeg";
 import christmas from "$lib/assets/events/christmas.jpeg";
 
 export type Event = {
   name: string;
   description: string;
   date: Date;
+  location: string;
   photo: string;
   photoAlt: string;
 };
 
 const events: Event[] = [
   {
-    name: "KHA Holiday Party",
-    description: `Come join KHA and your neighbors for a family-friendly Holiday party at the park! Food and beverages will be provided, and there will be a holiday parade!`,
-    date: new Date("2022-12-23T18:00:00"),
+    name: "First Annual Holiday Golf Cart Event",
+    description: `Join your neighbors for this family friendly event.  If you have a golf cart and want to join in the parade, be at Kendale Park at 6:30 p.m. with your decorated golf cart. Parade route will be announce week of event and all are welcomed to cheer them on throughout the route.`,
+    date: new Date("2022-12-23T18:45:00"),
+    location: "Kendale Park",
     photo: christmas,
     photoAlt: "A Christmas tree",
   },
   {
     name: "Movie Night",
-    description: `Come join KHA and your neighbors for a family-friendly movie night, in which we will be showing Elf!`,
-    date: new Date("2022-12-13T18:00:00"),
-    photo: elfPoster,
+    description: `Join us for a movie night at the park! The movie is Home Alone. Popcorn, cookies and glow  necklaces and will be provided`,
+    date: new Date("2022-12-13T19:00:00"),
+    location: "Kendale Park",
+    photo: homeAlonePoster,
     photoAlt: "The movie poster for Elf",
   },
 ];
