@@ -7,16 +7,23 @@
   <img class="event-image" alt={eventData.photoAlt} src={eventData.photo} />
   <div class="event-text">
     <h4>{eventData.name}</h4>
-    <p class="event-date">
-      {eventData.date.toLocaleDateString("en-us", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-      })}
-    </p>
+    <div class="flex-row flex-justify-left">
+      <span class="material-symbols-outlined">calendar_month</span>
+      <p class="event-subtile">
+        {eventData.date.toLocaleDateString("en-us", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
+      </p>
+    </div>
+    <div class="flex-row flex-justify-left">
+      <span class="material-symbols-outlined">pin_drop</span>
+      <p class="event-subtile">{eventData.location}</p>
+    </div>
     <p>{eventData.description}</p>
   </div>
 </div>
@@ -37,9 +44,11 @@
       margin-top: 0.5rem;
     }
   }
-  .event-date {
+  .event-subtile {
     font-size: 0.95rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.4rem;
+    margin-left: 0.2rem;
+    margin-top: 0.1rem;
     font-weight: 500;
   }
 </style>
