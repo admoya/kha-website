@@ -29,55 +29,57 @@
   };
 </script>
 
-<nav class="app-bar">
-  <a class="branding" href="/">
-    <img id="csmaLogo" src={khaLogo} alt="The CSMA logo" />
-  </a>
-  <ul
-    on:click={toggleMenu}
-    on:keypress={toggleMenu}
-    class={`nav-links ${isMenuopen ? "" : "hide-menu"}`}>
-    <li>
-      <a href="/about">About</a>
-    </li>
-    <li>
-      <a href="/stay-connected">Stay Connected</a>
-    </li>
-    <li>
-      <a href="/member-info">Member Info</a>
-    </li>
-    <li>
-      <a href="/events">Events</a>
-    </li>
-    <li>
-      <a href="/pay-dues">Pay Dues</a>
-    </li>
-  </ul>
-  <button
-    on:click={() => {
-      isMenuopen = !isMenuopen;
-    }}
-    class="hamburger-button">
-    {#if isMenuopen}
-      <span class="material-symbols-outlined"> close </span>
-    {:else}
-      <span class="material-symbols-outlined"> menu </span>
-    {/if}
-  </button>
-</nav>
-{#if showBanner}
-  <div
-    in:slide={{ delay: 250, duration: 400, easing: linear }}
-    out:slide={{ delay: 0, duration: 400, easing: linear }}
-    id="banner-alert">
-    <p id="banner-alert-text">
-      {@html bannerText}
-    </p>
-    <button on:click={onBannerAlertClose} id="banner-close-button">
-      <span class="material-symbols-outlined"> close </span>
+<div>
+  <nav class="app-bar">
+    <a class="branding" href="/">
+      <img id="csmaLogo" src={khaLogo} alt="The CSMA logo" />
+    </a>
+    <ul
+      on:click={toggleMenu}
+      on:keypress={toggleMenu}
+      class={`nav-links ${isMenuopen ? "" : "hide-menu"}`}>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/stay-connected">Stay Connected</a>
+      </li>
+      <li>
+        <a href="/member-info">Member Info</a>
+      </li>
+      <li>
+        <a href="/events">Events</a>
+      </li>
+      <li>
+        <a href="/pay-dues">Pay Dues</a>
+      </li>
+    </ul>
+    <button
+      on:click={() => {
+        isMenuopen = !isMenuopen;
+      }}
+      class="hamburger-button">
+      {#if isMenuopen}
+        <span class="material-symbols-outlined"> close </span>
+      {:else}
+        <span class="material-symbols-outlined"> menu </span>
+      {/if}
     </button>
-  </div>
-{/if}
+  </nav>
+  {#if showBanner}
+    <div
+      in:slide={{ delay: 250, duration: 400, easing: linear }}
+      out:slide={{ delay: 0, duration: 400, easing: linear }}
+      id="banner-alert">
+      <p id="banner-alert-text">
+        {@html bannerText}
+      </p>
+      <button on:click={onBannerAlertClose} id="banner-close-button">
+        <span class="material-symbols-outlined"> close </span>
+      </button>
+    </div>
+  {/if}
+</div>
 
 <style>
   #banner-alert {
@@ -89,7 +91,8 @@
   }
   #banner-alert-text {
     font-family: lato;
-    margin: 0.5rem 2rem 0.5rem 0.5rem;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    margin: 0;
     font-size: 1.5rem;
     font-weight: 500;
     color: white;
@@ -162,7 +165,8 @@
 
   @media (max-width: 640px) {
     #banner-alert-text {
-      margin: 0.5rem 1.5rem 0.5rem 0.5rem;
+      padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+      margin: 0;
       font-size: 1rem;
     }
     #banner-close-button {
