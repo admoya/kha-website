@@ -11,11 +11,7 @@
 
 <div class="container">
   <h2 class="page-subheading">KHA Events</h2>
-  <p>
-    Come join your community at our upcoming events! Events are open to members
-    who have paid their annual dues. If you have not yet done so, you can
-    <a href="/pay-dues">pay now</a>!
-  </p>
+  <p>Come join your community at our upcoming events!</p>
   <div class="events-container">
     {#each events as eventData}
       <Event {eventData} />
