@@ -4,7 +4,9 @@
   import migdyMoya from "$lib/assets/avatars/Migdy_Moya.jpeg";
   import pattyGonzalez from "$lib/assets/avatars/Patty_Gonzalez.jpg";
   import zurielCarbo from "$lib/assets/avatars/Zuriel_Carbo.jpg";
+  import Committee from "$lib/components/Committee.svelte";
   import TeamMember from "$lib/components/TeamMember.svelte";
+  import committees from "$lib/data/committees";
 </script>
 
 <head>
@@ -28,7 +30,7 @@
       and is a desirable place to live and enjoy the benefits of
       family, friends and community.
     </p>
-    <h2 class="page-subheading">Our Team</h2>
+    <h2 class="page-subheading">Our Board</h2>
     <div class="team">
       <TeamMember
         img={ernestoBascuas}
@@ -52,6 +54,17 @@
         position="Past President"
         name="Nancy Lyons" />
     </div>
+    <div class="committees">
+      <h2 class="page-subheading">Our Committees</h2>
+      <div class="commitee-items">
+        {#each committees as { name, members }}
+          <Committee
+            name={name}
+            members={members}
+          />
+        {/each}
+      </div>
+    </div>
   </section>
 </section>
 <section class="volunteer">
@@ -64,7 +77,6 @@
 
 <style>
   .layout {
-    max-width: 80%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -90,5 +102,11 @@
     text-align: left;
     width: 70%;
     padding: 0px 20px;
+  }
+
+  .commitee-items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
 </style>
