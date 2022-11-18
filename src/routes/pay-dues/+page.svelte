@@ -46,9 +46,9 @@
   };
 </script>
 
-<head>
+<svelte:head>
   <title>Pay Dues - KHA</title>
-</head>
+</svelte:head>
 
 <h1 class="page-heading">Pay Dues</h1>
 <section>
