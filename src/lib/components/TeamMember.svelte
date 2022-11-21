@@ -30,20 +30,22 @@
 
   .member-details {
     text-align: left;
-    margin-left: 10px;
+    margin: auto 0;
+    margin-left: 0.8rem;
   }
 
   .name {
     font-family: "roboto";
     font-weight: 300;
     font-size: 1.5rem;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   .position {
     font-family: "roboto";
     font-weight: 250;
     font-size: 18px;
-    margin-top: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 </style>

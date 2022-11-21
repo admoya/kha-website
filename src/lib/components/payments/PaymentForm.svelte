@@ -39,7 +39,8 @@
   <h3 style={`margin-top:0`}>Member Information</h3>
   {#each people as person, idx}
     <fieldset transition:slide|local class="form-row members">
-      <legend style={`${people.length === 1 ? "display:none" : ""}`}
+      <legend
+        style={`margin-bottom: 0; ${people.length === 1 ? "display:none" : ""}`}
         ><i>Member {idx + 1}</i></legend>
       <label class="form-label">
         Name:
@@ -92,6 +93,7 @@
     <label class="form-label">
       Address:
       <input
+        required
         name="Address"
         bind:value={address}
         class="form-text-input"

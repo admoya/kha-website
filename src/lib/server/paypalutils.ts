@@ -25,7 +25,11 @@ export async function generateAccessToken() {
 }
 
 // create an order
-export async function createOrder(includesDues: boolean, donationAmount = 0) {
+export async function createOrder(
+  includesDues: boolean,
+  donationAmount = 0,
+  description = "Annual dues and/or donation to Kendale Homeowners Association"
+) {
   console.log("Creating paypal order");
   const duesAmount = "60.00"; // TODO: pull amount from a database or session
   const accessToken = await generateAccessToken();
@@ -49,8 +53,7 @@ export async function createOrder(includesDues: boolean, donationAmount = 0) {
             },
           },
         },
-        description:
-          "Annual dues and/or donation to Kendale Homeowners Association",
+        description,
         soft_descriptor: "KHA Dues/Donation",
         items: [
           includesDues && {

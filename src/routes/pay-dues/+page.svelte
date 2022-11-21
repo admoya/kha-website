@@ -19,7 +19,8 @@
   let showSuccess = false;
   let showError = false;
 
-  let successMessage = "";
+  let successMessage =
+    "We have received your payment. Thank you for your contribution!";
 
   let paypalTokenData: any;
 

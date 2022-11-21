@@ -21,7 +21,6 @@
         "client-id": clientId,
         "data-client-token": token,
         "disable-funding": "paylater",
-        // "enable-funding": "venmo",
       });
     } catch (error) {
       console.error("failed to load the PayPal JS SDK script", error);
@@ -31,13 +30,13 @@
       try {
         await paypal
           .Buttons({
-            // style: { color: 'silver' },
             async createOrder() {
               const res = await fetch("/api/payments/createOrder", {
                 method: "post",
                 body: JSON.stringify({
                   includesDues,
                   donationAmount,
+                  description: getCompactDescription(),
                 }),
               });
               if (!res.ok) {
@@ -77,13 +76,25 @@
     ? (60 + donation).toFixed(2)
     : donation.toFixed(2);
 
-  const onVenmoPressed = () => {
+  const getDescription = () => {
     const peopleInfo = people
       .map(({ email, name, phone }) => `${name} (${email},${phone})`)
       .join(", ");
-    const note = encodeURIComponent(
-      `KHA payment from ${peopleInfo}. Address: ${address}`
-    );
+    return `KHA payment from ${peopleInfo}. Address: ${address}`;
+  };
+
+  const getCompactDescription = (maxLen = 120) => {
+    const peopleInfo = people
+      .map(({ email, name, phone }) => `${name}(${email},${phone})`)
+      .join(",");
+    const compactDescription = `${address}. ${peopleInfo}`;
+    return compactDescription.length <= maxLen
+      ? compactDescription
+      : `${compactDescription.substring(0, maxLen - 3)}...`;
+  };
+
+  const onVenmoPressed = () => {
+    const note = encodeURIComponent(getDescription());
     const url = `https://venmo.com/KendaleHomeowners-Association?txn=pay&note=${note}&amount=${totalPayment}&audience=private`;
     window.open(url);
     dispatch(
