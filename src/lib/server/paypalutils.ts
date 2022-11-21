@@ -31,7 +31,7 @@ export async function createOrder(
   description = "Annual dues and/or donation to Kendale Homeowners Association"
 ) {
   console.log("Creating paypal order");
-  const duesAmount = "60.00"; // TODO: pull amount from a database or session
+  const duesAmount = includesDues ? "60.00" : "0"; // TODO: pull amount from a database or session
   const accessToken = await generateAccessToken();
   const url = `${BASE_URL}/v2/checkout/orders`;
   const orderTotal = Number(duesAmount) + donationAmount;
