@@ -12,6 +12,7 @@ export const POST: RequestHandler = async ({ request }) => {
     );
     return json(order);
   } catch (err: any) {
+    console.error(err);
     throw error(500, err.message);
   }
 };

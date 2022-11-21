@@ -115,7 +115,7 @@
     </div>
   {/if}
   <div class="inline-flex">
-    <p class="item">Donation:</p>
+    <p class="item">Additional Contribution:</p>
     <p class="item">${donationAmount}</p>
   </div>
   <div class="inline-flex total">

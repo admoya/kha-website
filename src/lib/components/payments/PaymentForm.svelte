@@ -32,10 +32,15 @@
     e.preventDefault();
     dispatch("nextPressed", e);
   };
+
+  $: peopleInfo = people
+    .map(({ email, name, phone }) => `${name} (${email}, ${phone})`)
+    .join("\n");
 </script>
 
 <form on:submit={handleSubmit} name="payments-form" data-netlify>
   <input type="hidden" name="form-name" value="payments-form" />
+  <input type="hidden" name="Member Info" value={peopleInfo} />
   <h3 style={`margin-top:0`}>Member Information</h3>
   {#each people as person, idx}
     <fieldset transition:slide|local class="form-row members">
@@ -46,7 +51,6 @@
         Name:
         <input
           bind:value={people[idx].name}
-          name={`Person[${idx + 1}][Name]`}
           class="form-text-input"
           placeholder="John Doe"
           type="text"
@@ -56,7 +60,6 @@
         Email:
         <input
           bind:value={people[idx].email}
-          name={`Person[${idx + 1}][Email]`}
           class="form-text-input"
           placeholder="jdoe@example.com"
           type="email"
@@ -66,7 +69,6 @@
         Phone:
         <input
           bind:value={people[idx].phone}
-          name={`Person[${idx + 1}][Phone]`}
           type="tel"
           class="form-text-input"
           placeholder="305-123-4567" />
@@ -110,7 +112,7 @@
       </label>
       <label>
         <input type="radio" bind:group={paymentChoice} value="donation" />
-        Donation Only
+        Additional Contribution Only
       </label>
     </fieldset>
   </div>
@@ -129,7 +131,8 @@
     </div>
   {/if}
   <div class="form-row">
-    <label class="form-inline-label" for="donationInput">Donation:</label>
+    <label class="form-inline-label" for="donationInput"
+      >Additional Contribution:</label>
     <span class="form-currency-container">
       <input
         name="Donation"
