@@ -63,12 +63,11 @@
     display: inline-flex;
     list-style-type: none;
     gap: 15px;
-    margin-top: 0.5em;
+    margin-top: 0.3em;
     margin-bottom: 0.5em;
   }
   .social-logo {
-    width: 25px;
-    height: 25px;
-    /* border-radius: 30%; */
+    width: 22px;
+    height: 22px;
   }
 </style>
