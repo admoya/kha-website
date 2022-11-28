@@ -12,7 +12,7 @@
   let isCheckingOut = false;
 
   let paymentChoice = "dues";
-  let donationAmount = "0";
+  let donationAmount = "";
   let people: Person[];
   let address = "";
 

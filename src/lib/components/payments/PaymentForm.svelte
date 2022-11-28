@@ -11,7 +11,7 @@
   import { createEventDispatcher } from "svelte";
 
   export let paymentChoice = "dues";
-  export let donationAmount = "0";
+  export let donationAmount = "";
 
   export let people: Person[] = [
     {
@@ -71,7 +71,8 @@
           bind:value={people[idx].phone}
           type="tel"
           class="form-text-input"
-          placeholder="305-123-4567" />
+          placeholder="305-123-4567"
+          pattern={"[0-9-() ]{10,15}"} />
       </label>
     </fieldset>
   {/each}
@@ -140,6 +141,7 @@
         id="donationInput"
         on:blur={cleanDonation}
         step="0.01"
+        min="0"
         type="number"
         placeholder="0.00"
         bind:value={donationAmount} />
