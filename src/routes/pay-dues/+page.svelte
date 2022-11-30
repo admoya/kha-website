@@ -53,6 +53,15 @@
 
 <h1 class="page-heading">Pay Dues</h1>
 <section>
+  <div style="margin-top: 2rem;" class="container">
+    <p>
+      Below you will find several methods of paying your KHA dues and making
+      additional contributions. Your generous contributions enable us to provide
+      our various benefits to the community!
+    </p>
+  </div>
+</section>
+<section id="pay-online-form">
   <h2 class="page-subheading">Pay Online</h2>
   <div on:input={getPaypalToken} class="card grid container">
     {#if showError}
@@ -96,6 +105,17 @@
       </div>
     {/if}
   </div>
+</section>
+<section class="container">
+  <h2 class="page-subheading">Pay with Venmo</h2>
+  <p>
+    The easiest way to pay with Venmo is to fill out the <a
+      href="#pay-online-form">online payment form</a>
+    above, and select the Venmo option at checkout. <br /><br />
+    If you prefer to send a payment manually, please do so to
+    <b>@KendaleHomeowners-Association</b>, and include your name, email, phone
+    number, and address in the note for our bookkeeping.
+  </p>
 </section>
 <section class="container" style={`margin-bottom: 2rem;`}>
   <h2 class="page-subheading">Pay by Check</h2>
