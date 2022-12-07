@@ -80,7 +80,7 @@
   <section class="flex-item instagram">
     <h2 class="page-subheading">Follow us on Instagram!</h2>
     <p class="instagram-subtitle">
-      Stay up to date on all of the events around our beautiful community.
+      Stay up to date on all of the events around our beautiful community by following <a style="color: black" rel="noreferrer" target="_blank" href="https://www.instagram.com/kendale_hoa"><strong>@kendale_hoa</strong></a>
     </p>
     <InstagramPreview {items} />
   </section>
