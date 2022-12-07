@@ -84,7 +84,6 @@
 <style>
   #banner-alert {
     width: 100%;
-    /* top: 66px; */
     background-color: var(--primary-green);
     text-align: center;
     position: relative;
@@ -196,10 +195,6 @@
       padding-top: 1rem;
       padding-bottom: 1rem;
       transition: opacity 600ms, visibility 600ms;
-    }
-
-    .nav-links a {
-      padding-right: 2rem;
     }
   }
 </style>
