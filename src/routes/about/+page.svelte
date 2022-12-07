@@ -5,6 +5,7 @@
   import pattyGonzalez from "$lib/assets/avatars/Patty_Gonzalez.jpg";
   import zurielCarbo from "$lib/assets/avatars/Zuriel_Carbo.jpg";
   import monicaScudieri from "$lib/assets/avatars/Monica_Scudieri.jpg";
+  import nancyLyons from "$lib/assets/avatars/Nancy_Lyons.jpg";
   import Committee from "$lib/components/Committee.svelte";
   import TeamMember from "$lib/components/TeamMember.svelte";
   import committees from "$lib/data/committees";
@@ -52,7 +53,7 @@
         position="Recording Secretary"
         name="Monica Scudieri" />
       <TeamMember
-        img={placeholder}
+        img={nancyLyons}
         position="Past President"
         name="Nancy Lyons" />
     </div>
