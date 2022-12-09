@@ -122,7 +122,7 @@
               Phone
               <input
                 class="form-text-input"
-                type="email"
+                type="tel"
                 required
                 name="phone"
                 pattern={"[0-9-() ]{10,15}"} />
