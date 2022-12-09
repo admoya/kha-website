@@ -117,7 +117,8 @@
     number, and address in the note for our bookkeeping.
   </p>
 </section>
-<section class="container" style={`margin-bottom: 2rem;`}>
+<!-- TODO: Get updated membership form, update this image, and display this -->
+<section class="container display-none" style={`margin-bottom: 2rem;`}>
   <h2 class="page-subheading">Pay by Check</h2>
   <p>If you prefer to pay by check, please print and mail the below form.</p>
   <a href={khaMembershipForm} rel="noreferrer" target="_blank"

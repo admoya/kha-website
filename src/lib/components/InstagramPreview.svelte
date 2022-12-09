@@ -13,7 +13,7 @@
 </script>
 
 <script lang="ts">
-  import khaLogo from "$lib/assets/kha-logo.gif";
+  import khaLogo from "$lib/assets/logo-no-text.png";
   import { Carousel, CarouselControl, CarouselItem } from "sveltestrap";
   import { Circle } from "svelte-loading-spinners";
   const interval = "5000";
@@ -109,10 +109,9 @@
   }
 
   .avatar {
-    width: 1rem;
-    height: 1rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 100%;
-    -o-object-fit: contain;
     object-fit: contain;
   }
 

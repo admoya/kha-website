@@ -1,5 +1,4 @@
 <script lang="ts">
-  import placeholder from "$lib/assets/avatars/avatar-placeholder.png";
   import ernestoBascuas from "$lib/assets/avatars/Ernesto_Bascuas.jpeg";
   import migdyMoya from "$lib/assets/avatars/Migdy_Moya.jpeg";
   import pattyGonzalez from "$lib/assets/avatars/Patty_Gonzalez.jpg";

@@ -50,6 +50,7 @@
     font-family: cursive;
     -webkit-tap-highlight-color: transparent;
     padding: 0;
+    color: black;
   }
   .slide-control-button:active {
     background: none;
