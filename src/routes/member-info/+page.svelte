@@ -26,51 +26,52 @@
 </svelte:head>
 
 <h1 class="page-heading">Member Info</h1>
-<!-- <section class="container">
-  <h2 class="page-subheading">KHA Newsletter</h2>
-  <p class="newsletter-text">
-    Our quarterly community newsletter keeps KHA members informed on local events, introduces them to their neighbors, and offers exclusive discounts to local businesses!
-    <br>If you are up to date on your membership dues, you can sign up for the newsletter by submitting your name and email below.
+
+<section class="card container letter">
+  <h2 class="page-subheading card-title">A Letter from the President</h2>
+  <p>Dear Neighbors and families of KHA,</p>
+  <p>
+    I hope this letter finds you and your families well. I am pleased to
+    announce our new board of directors and their respective positions. Ernie
+    Bascuas, President; Zuriel Carbo Vice-President; Migdy Moya, Treasurer;
+    Monica Scudieri, Recording Secretary; Patty Gonzalez, Corresponding
+    Secretary. It is an honor to represent YOUR community. We are excited to get
+    to work on bringing in innovative ideas to create a more connected and
+    active community for us all. While also staying true to the history and
+    character that has made our community an amenable and desirable place to
+    live.
   </p>
-  <FormContainer
-    {formStatus}
-    successMessage="Thank you for subscribing! If you are a paid member, you will be added to our mailing list."
-    errorMessage="Sorry, there was an error subscribing to the newsletter. Please try again later."
-  >
-    <form on:submit={onSubscribe} class="newsletter-form" data-netlify="true" name="newsletter-form">
-      <input type='hidden' name='form-name' value='newsletter-form' />
-      <label>
-        Name
-        <input class="form-text-input" name="name" required />
-      </label>
-      <label>
-        Email
-        <input class="form-text-input" name="email" required type="email" />
-      </label>
-      <button class="primary-button">Submit</button>
-    </form>
-  </FormContainer>
-</section> -->
-<!-- <section class="container">
-  <h2 class="page-subheading">Member Discounts</h2>
-  <p>Stop into any of the below businesses and show proof of your KHA membership for an exclusive discount!</p>
-  <div class="discounts">
-    <div class="business-block">
-      <img alt="Killian Greens logo" src={killianGreens} class="business-image"/>
-      <p class="business-name">Killian Greens Golf Club</p>
-    </div>
-    <div class="business-block">
-      <img alt="El Rinconcito logo" src={elRinconcito} class="business-image"/>
-      <p class="business-name">El Rinconcito Latino</p>
-    </div>
-    <div class="business-block">
-      <img alt="Body and Brain logo" src={bodyAndBrain} class="business-image"/>
-      <p class="business-name">Body and Brain</p>
-    </div>
-  </div>
-</section> -->
-<section class="container">
-  <h2 class="page-subheading">Laws and Covenants</h2>
+  <p>
+    We have had many new homeowners volunteer and join one of our many
+    committees. For those who have volunteered, thank you! Our board&#39;s
+    number one goal is to create a greater sense of community, that will inspire
+    a culture for every one of you to get involved in and around our community.
+    We ask each one of you to please reach out with your feedback, ideas, and/or
+    concerns.
+  </p>
+  <p>
+    I am very happy and grateful to neighbors such as Maritza Pardinas, who
+    stepped forward to continue community traditions as Movie Night at Kendale
+    Park, and others, like Alana and John Garcia, who have started wonderful new
+    traditions by organizing The Village of Kendale’s First Annual Halloween
+    Golf Cart Parade and now the Christmas Golf Cart Parade which will tour all
+    the beautifully decorated homes in our Village neighborhood.
+  </p>
+  <p>
+    Your support and involvement are critical in achieving our goal of making
+    KHA a more connected and active community. We ask you all to please get
+    involved in supporting OUR beautiful KHA community!
+  </p>
+  <p>
+    Wishing you a very safe and Happy Holidays! We look forward to seeing you
+    around the neighborhood!
+  </p>
+  <p>
+    Ernie Bascuas<br />President - KHA
+  </p>
+</section>
+<section class="container card">
+  <h2 class="page-subheading card-title">Laws and Covenants</h2>
   <p>
     <strong
       >The state of our neighborhood depends on our knowledge of our rights and
@@ -97,48 +98,6 @@
 </section>
 
 <style>
-  /* .newsletter-text {
-    line-height: 1.5rem;
-  }
-  .newsletter-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .newsletter-form label {
-  margin-top: 1rem;
-  width: 100%;
-  font-weight: 700;
-  }
-  .newsletter-form input {
-
-    max-width: 25rem;
-  }
-
-  .newsletter-form button {
-    margin: 1rem auto;
-  } */
-  /* .discounts {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-  .business-image {
-    width: 150px;
-    height: 150px;
-    max-width: none;
-    -o-object-fit: contain;
-    object-fit: contain;
-  }
-  .business-name {
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  } */
   .laws-and-covenants {
     text-align: justify;
     white-space: pre-line;
@@ -147,5 +106,11 @@
     display: block;
     margin: 1rem 0;
     text-align: left;
+  }
+  .card {
+    margin: 1rem auto;
+  }
+  .letter {
+    text-align: justify;
   }
 </style>

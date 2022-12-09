@@ -227,6 +227,13 @@ button {
   max-width: 60rem;
 }
 
+.card-title {
+  font-size: 2rem;
+  font-family: lato;
+  margin-top: 0;
+  text-align: center;
+}
+
 .inline-flex {
   display: inline-flex;
   justify-content: space-between;
