@@ -1,10 +1,9 @@
-<svg width="185" height="103" viewBox="0 0 185 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="185" height="106" viewBox="0 0 185 106" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.2917 35H98.2917V90H16.2917V35Z" fill="#8AB07E"/>
 <path d="M56.2917 0L112.583 43.5H0L56.2917 0Z" fill="#8AB07E"/>
 <path d="M88.2917 35H170.292V90H88.2917V35Z" fill="#6796A7"/>
 <path d="M128.292 0L184.583 43.5H72L128.292 0Z" fill="#6796A7"/>
-<path d="M53 48H135V103H53V48Z" fill="#3B674B"/>
-<path d="M93 13L149.292 56.5H36.7083L93 13Z" fill="#3B674B"/>
+<path d="M36.7083 58H51.5V103V104.5H53H135H136.5V103V58H149.292H153.686L150.209 55.3131L93.9172 11.8131L93 11.1043L92.0828 11.8131L35.7911 55.3131L32.3141 58H36.7083Z" fill="#3B674B" stroke="white" stroke-width="3"/>
 <rect x="102" y="78" width="15" height="25" fill="white"/>
 <rect x="67" y="61" width="17" height="17" fill="white"/>
 <line x1="75.5" y1="61" x2="75.5" y2="78" stroke="#3B674B"/>
