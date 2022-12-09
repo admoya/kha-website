@@ -11,40 +11,49 @@
 <footer>
   <div class="footer-content">
     <h2 class="footer-title">Kendale HOA</h2>
-    <ul class="footer-social-links">
-      <a href={facebookUrl} target="_blank" rel="noreferrer">
-        <li>
-          <img alt="Facebook logo" class="social-logo" src={facebookLogo} />
-        </li>
-      </a>
-      <a href={instagramUrl} target="_blank" rel="noreferrer">
-        <li>
-          <img
-            style={`filter: invert(); margin-top: 1px;`}
-            alt="Instagram logo"
-            class="social-logo"
-            src={instagramLogo} />
-        </li>
-      </a>
-      <a href={emailUrl}>
-        <li>
-          <img
-            style={`margin-top: 1px;`}
-            alt="Email icon"
-            class="social-logo"
-            src={emailLogo} />
-        </li>
-      </a>
-    </ul>
+    <div class="footer-contact-details">
+      <p class="footer-address">PO Box 161461, Miami, FL 33116</p>
+      <ul class="footer-social-links">
+        <a href={facebookUrl} target="_blank" rel="noreferrer">
+          <li>
+            <img alt="Facebook logo" class="social-logo" src={facebookLogo} />
+          </li>
+        </a>
+        <a href={instagramUrl} target="_blank" rel="noreferrer">
+          <li>
+            <img
+              style={`filter: invert(); margin-top: 1px;`}
+              alt="Instagram logo"
+              class="social-logo"
+              src={instagramLogo} />
+          </li>
+        </a>
+        <a href={emailUrl}>
+          <li>
+            <img
+              style={`margin-top: 1px;`}
+              alt="Email icon"
+              class="social-logo"
+              src={emailLogo} />
+          </li>
+        </a>
+      </ul>
+    </div>
   </div>
 </footer>
 
 <style>
   .footer-title {
     color: white;
-    text-align: center;
     margin-bottom: 0;
     margin-top: 0.5em;
+    font-size: 1.5rem;
+    border-right: solid;
+    border-width: 1px;
+    padding: 1rem 0.5rem;
+    margin-top: 0;
+    width: 13rem;
+    text-align: right;
   }
   footer {
     flex-grow: 1;
@@ -55,6 +64,10 @@
   }
   .footer-content {
     background-color: #2b2c2e;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   .footer-social-links {
     width: 100%;
@@ -69,5 +82,15 @@
   .social-logo {
     width: 22px;
     height: 22px;
+  }
+  .footer-address {
+    font-size: 0.8rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .footer-contact-details {
+    padding: 1rem 0.5rem;
+    width: 13rem;
   }
 </style>
