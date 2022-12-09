@@ -9,3 +9,6 @@ declare namespace App {
   // interface Platform {}
 }
 type FormStatus = "active" | "success" | "error";
+interface Window {
+  dataLayer: any;
+}
