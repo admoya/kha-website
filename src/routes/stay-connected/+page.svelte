@@ -98,7 +98,9 @@
         We offer various opportunities for high school students to earn service
         hours! Leave your information below and we will be in touch.
       </p>
-      <FormContainer formStatus={serviceFormStatus}>
+      <FormContainer
+        formStatus={serviceFormStatus}
+        successMessage="Thank you, we have received your submission! We will be in touch.">
         <form
           on:submit={onServiceFormSubmit}
           class="contact-form"
