@@ -10,7 +10,9 @@
   <title>KHA Home</title>
 </svelte:head>
 
-<section class="banner" style="background-image: linear-gradient(rgb(0,0,0,0.35), rgb(0,0,0,0.35)), url({homeBanner});">
+<section
+  class="banner"
+  style="background-image: linear-gradient(rgb(0,0,0,0.35), rgb(0,0,0,0.35)), url({homeBanner});">
   <div class="container">
     <h1 class="banner-title">Kendale Homeowners Association</h1>
     <p class="banner-subtitle">Three Neighborhoods — One Community</p>
@@ -79,6 +81,9 @@
 </section>
 
 <style>
+  :global(body) {
+    overflow-x: hidden;
+  }
   .banner {
     color: white;
     padding-top: 30px;
