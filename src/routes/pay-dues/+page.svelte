@@ -114,7 +114,7 @@
     above, and select the Venmo option at checkout. <br /><br />
     If you prefer to send a payment manually, please do so to
     <b>@KendaleHomeowners-Association</b>, and include your name, email, phone
-    number, and address in the note for our bookkeeping.
+    number, and address in the note for our records.
   </p>
 </section>
 <!-- TODO: Get updated membership form, update this image, and display this -->
