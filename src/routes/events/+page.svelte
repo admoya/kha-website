@@ -13,7 +13,18 @@
   <h2 class="page-subheading">KHA Events</h2>
   <p>Come join your community at our upcoming events!</p>
   <div class="events-container">
-    {#each events as eventData}
+    {#each events.filter(({ date }) => date > new Date()) as eventData}
+      <Event {eventData} />
+    {/each}
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="page-subheading">Past Events</h2>
+  <div class="events-container">
+    {#each events
+      .filter(({ date }) => date < new Date())
+      .reverse() as eventData}
       <Event {eventData} />
     {/each}
   </div>

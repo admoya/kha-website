@@ -52,7 +52,7 @@ ul {
 
 @media (max-width: 480px) {
   .container {
-    max-width: 90%;
+    max-width: 95vw;
   }
   h2 {
     font-size: 1.5rem !important;
@@ -62,7 +62,7 @@ ul {
   }
 
   .flex-item {
-    max-width: 90%;
+    max-width: 95%;
   }
 }
 
@@ -224,7 +224,7 @@ button {
 .card {
   padding: 2rem;
   background-color: var(--card-background);
-  max-width: 60rem;
+  max-width: min(60rem, 95vw);
 }
 
 .card-title {
