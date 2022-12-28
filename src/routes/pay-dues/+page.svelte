@@ -6,7 +6,7 @@
   import Checkout from "$lib/components/payments/Checkout.svelte";
   import Success from "$lib/components/payments/Success.svelte";
   import Error from "$lib/components/payments/Error.svelte";
-  import khaMembershipForm from "$lib/assets/documents/kha-membership-form.jpg";
+  import khaMembershipForm from "$lib/assets/documents/kha-membership-form.pdf";
   import { submitFormToNetlify } from "$lib/utils";
 
   let isCheckingOut = false;
@@ -118,9 +118,9 @@
   </p>
 </section>
 <!-- TODO: Get updated membership form, update this image, and display this -->
-<section class="container display-none" style={`margin-bottom: 2rem;`}>
-  <h2 class="page-subheading">Pay by Check</h2>
-  <p>If you prefer to pay by check, please print and mail the below form.</p>
+<section class="container" style={`margin-bottom: 2rem;`}>
+  <h2 class="page-subheading">Pay by Mail</h2>
+  <p>If you prefer to pay by mail, please print and mail the below form.</p>
   <a href={khaMembershipForm} rel="noreferrer" target="_blank"
     >Click here to open the membership form in a new tab.</a>
 </section>
