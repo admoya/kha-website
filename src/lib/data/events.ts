@@ -1,5 +1,4 @@
 import homeAlonePoster from "$lib/assets/events/home-alone.jpeg";
-import christmas from "$lib/assets/events/christmas.jpeg";
 import golfCartParade from "$lib/assets/events/golf-cart-parade.jpg";
 
 export type Event = {
