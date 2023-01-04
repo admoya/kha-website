@@ -1,6 +1,6 @@
 import { json, error } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
-import { INSTAGRAM_TOKEN, INSTAGRAM_TOKEN_EXP } from "$env/static/private";
+import { INSTAGRAM_TOKEN } from "$env/static/private";
 import type Post from "$lib/components/InstagramPreview.svelte";
 
 const instagramUrl = "https://graph.instagram.com/me/media?";
@@ -31,7 +31,7 @@ export const GET: RequestHandler = async () => {
 function truncateCaptions(posts: Post[]) {
   for (var post of posts) {
     if (post.caption && post.caption.length > characterLimit) {
-      post.caption = post.caption.substring(0, characterLimit) + '...';
+      post.caption = post.caption.substring(0, characterLimit) + "...";
     }
   }
   return posts;
