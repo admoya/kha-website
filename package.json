@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@paypal/paypal-js": "^5.1.1",
-    "@playwright/test": "^1.25.0",
+    "@playwright/test": "^1.29.1",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^5.27.0",

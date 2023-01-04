@@ -89,10 +89,6 @@
     }
   }
 
-  .mission-vision-text {
-    text-align: justify;
-  }
-
   .team {
     display: flex;
     flex-flow: row wrap;
