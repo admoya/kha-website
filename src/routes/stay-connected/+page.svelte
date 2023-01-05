@@ -15,7 +15,7 @@
   let contactFormStatus: FormStatus = "active";
   let serviceFormStatus: FormStatus = "active";
 
-  const onContactFormSubmit = async (e: SubmitEvent) => {
+  const onContactFormSubmit = async (e: Event) => {
     const error = await submitFormToNetlify(e);
     if (error) {
       contactFormStatus = "error";
@@ -24,7 +24,7 @@
     }
   };
 
-  const onServiceFormSubmit = async (e: SubmitEvent) => {
+  const onServiceFormSubmit = async (e: Event) => {
     const error = await submitFormToNetlify(e);
     if (error) {
       serviceFormStatus = "error";

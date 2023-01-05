@@ -1,0 +1,17 @@
+/* Max-Width: 480px */
+
+h2 {
+  font-size: 1.5rem !important;
+}
+
+.container {
+  max-width: 95vw;
+}
+
+.flex-row {
+  margin: 0px;
+}
+
+.flex-item {
+  max-width: 95%;
+}

@@ -175,7 +175,6 @@
     gap: 1rem;
   }
   .item {
-    /* margin-top: 0; */
     font-weight: 500;
   }
   .items-total {

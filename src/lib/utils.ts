@@ -8,7 +8,7 @@ export function getErrorMessage(error: unknown) {
  * @param e A form submission event
  * @returns An error message if the submission failed
  */
-export const submitFormToNetlify = async (e: SubmitEvent) => {
+export const submitFormToNetlify = async (e: Event) => {
   e.preventDefault();
   const formData = new FormData(e.target as HTMLFormElement);
   try {
