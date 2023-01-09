@@ -7,7 +7,7 @@
   import Success from "$lib/components/payments/Success.svelte";
   import Error from "$lib/components/payments/Error.svelte";
   import khaMembershipForm from "$lib/assets/documents/kha-membership-form.pdf";
-  import { submitFormToNetlify } from "$lib/utils";
+  import { collectError, submitFormToNetlify } from "$lib/utils";
 
   let isCheckingOut = false;
 
@@ -29,7 +29,7 @@
       paypalTokenData = null;
       const res = await fetch("pay-dues/paypalData");
       if (!res.ok) {
-        console.error(`Error fetching paypal token: ${await res.text()}`);
+        collectError(`Error fetching paypal token: ${await res.text()}`);
         showError = true;
       }
       paypalTokenData = await res.json();

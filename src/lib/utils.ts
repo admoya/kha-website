@@ -1,3 +1,5 @@
+import { browser } from "$app/environment";
+
 export function getErrorMessage(error: unknown) {
   if (error instanceof Error) return error.message;
   return String(error);
@@ -22,5 +24,25 @@ export const submitFormToNetlify = async (e: Event) => {
     }
   } catch (err) {
     return getErrorMessage(err);
+  }
+};
+
+export const gtag: Gtag.Gtag = function () {
+  window.dataLayer.push(arguments);
+};
+
+const extractErrorText = (error: any) => {
+  if (error.message) return error.message as string;
+  if (typeof error === "string") return error;
+  return JSON.stringify(error);
+};
+
+export const collectError = (description: string, error?: any) => {
+  if (browser) {
+    console.error(`Error: ${description}`);
+    gtag("event", "exception", {
+      description,
+      errorText: error && extractErrorText(error),
+    });
   }
 };

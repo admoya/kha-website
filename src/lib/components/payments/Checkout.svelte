@@ -5,6 +5,7 @@
   import { browser } from "$app/environment";
   import venmoLogo from "$lib/assets/logos/venmo.svg";
   import type { Person } from "./PaymentForm.svelte";
+  import { collectError } from "$lib/utils";
 
   export let includesDues: Boolean;
   export let donationAmount: String;
@@ -23,7 +24,7 @@
         "disable-funding": "paylater",
       });
     } catch (error) {
-      console.error("failed to load the PayPal JS SDK script", error);
+      collectError("failed to load the PayPal JS SDK script", error);
     }
 
     if (paypal && paypal.Buttons) {
@@ -56,13 +57,13 @@
               });
             },
             onError(err) {
-              console.error(err);
+              collectError("payment error", err);
               dispatch("paymentError");
             },
           })
           .render("#paypal-div");
       } catch (error) {
-        console.error("failed to render the PayPal Buttons", error);
+        collectError("failed to render the PayPal Buttons", error);
       }
     }
   };

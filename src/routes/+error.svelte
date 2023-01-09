@@ -1,11 +1,12 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { collectError } from "$lib/utils";
   const { status, error } = $page;
   let pageHeader = "An error has occured";
   if (status === 404) {
     pageHeader = "Page Not Found";
   } else {
-    console.error(error?.message);
+    collectError(`Page error. Status: ${status}`, error);
   }
 </script>
 
