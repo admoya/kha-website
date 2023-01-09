@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css");
 @import "styles/base.css";
 @import "styles/tablet.css" (max-width: 768px);
 @import "styles/mobile.css" (max-width: 480px);
