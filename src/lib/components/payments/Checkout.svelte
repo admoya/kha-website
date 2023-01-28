@@ -11,6 +11,7 @@
   export let donationAmount: String;
   export let paypalTokenData: any;
   export let address: String;
+  export let neighborhood: String;
   export let people: Person[];
 
   const dispatch = createEventDispatcher();
@@ -81,7 +82,7 @@
     const peopleInfo = people
       .map(({ email, name, phone }) => `${name} (${email},${phone})`)
       .join(", ");
-    return `KHA payment from ${peopleInfo}. Address: ${address}`;
+    return `Member(s): ${peopleInfo} | Address: ${address} | Neighborhood: ${neighborhood}`;
   };
 
   const getCompactDescription = (maxLen = 120) => {

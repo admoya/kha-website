@@ -15,6 +15,7 @@
   let donationAmount = "";
   let people: Person[];
   let address = "";
+  let neighborhood = "";
 
   let showSuccess = false;
   let showError = false;
@@ -78,6 +79,7 @@
           bind:donationAmount
           bind:people
           bind:address
+          bind:neighborhood
           on:nextPressed={({ detail }) => {
             isCheckingOut = true;
             paymentFormSubmitEvent = detail;
@@ -91,6 +93,7 @@
         <Checkout
           {address}
           {people}
+          {neighborhood}
           on:paymentError={() => {
             showError = true;
           }}

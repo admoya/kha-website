@@ -21,6 +21,7 @@
     },
   ];
   export let address = "";
+  export let neighborhood = "";
 
   const cleanDonation = () => {
     donationAmount = Number(donationAmount).toFixed(2);
@@ -102,6 +103,15 @@
         class="form-text-input"
         placeholder="123 Main Street"
         type="text" />
+    </label>
+    <label class="form-label">
+      Neighborhood:
+      <select name="neighborhood" class="form-text-input" required bind:value={neighborhood}>
+        <option disabled value selected>Please select an option</option>
+        <option>Kendale Country Club Estates</option>
+        <option>Kendale South</option>
+        <option>Village of Kendale</option>
+      </select>
     </label>
   </div>
   <div class="form-row">
