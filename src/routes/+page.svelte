@@ -17,7 +17,8 @@
     <h1 class="banner-title">Kendale Homeowners Association</h1>
     <p class="banner-subtitle">Three Neighborhoods — One Community</p>
     <p class="banner-description">
-      The Village of Kendale, Kendale South and Kendale Country Club Estates
+      A voluntary community association for the Village of Kendale, Kendale
+      South, and Kendale Country Club Estates
     </p>
     <div class="banner-buttons">
       <a href="/pay-dues"><button class="primary-button">Sign Up</button></a>
