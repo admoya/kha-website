@@ -12,7 +12,7 @@
 
   let bannerAlertsDismissed: Set<string>;
   let showBanner = false;
-  const bannerText = `We rely on your support! The deadline for 2023 dues is February 15th. To pay your dues, click <a href="/pay-dues">here.</a>`;
+  const bannerText = `We rely on your support! To pay your dues, click <a href="/pay-dues">here.</a>`;
   onMount(() => {
     bannerAlertsDismissed = new Set(
       JSON.parse(localStorage.getItem("bannerAlertsDismissed") || "[]")
