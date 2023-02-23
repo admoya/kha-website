@@ -15,7 +15,7 @@
           year: "numeric",
           month: "long",
           day: "2-digit",
-          hour: "2-digit",
+          hour: "numeric",
           minute: "2-digit",
         })}
       </p>

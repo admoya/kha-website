@@ -1,5 +1,6 @@
 import homeAlonePoster from "$lib/assets/events/home-alone.jpeg";
 import golfCartParade from "$lib/assets/events/golf-cart-parade.jpg";
+import springFestival from "$lib/assets/events/spring_festival.png";
 
 export type Event = {
   name: string;
@@ -26,6 +27,14 @@ const events: Event[] = [
     location: "Kendale Park",
     photo: golfCartParade,
     photoAlt: "A Christmas tree",
+  },
+  {
+    name: "Spring Festival",
+    description: `Join your neighbors and friends  for this community fun event. Festivities start at 2 pm at Kendale Park. Access bracelets to rides and food with your paid dues. Hope to see you there!`,
+    date: new Date("2023-04-01T14:00:00"),
+    location: "Kendale Park",
+    photo: springFestival,
+    photoAlt: "The flyer for the Spring Festival",
   },
 ];
 
