@@ -1,6 +1,7 @@
 import homeAlonePoster from "$lib/assets/events/home-alone.jpeg";
 import golfCartParade from "$lib/assets/events/golf-cart-parade.jpg";
 import springFestival from "$lib/assets/events/spring_festival.png";
+import faithandfitness from "$lib/assets/events/faithandfitnessfull.png";
 
 export type Event = {
   name: string;
@@ -35,6 +36,14 @@ const events: Event[] = [
     location: "Kendale Park",
     photo: springFestival,
     photoAlt: "The flyer for the Spring Festival",
+  },
+  {
+    name: "Faith and Fitness Event",
+    description: `Enjoy a quick fitness event to start your weekend off right! Please bring a mat and water bottle.`,
+    date: new Date("2023-05-06T07:30:00"),
+    location: "Kendale Park",
+    photo: faithandfitness,
+    photoAlt: "The flyer for the Faith and Fitness event",
   },
 ];
 
