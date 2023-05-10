@@ -2,6 +2,7 @@ import homeAlonePoster from "$lib/assets/events/home-alone.jpeg";
 import golfCartParade from "$lib/assets/events/golf-cart-parade.jpg";
 import springFestival from "$lib/assets/events/spring_festival.png";
 import faithandfitness from "$lib/assets/events/faithandfitnessfull.png";
+import khaLogo from "$lib/assets/logo-no-text.svg";
 
 export type Event = {
   name: string;
@@ -44,6 +45,14 @@ const events: Event[] = [
     location: "Kendale Park",
     photo: faithandfitness,
     photoAlt: "The flyer for the Faith and Fitness event",
+  },
+  {
+    name: "General Community Meeting",
+    description: `Meet the NEW Board Members, hear about issues affecting our communities, Public Safety presentation, Killian Parkway damaged wall update, FDOT speed limit campaign for Killian Parkway, Golf Course , upcoming events and future plans for the community and open discussion on community issues/suggestions.`,
+    date: new Date("2023-05-23T19:00:00"),
+    location: "Ron Ehmann Park",
+    photo: khaLogo,
+    photoAlt: "The KHA logo",
   },
 ];
 

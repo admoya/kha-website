@@ -32,7 +32,7 @@
   .event-image {
     width: 20%;
     min-width: 10rem;
-    object-fit: cover;
+    /* object-fit: cover; */
   }
   .event-text {
     width: 60%;
