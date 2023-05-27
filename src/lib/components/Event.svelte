@@ -33,7 +33,7 @@
     width: 20%;
     min-width: 10rem;
     /* object-fit: cover; */
-    height: fit-content;
+    /* height: fit-content; */
   }
   .event-text {
     width: 60%;
