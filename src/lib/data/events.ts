@@ -3,7 +3,7 @@ import golfCartParade from "$lib/assets/events/golf-cart-parade.jpg";
 import springFestival from "$lib/assets/events/spring_festival.png";
 import faithandfitness from "$lib/assets/events/faithandfitnessfull.png";
 import khaLogo from "$lib/assets/logo-no-text.svg";
-import summerMovieNight from "$lib/assets/events/summer-movie-night.png";
+import sonic2MovieNight from "$lib/assets/events/sonic-2-movie-night.jpeg";
 import fitnessAtThePark from "$lib/assets/events/fitness-at-the-park.png";
 
 export type Event = {
@@ -69,7 +69,7 @@ const events: Event[] = [
     description: `Kick off your summer with your friends and neighbors at our Summer Movie Night! Saturday, June 10th. Movie will start at 8 p.m. Popcorn and glow sticks will be provided to the kids.`,
     date: new Date("2023-06-10T20:00:00"),
     location: "Kendale Park",
-    photo: summerMovieNight,
+    photo: sonic2MovieNight,
     photoAlt: "Movie Night Flyer",
   },
   {
