@@ -63,7 +63,10 @@
   </div>
 </section>
 <section id="pay-online-form">
-  <h2 class="page-subheading">Pay Online</h2>
+  <header>
+    <h2 class="page-subheading">Pay Online</h2>
+    <p class="subtitle">Credit card, Paypal, or Venmo accepted!</p>
+  </header>
   <div on:input={getPaypalToken} class="card grid container">
     {#if showError}
       <Error />
@@ -136,5 +139,8 @@
   .grid {
     display: grid;
     overflow: hidden;
+  }
+  .subtitle {
+    font-weight: bold;
   }
 </style>
