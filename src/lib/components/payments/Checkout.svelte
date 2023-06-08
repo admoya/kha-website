@@ -74,41 +74,29 @@
 
   const onBackPressed = () => dispatch("backPressed");
   const donation = Number(donationAmount);
-  const totalPayment = includesDues
-    ? (60 + donation).toFixed(2)
-    : donation.toFixed(2);
+  const totalPayment = includesDues ? (60 + donation).toFixed(2) : donation.toFixed(2);
 
   const getDescription = () => {
-    const peopleInfo = people
-      .map(({ email, name, phone }) => `${name} (${email},${phone})`)
-      .join(", ");
+    const peopleInfo = people.map(({ email, name, phone }) => `${name} (${email},${phone})`).join(", ");
     return `Member(s): ${peopleInfo} | Address: ${address} | Neighborhood: ${neighborhood}`;
   };
 
   const getCompactDescription = (maxLen = 120) => {
-    const peopleInfo = people
-      .map(({ email, name, phone }) => `${name}(${email},${phone})`)
-      .join(",");
+    const peopleInfo = people.map(({ email, name, phone }) => `${name}(${email},${phone})`).join(",");
     const compactDescription = `${address}. ${peopleInfo}`;
-    return compactDescription.length <= maxLen
-      ? compactDescription
-      : `${compactDescription.substring(0, maxLen - 3)}...`;
+    return compactDescription.length <= maxLen ? compactDescription : `${compactDescription.substring(0, maxLen - 3)}...`;
   };
 
   const onVenmoPressed = () => {
     const note = encodeURIComponent(getDescription());
     const url = `https://venmo.com/KendaleHomeowners-Association?txn=pay&note=${note}&amount=${totalPayment}&audience=private`;
     window.open(url);
-    dispatch(
-      "paymentOffline",
-      "Venmo should have opened in another window. Please finish your payment there. Thank you for your contribution!"
-    );
+    dispatch("paymentOffline", "Venmo should have opened in another window. Please finish your payment there. Thank you for your contribution!");
   };
 </script>
 
 <div>
-  <button class="secondary-button" id="backBtn" on:click={onBackPressed}
-    >&lt Back</button>
+  <button class="secondary-button" id="backBtn" on:click={onBackPressed}>&lt Back</button>
   <h3>Payment Confirmation</h3>
   {#if includesDues}
     <div class="inline-flex">

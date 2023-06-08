@@ -34,9 +34,7 @@
     dispatch("nextPressed", e);
   };
 
-  $: peopleInfo = people
-    .map(({ email, name, phone }) => `${name} (${email}, ${phone})`)
-    .join("\n");
+  $: peopleInfo = people.map(({ email, name, phone }) => `${name} (${email}, ${phone})`).join("\n");
 </script>
 
 <form on:submit={handleSubmit} name="payments-form" data-netlify>
@@ -45,35 +43,18 @@
   <h3 style={`margin-top:0`}>Member Information</h3>
   {#each people as person, idx}
     <fieldset transition:slide|local class="form-row members">
-      <legend
-        style={`margin-bottom: 0; ${people.length === 1 ? "display:none" : ""}`}
-        ><i>Member {idx + 1}</i></legend>
+      <legend style={`margin-bottom: 0; ${people.length === 1 ? "display:none" : ""}`}><i>Member {idx + 1}</i></legend>
       <label class="form-label">
         Name:
-        <input
-          bind:value={people[idx].name}
-          class="form-text-input"
-          placeholder="John Doe"
-          type="text"
-          required />
+        <input bind:value={people[idx].name} class="form-text-input" placeholder="John Doe" type="text" required />
       </label>
       <label class="form-label">
         Email:
-        <input
-          bind:value={people[idx].email}
-          class="form-text-input"
-          placeholder="jdoe@example.com"
-          type="email"
-          required />
+        <input bind:value={people[idx].email} class="form-text-input" placeholder="jdoe@example.com" type="email" required />
       </label>
       <label class="form-label">
         Phone:
-        <input
-          bind:value={people[idx].phone}
-          type="tel"
-          class="form-text-input"
-          placeholder="305-123-4567"
-          pattern={"[0-9-() ]{10,15}"} />
+        <input bind:value={people[idx].phone} type="tel" class="form-text-input" placeholder="305-123-4567" pattern={"[0-9-() ]{10,15}"} />
       </label>
     </fieldset>
   {/each}
@@ -96,13 +77,7 @@
   <div class="form-row">
     <label class="form-label">
       Address:
-      <input
-        required
-        name="Address"
-        bind:value={address}
-        class="form-text-input"
-        placeholder="123 Main Street"
-        type="text" />
+      <input required name="Address" bind:value={address} class="form-text-input" placeholder="123 Main Street" type="text" />
     </label>
     <label class="form-label">
       Neighborhood:
@@ -131,19 +106,13 @@
     <div transition:slide|local class="form-row">
       <label class="form-inline-label" for="duesInput">Dues:</label>
       <span class="form-currency-container">
-        <input
-          class="form-currency-input"
-          id="duesInput"
-          value="60.00"
-          disabled
-          style="border: none" />
+        <input class="form-currency-input" id="duesInput" value="60.00" disabled style="border: none" />
         <input type="hidden" name="Dues" value="60" />
       </span>
     </div>
   {/if}
   <div class="form-row">
-    <label class="form-inline-label" for="donationInput"
-      >Additional Contribution:</label>
+    <label class="form-inline-label" for="donationInput">Additional Contribution:</label>
     <span class="form-currency-container">
       <input
         name="Donation"

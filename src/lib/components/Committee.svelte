@@ -5,11 +5,11 @@
 
 <div class="committee">
   <h2 class="committee-heading">{name}</h2>
- <ol>
-  {#each members as member}
-    <li>{member}</li>
-  {/each}
- </ol>
+  <ol>
+    {#each members as member}
+      <li>{member}</li>
+    {/each}
+  </ol>
 </div>
 
 <style>

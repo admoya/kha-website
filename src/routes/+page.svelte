@@ -10,16 +10,11 @@
   <title>KHA Home</title>
 </svelte:head>
 
-<section
-  class="banner"
-  style="background-image: linear-gradient(rgb(0,0,0,0.35), rgb(0,0,0,0.35)), url({homeBanner});">
+<section class="banner" style="background-image: linear-gradient(rgb(0,0,0,0.35), rgb(0,0,0,0.35)), url({homeBanner});">
   <div class="container">
     <h1 class="banner-title">Kendale Homeowners Association</h1>
     <p class="banner-subtitle">Three Neighborhoods — One Community</p>
-    <p class="banner-description">
-      A voluntary community association for the Village of Kendale, Kendale
-      South, and Kendale Country Club Estates
-    </p>
+    <p class="banner-description">A voluntary community association for the Village of Kendale, Kendale South, and Kendale Country Club Estates</p>
     <div class="banner-buttons">
       <a href="/pay-dues"><button class="primary-button">Sign Up</button></a>
       <a href="/about"><button class="secondary-button">Learn More</button></a>
@@ -31,48 +26,31 @@
   <div class="offerings">
     <div class="offering">
       <span class="offering-headline">
-        <span
-          class="offering-icon material-symbols-outlined material-symbols-filled">
-          potted_plant
-        </span>
+        <span class="offering-icon material-symbols-outlined material-symbols-filled"> potted_plant </span>
         <h3 class="offering-title">Community Maintenance</h3>
       </span>
-      <p class="offering-description">
-        Keeping all community entrances and common areas landscaped, well
-        maintained, and uniform in appearance.
-      </p>
+      <p class="offering-description">Keeping all community entrances and common areas landscaped, well maintained, and uniform in appearance.</p>
     </div>
     <div class="offering">
       <span class="offering-headline">
-        <span
-          class="offering-icon material-symbols-outlined material-symbols-filled">
-          celebration
-        </span>
+        <span class="offering-icon material-symbols-outlined material-symbols-filled"> celebration </span>
         <h3 class="offering-title">Local Events</h3>
       </span>
-      <p class="offering-description">
-        Community Movie Nights, Annual Festival, and much more to come!
-      </p>
+      <p class="offering-description">Community Movie Nights, Annual Festival, and much more to come!</p>
     </div>
     <div class="offering">
       <span class="offering-headline">
-        <span
-          class="offering-icon material-symbols-outlined material-symbols-filled">
-          newspaper
-        </span>
+        <span class="offering-icon material-symbols-outlined material-symbols-filled"> newspaper </span>
         <h3 class="offering-title">Community Information</h3>
       </span>
       <p class="offering-description">
-        Keeping neighbors informed of issues affecting the community, and acting
-        as a liaison between residents and County Departments.
+        Keeping neighbors informed of issues affecting the community, and acting as a liaison between residents and County Departments.
       </p>
     </div>
   </div>
 </section>
 <section>
-  <ResponsiveSlider
-    title="What People Say About Us"
-    numSlots={testimonials.length}>
+  <ResponsiveSlider title="What People Say About Us" numSlots={testimonials.length}>
     {#each testimonials as { name, photo, testimony, title }}
       <Slide>
         <Testimonial description={testimony} author={name} role={title} />

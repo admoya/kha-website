@@ -24,18 +24,12 @@
 
 <h2 class="page-subheading">{title}</h2>
 <div class="slideshow">
-  <button
-    class="slide-control-button"
-    disabled={activeSlide === 0}
-    on:click={onLeftSlide}
+  <button class="slide-control-button" disabled={activeSlide === 0} on:click={onLeftSlide}
     ><span class="material-symbols-outlined">navigate_before</span></button>
   <div bind:this={slideshowEl} class="slides reset-margin-left">
     <slot />
   </div>
-  <button
-    class="slide-control-button"
-    disabled={activeSlide === numSlots - 1}
-    on:click={onRightSlide}
+  <button class="slide-control-button" disabled={activeSlide === numSlots - 1} on:click={onRightSlide}
     ><span class="material-symbols-outlined">navigate_next</span></button>
 </div>
 

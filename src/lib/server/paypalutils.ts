@@ -1,11 +1,7 @@
 // const fetch = require('node-fetch');
 
 // export const { CLIENT_ID, APP_SECRET } = process.env; // pull from environment variables
-import {
-  PAYPAL_CLIENT_ID as CLIENT_ID,
-  PAYPAL_APP_SECRET as APP_SECRET,
-  PAYPAL_BASE_URL as BASE_URL,
-} from "$env/static/private";
+import { PAYPAL_CLIENT_ID as CLIENT_ID, PAYPAL_APP_SECRET as APP_SECRET, PAYPAL_BASE_URL as BASE_URL } from "$env/static/private";
 export { CLIENT_ID, APP_SECRET, BASE_URL };
 import type { CreateOrderRequestBody, PurchaseItem } from "@paypal/paypal-js";
 
@@ -87,10 +83,7 @@ export async function createOrder(
     },
     body: JSON.stringify(order),
   });
-  if (!response.ok)
-    throw new Error(
-      `Error from Paypal: ${response.status}: ${await response.text()}`
-    );
+  if (!response.ok) throw new Error(`Error from Paypal: ${response.status}: ${await response.text()}`);
   const data = await response.json();
   return data;
 }

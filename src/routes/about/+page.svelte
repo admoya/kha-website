@@ -19,42 +19,24 @@
   <section class="content">
     <h2 class="page-subheading">Our Mission</h2>
     <p>
-      To serve and inform the community of the Village of Kendale, Kendale
-      Country Club Estates and Kendale South. To promote safety, foster
-      community activities, and protect our environment. To further interaction
-      of the Association Membership while preserving the quality of life and
-      sense of community in our neighborhood.
+      To serve and inform the community of the Village of Kendale, Kendale Country Club Estates and Kendale South. To promote safety, foster community
+      activities, and protect our environment. To further interaction of the Association Membership while preserving the quality of life and sense of
+      community in our neighborhood.
     </p>
 
     <h2 class="page-subheading">Our Vision</h2>
     <p>
-      We envision a community that offers an inspiring lifestyle and is a
-      desirable place to live and enjoy the benefits of family, friends and
+      We envision a community that offers an inspiring lifestyle and is a desirable place to live and enjoy the benefits of family, friends and
       community.
     </p>
     <h2 class="page-subheading">Our Board</h2>
     <div class="team">
-      <TeamMember
-        img={ernestoBascuas}
-        position="President"
-        name="Ernie Bascuas" />
-      <TeamMember
-        img={zurielCarbo}
-        position="Vice President"
-        name="Zuriel Carbo" />
+      <TeamMember img={ernestoBascuas} position="President" name="Ernie Bascuas" />
+      <TeamMember img={zurielCarbo} position="Vice President" name="Zuriel Carbo" />
       <TeamMember img={migdyMoya} position="Treasurer" name="Migdy Moya" />
-      <TeamMember
-        img={pattyGonzalez}
-        position="Corresponding Secretary"
-        name="Patty Gonzalez" />
-      <TeamMember
-        img={monicaScudieri}
-        position="Recording Secretary"
-        name="Monica Scudieri" />
-      <TeamMember
-        img={nancyLyons}
-        position="Past President"
-        name="Nancy Lyons" />
+      <TeamMember img={pattyGonzalez} position="Corresponding Secretary" name="Patty Gonzalez" />
+      <TeamMember img={monicaScudieri} position="Recording Secretary" name="Monica Scudieri" />
+      <TeamMember img={nancyLyons} position="Past President" name="Nancy Lyons" />
     </div>
     <div class="committees">
       <h2 class="page-subheading">Our Committees</h2>
@@ -69,8 +51,7 @@
 <section class="volunteer">
   <h2 class="page-subheading">We need your help!</h2>
   <p>
-    There are many positions open! If you wish to volunteer, send us a message
-    from the <a href="/stay-connected">contact</a> form.
+    There are many positions open! If you wish to volunteer, send us a message from the <a href="/stay-connected">contact</a> form.
   </p>
 </section>
 

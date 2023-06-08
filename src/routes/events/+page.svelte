@@ -22,9 +22,7 @@
 <div class="container">
   <h2 class="page-subheading">Past Events</h2>
   <div class="events-container">
-    {#each events
-      .filter(({ date }) => date < new Date())
-      .reverse() as eventData}
+    {#each events.filter(({ date }) => date < new Date()).reverse() as eventData}
       <Event {eventData} />
     {/each}
   </div>

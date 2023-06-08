@@ -22,20 +22,12 @@
           </a>
           <a href={instagramUrl} target="_blank" rel="noreferrer">
             <li>
-              <img
-                style={`filter: invert(); margin-top: 1px;`}
-                alt="Instagram logo"
-                class="social-logo"
-                src={instagramLogo} />
+              <img style={`filter: invert(); margin-top: 1px;`} alt="Instagram logo" class="social-logo" src={instagramLogo} />
             </li>
           </a>
           <a href={emailUrl}>
             <li>
-              <img
-                style={`margin-top: 1px;`}
-                alt="Email icon"
-                class="social-logo"
-                src={emailLogo} />
+              <img style={`margin-top: 1px;`} alt="Email icon" class="social-logo" src={emailLogo} />
             </li>
           </a>
         </ul>

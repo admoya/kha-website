@@ -5,7 +5,7 @@ import faithandfitness from "$lib/assets/events/faithandfitnessfull.png";
 import khaLogo from "$lib/assets/logo-no-text.svg";
 import sonic2MovieNight from "$lib/assets/events/sonic-2-movie-night.jpeg";
 import fitnessAtThePark from "$lib/assets/events/fitness-at-the-park.png";
-import juneMovieNightPoster from "$lib/assets/events/june-movie-night-poster.jpeg"
+import juneMovieNightPoster from "$lib/assets/events/june-movie-night-poster.jpeg";
 
 export type Event = {
   name: string;

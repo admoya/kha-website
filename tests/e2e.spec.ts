@@ -23,7 +23,7 @@ test.describe("screenshots", () => {
   });
   test("stay connected page screenshot", async ({ page }) => {
     await page.route("/stay-connected/instagramData", async (route) => {
-      await route.fulfill({ json: [] });
+      await route.fulfill({ json: [{ username: "test" }] });
     });
     await page.goto("/stay-connected", { waitUntil: "networkidle" });
     await expect(page).toHaveScreenshot({ fullPage: true });

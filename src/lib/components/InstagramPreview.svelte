@@ -37,15 +37,9 @@
           <CarouselItem bind:activeIndex itemIndex={index}>
             <a href={item.permalink} target="_blank" rel="noreferrer">
               {#if item.media_type == "VIDEO"}
-                <img
-                  src={item.thumbnail_url}
-                  alt="instagram post"
-                  class="d-block w-100" />
+                <img src={item.thumbnail_url} alt="instagram post" class="d-block w-100" />
               {:else}
-                <img
-                  src={item.media_url}
-                  alt="instagram post"
-                  class="d-block w-100" />
+                <img src={item.media_url} alt="instagram post" class="d-block w-100" />
               {/if}
             </a>
           </CarouselItem>

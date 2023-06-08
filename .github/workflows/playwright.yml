@@ -5,6 +5,7 @@ env:
   PAYPAL_CLIENT_ID: Testing
   PAYPAL_BASE_URL: https://api-m.sandbox.paypal.com
   INSTAGRAM_TOKEN: Testing
+  KHA_AUTH_HEADER: Testing
 
 on:
   push:

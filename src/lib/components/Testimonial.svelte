@@ -9,10 +9,7 @@
 
 <div class="testimonial">
   {#if img}
-    <img
-      alt="headshot of the testimonial speaker"
-      class="testimonial-photo"
-      src={img} />
+    <img alt="headshot of the testimonial speaker" class="testimonial-photo" src={img} />
   {/if}
   <div class="testimony">
     <p class={`testimony-text ${shrinkText ? "shrink-text" : ""}`}>

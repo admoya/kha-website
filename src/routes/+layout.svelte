@@ -16,9 +16,7 @@
 </script>
 
 <svelte:head>
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-XCXG9SEF97"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCXG9SEF97"></script>
 </svelte:head>
 
 <AppBar />

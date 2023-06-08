@@ -1,10 +1,6 @@
 import { json } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
-import {
-  generateAccessToken,
-  CLIENT_ID,
-  BASE_URL,
-} from "$lib/server/paypalutils";
+import { generateAccessToken, CLIENT_ID, BASE_URL } from "$lib/server/paypalutils";
 
 export const GET: RequestHandler = async () => {
   const accessToken = await generateAccessToken();

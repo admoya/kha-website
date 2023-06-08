@@ -16,38 +16,27 @@
   <h2 class="page-subheading card-title">A Letter from the President</h2>
   <p>Dear Neighbors and families of KHA,</p>
   <p>
-    I hope this letter finds you and your families well. I am pleased to
-    announce our new Board of Directors and their respective positions. Ernie
-    Bascuas, President; Zuriel Carbo Vice-President; Migdy Moya, Treasurer;
-    Monica Scudieri, Recording Secretary; Patty Gonzalez, Corresponding
-    Secretary. It is an honor to represent YOUR community. We are excited to get
-    to work on bringing in innovative ideas to create a more connected and
-    active community for us all. While also staying true to the history and
-    character that has made our community an amenable and desirable place to
-    live.
+    I hope this letter finds you and your families well. I am pleased to announce our new Board of Directors and their respective positions. Ernie
+    Bascuas, President; Zuriel Carbo Vice-President; Migdy Moya, Treasurer; Monica Scudieri, Recording Secretary; Patty Gonzalez, Corresponding
+    Secretary. It is an honor to represent YOUR community. We are excited to get to work on bringing in innovative ideas to create a more connected
+    and active community for us all. While also staying true to the history and character that has made our community an amenable and desirable place
+    to live.
   </p>
   <p>
-    We have had many new homeowners volunteer and join one of our many
-    committees. For those who have volunteered, thank you! Our Board's
-    number one goal is to create a greater sense of community, that will inspire
-    a culture for every one of you to get involved in and around our community.
-    We ask each one of you to please reach out with your feedback, ideas, and/or
-    concerns.
+    We have had many new homeowners volunteer and join one of our many committees. For those who have volunteered, thank you! Our Board's number one
+    goal is to create a greater sense of community, that will inspire a culture for every one of you to get involved in and around our community. We
+    ask each one of you to please reach out with your feedback, ideas, and/or concerns.
   </p>
   <p>
-    I am very happy and grateful to neighbors who have already stepped forward to continue 
-    community traditions as Movie Night at Kendale Park, and others who have started wonderful 
-    new traditions such as The Village of Kendale's Halloween and Christmas Golf Cart Parades. 
-    Volunteers are the foundation of this great Kendale Community Association.
+    I am very happy and grateful to neighbors who have already stepped forward to continue community traditions as Movie Night at Kendale Park, and
+    others who have started wonderful new traditions such as The Village of Kendale's Halloween and Christmas Golf Cart Parades. Volunteers are the
+    foundation of this great Kendale Community Association.
   </p>
   <p>
-    Your support and involvement are critical in achieving our goal of making
-    KHA a more connected and active community. We ask you all to please get
+    Your support and involvement are critical in achieving our goal of making KHA a more connected and active community. We ask you all to please get
     involved in supporting OUR beautiful KHA community!
   </p>
-  <p>
-    We look forward to a great year seeing you around the neighborhood!
-  </p>
+  <p>We look forward to a great year seeing you around the neighborhood!</p>
   <p>
     Ernie Bascuas<br />President - KHA
   </p>
@@ -55,28 +44,13 @@
 <section class="container card">
   <h2 class="page-subheading card-title">Laws and Covenants</h2>
   <p>
-    <strong
-      >The state of our neighborhood depends on our knowledge of our rights and
-      our willingness as a community to defend them.</strong>
+    <strong>The state of our neighborhood depends on our knowledge of our rights and our willingness as a community to defend them.</strong>
   </p>
   <p class="laws-and-covenants">{text.lawsAndCovenants}</p>
-  <a
-    class="document-link"
-    rel="noreferrer"
-    target="_blank"
-    href={kendaleSouthSection1}>KENDALE SOUTH SECTION I</a>
-  <a
-    class="document-link"
-    rel="noreferrer"
-    target="_blank"
-    href={kendaleSouthSection2Part1}>KENDALE SOUTH SECTION 2 PART 1</a>
-  <a
-    class="document-link"
-    rel="noreferrer"
-    target="_blank"
-    href={kendaleSouthSection2Part2}>KENDALE SOUTH SECTION 2 PART 2</a>
-  <a class="document-link" rel="noreferrer" target="_blank" href={byLaws}
-    >KENDALE HOMEOWNERS ASSOCIATION BY-LAWS</a>
+  <a class="document-link" rel="noreferrer" target="_blank" href={kendaleSouthSection1}>KENDALE SOUTH SECTION I</a>
+  <a class="document-link" rel="noreferrer" target="_blank" href={kendaleSouthSection2Part1}>KENDALE SOUTH SECTION 2 PART 1</a>
+  <a class="document-link" rel="noreferrer" target="_blank" href={kendaleSouthSection2Part2}>KENDALE SOUTH SECTION 2 PART 2</a>
+  <a class="document-link" rel="noreferrer" target="_blank" href={byLaws}>KENDALE HOMEOWNERS ASSOCIATION BY-LAWS</a>
 </section>
 
 <style>

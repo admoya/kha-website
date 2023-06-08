@@ -1,25 +1,11 @@
 export default [
   {
     name: "Membership",
-    members: [
-      "Alain Fernandez",
-      "Joanna & Victor Davalos",
-      "Wanda Currea",
-      "Karol Hochman",
-      "Dan Miranda",
-      "Tony Nardo",
-      "Jorge Labarraque",
-    ],
+    members: ["Alain Fernandez", "Joanna & Victor Davalos", "Wanda Currea", "Karol Hochman", "Dan Miranda", "Tony Nardo", "Jorge Labarraque"],
   },
   {
     name: "Public Safety",
-    members: [
-      "Manny Garcia",
-      "James Nessl",
-      "Jim Cox",
-      "Wanda Currea",
-      "Richard Praschnik",
-    ],
+    members: ["Manny Garcia", "James Nessl", "Jim Cox", "Wanda Currea", "Richard Praschnik"],
   },
   {
     name: "Grounds",

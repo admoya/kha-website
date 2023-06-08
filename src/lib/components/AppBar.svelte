@@ -14,18 +14,13 @@
   let showBanner = false;
   const bannerText = `We rely on your support! To pay your dues, click <a href="/pay-dues">here.</a>`;
   onMount(() => {
-    bannerAlertsDismissed = new Set(
-      JSON.parse(localStorage.getItem("bannerAlertsDismissed") || "[]")
-    );
+    bannerAlertsDismissed = new Set(JSON.parse(localStorage.getItem("bannerAlertsDismissed") || "[]"));
     showBanner = !bannerAlertsDismissed.has(bannerText);
   });
 
   const onBannerAlertClose = () => {
     bannerAlertsDismissed.add(bannerText);
-    localStorage.setItem(
-      "bannerAlertsDismissed",
-      JSON.stringify(Array.from(bannerAlertsDismissed))
-    );
+    localStorage.setItem("bannerAlertsDismissed", JSON.stringify(Array.from(bannerAlertsDismissed)));
     showBanner = false;
   };
 </script>
@@ -36,10 +31,7 @@
       <img id="khaLogo" src={houseLogo} alt="The KHA logo" />
       <img id="khaLogo-text" src={logoText} alt="The KHA logo text" />
     </a>
-    <ul
-      on:click={toggleMenu}
-      on:keypress={toggleMenu}
-      class={`nav-links ${isMenuopen ? "" : "hide-menu"}`}>
+    <ul on:click={toggleMenu} on:keypress={toggleMenu} class={`nav-links ${isMenuopen ? "" : "hide-menu"}`}>
       <li>
         <a href="/about">About</a>
       </li>
@@ -69,10 +61,7 @@
     </button>
   </nav>
   {#if showBanner}
-    <div
-      in:slide={{ delay: 250, duration: 400, easing: linear }}
-      out:slide={{ delay: 0, duration: 400, easing: linear }}
-      id="banner-alert">
+    <div in:slide={{ delay: 250, duration: 400, easing: linear }} out:slide={{ delay: 0, duration: 400, easing: linear }} id="banner-alert">
       <p id="banner-alert-text">
         {@html bannerText}
       </p>
