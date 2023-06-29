@@ -8,6 +8,7 @@
 
 <svelte:head>
   <title>KHA Home</title>
+  <meta name="description" content="Welcome to Kendale Homeowners Association, a community in the Village of Kendale, Kendale South, and Kendale Country Club Estates. Learn about our services including community maintenance, local events, and community information.">
 </svelte:head>
 
 <section class="banner" style="background-image: linear-gradient(rgb(0,0,0,0.35), rgb(0,0,0,0.35)), url({homeBanner});">

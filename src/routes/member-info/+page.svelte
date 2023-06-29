@@ -8,6 +8,7 @@
 
 <svelte:head>
   <title>Member Info - KHA</title>
+  <meta name="description" content="Get information for members of the Kendale Homeowners Association. Read the latest letter from our president, learn about our neighborhood's laws and covenants, and join us in preserving our community.">
 </svelte:head>
 
 <h1 class="page-heading">Member Info</h1>

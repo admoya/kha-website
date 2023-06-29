@@ -5,10 +5,11 @@
   import { browser } from "$app/environment";
 
   // Google Analytics
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
   if (browser) {
+    // @ts-ignore
+    window.gtag = function() {
+      window.dataLayer.push(arguments);
+    }
     window.dataLayer = window.dataLayer || [];
     gtag("js", new Date());
     gtag("config", "G-XCXG9SEF97");

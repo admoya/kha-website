@@ -5,13 +5,24 @@
   import { onMount } from "svelte";
   import { enhance } from "$app/forms";
   import type { ActionData } from "./$types";
+  import kha4thPicture from "$lib/assets/kha-4th-of-july.png";
+  import { Modal } from "sveltestrap";
 
   export let form: ActionData;
 
   let items: Post[];
+
+  let showModal = false;
+  const toggleModal = () => (showModal = !showModal) || localStorage.setItem("popupCleared", "yes");
   onMount(async () => {
     const res = await fetch("/stay-connected/instagramData");
     items = await res.json();
+
+    // Temporary logic for 4th of July popup
+    const isWithinWindow = new Date() >= new Date(2023, 6, 1) && new Date() <= new Date(2023, 6, 4);
+    if (isWithinWindow && location.href.endsWith("#subscribeForm") && !localStorage.getItem("popupCleared")) {
+      showModal = true;
+    }
   });
 
   let contactFormStatus: FormStatus = "active";
@@ -44,12 +55,27 @@
 
   const onSubscribeFormSubmit = () => {
     subscribeFormButtonEnabled = false;
+    gtag("event", "email_subscribe");
   };
 </script>
 
 <svelte:head>
   <title>Stay Connected - KHA</title>
+  <meta
+    name="description"
+    content="Stay connected with the Kendale Homeowners Association. Send us a message, subscribe to our emails, or join our community service opportunities. Follow us on Instagram @kendale_hoa for the latest updates." />
 </svelte:head>
+
+<div style="text-align: center;">
+  <Modal body header="Happy 4th of July!" isOpen={showModal} toggle={toggleModal}>
+    <div class="inline-flex">
+      <img style="width: 100%;" src={kha4thPicture} alt={`a flyer that says "Join us in spreading community spirit this 4th of July"`} />
+      <p style="font-size: 1.3rem; font-weight: bold; text-align:center">
+        We hope you enjoy your complimentary American flag, courtesy of KHA!<br /><br />Please have a happy and safe holiday!
+      </p>
+    </div>
+  </Modal>
+</div>
 
 <h1 class="page-heading">Connect with Us</h1>
 <section class="flex-row">

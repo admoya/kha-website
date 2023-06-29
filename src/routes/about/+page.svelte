@@ -12,6 +12,7 @@
 
 <svelte:head>
   <title>About - KHA</title>
+  <meta name="description" content="Learn about the Kendale Homeowners Association's mission, vision, board members, and committees. We aim to serve, inform, and promote a safe, engaging, and environmentally friendly community.">
 </svelte:head>
 
 <h1 class="page-heading">About KHA</h1>
