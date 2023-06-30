@@ -66,16 +66,9 @@
     content="Stay connected with the Kendale Homeowners Association. Send us a message, subscribe to our emails, or join our community service opportunities. Follow us on Instagram @kendale_hoa for the latest updates." />
 </svelte:head>
 
-<div style="text-align: center;">
-  <Modal body header="Happy 4th of July!" isOpen={showModal} toggle={toggleModal}>
-    <div class="inline-flex">
-      <img style="width: 100%;" src={kha4thPicture} alt={`a flyer that says "Join us in spreading community spirit this 4th of July"`} />
-      <p style="font-size: 1.3rem; font-weight: bold; text-align:center">
-        We hope you enjoy your complimentary American flag, courtesy of KHA!<br /><br />Please have a happy and safe holiday!
-      </p>
-    </div>
-  </Modal>
-</div>
+<Modal centered body header="Happy 4th of July!" isOpen={showModal} toggle={toggleModal}>
+  <img style="width: 100%;" src={kha4thPicture} alt="We hope you enjoy your complimentary American flag, courtesy of KHA" />
+</Modal>
 
 <h1 class="page-heading">Connect with Us</h1>
 <section class="flex-row">
