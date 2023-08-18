@@ -57,14 +57,6 @@ const events: Event[] = [
     photo: khaLogo,
     photoAlt: "The KHA logo",
   },
-  // {
-  //   name: "Fitness at the Park - Faith and Fitness",
-  //   description: `Let’s Get Right on the Inside & Look Great on the Outside as a community! Grab your mats, towel and water bottle and join fellow neighbors at our FREE Fitness Event at Kendale Park. The class is led by one of our neighbors volunteering her time and talent to bring us a great opportunity to start the day off right! All skill levels welcomed!`,
-  //   date: new Date("2023-06-03T07:30:00"),
-  //   location: "Kendale Park",
-  //   photo: fitnessAtThePark,
-  //   photoAlt: "The Fitness at the Park logo",
-  // },
   {
     name: "Summer Kickoff Movie Night",
     description: `Kick off your summer with your friends and neighbors at our Summer Movie Night! Saturday, June 10th. Movie will start at 8 p.m. Popcorn and glow sticks will be provided to the kids.`,
@@ -73,14 +65,14 @@ const events: Event[] = [
     photo: juneMovieNightPoster,
     photoAlt: "Movie Night Flyer",
   },
-  // {
-  //   name: "Fitness at the Park - Yoga Class",
-  //   description: `Start off your Saturday with the right frame of mind. Bring your mats, towel and water bottle and join your neighbors and friends for a FREE  hour of Yoga and Meditation at Kendale Park. Led by one of our neighbors volunteering her time and talent to bring  you a sense of  inner peace and  community connection. No previous yoga experience required.`,
-  //   date: new Date("2023-06-17T08:00:00"),
-  //   location: "Kendale Park",
-  //   photo: fitnessAtThePark,
-  //   photoAlt: "The Fitness at the Park logo",
-  // },
+  {
+    name: "Community Volunteers and Committee Meeting",
+    description: "Join us for a community meeting on September 14th! Find out about our Volunteer opportunities and how you can help in keeping our community a wonderful place to live!",
+    date: new Date("2023-09-14T19:30"),
+    location: "Regis HR Room - 10625 N Kendall Dr.",
+    photo: khaLogo,
+    photoAlt: "The KHA Logo"
+  }
 ];
 
 export default events;
