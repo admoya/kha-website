@@ -81,14 +81,14 @@ const events: Event[] = [
     photo: khaLogo,
     photoAlt: "The KHA Logo"
   },
-  // {
-  //   name: 'Yoga and Meditation Event',
-  //   description: 'Join your friends and neighbors for a FREE Yoga and Meditation session lead by Gloria, instructor from Gin Yogi.',
-  //   date: new Date("2023-09-19T18:30"),
-  //   location: "Kendale Park",
-  //   photo: yogaFlyer,
-  //   photoAlt: "A flyer for the Yoga and Meditation event"
-  // }
+  {
+    name: 'Yoga and Meditation Event',
+    description: 'Join your friends and neighbors for a FREE Yoga and Meditation session lead by Gloria, instructor from Gin Yogi.',
+    date: new Date("2023-09-19T18:30"),
+    location: "Kendale Park",
+    photo: yogaFlyer,
+    photoAlt: "A flyer for the Yoga and Meditation event"
+  }
 ];
 
 export default events;
