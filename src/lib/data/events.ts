@@ -3,9 +3,9 @@ import golfCartParade from "$lib/assets/events/golf-cart-parade.jpg";
 import springFestival from "$lib/assets/events/spring_festival.png";
 import faithandfitness from "$lib/assets/events/faithandfitnessfull.png";
 import khaLogo from "$lib/assets/logo-no-text.svg";
-import sonic2MovieNight from "$lib/assets/events/sonic-2-movie-night.jpeg";
-import fitnessAtThePark from "$lib/assets/events/fitness-at-the-park.png";
 import juneMovieNightPoster from "$lib/assets/events/june-movie-night-poster.jpeg";
+import yogaFlyer from "$lib/assets/events/yoga-flyer.jpeg";
+import septemberCommunityFitness from "$lib/assets/events/community-fitness-september-23.jpeg";
 
 export type Event = {
   name: string;
@@ -66,12 +66,28 @@ const events: Event[] = [
     photoAlt: "Movie Night Flyer",
   },
   {
+    name: "Community Fitness Event",
+    description: "Rise and shine! Join us for a morning community walk at the park.",
+    date: new Date("2023-09-02T07:00"),
+    location: "Kendale Park",
+    photo: septemberCommunityFitness,
+    photoAlt: "A flyer for the community fitness event",
+  },
+  {
     name: "Community Volunteers and Committee Meeting",
     description: "Join us for a community meeting on September 14th! Find out about our Volunteer opportunities and how you can help in keeping our community a wonderful place to live!",
     date: new Date("2023-09-14T19:30"),
     location: "Regis HR Room - 10625 N Kendall Dr.",
     photo: khaLogo,
     photoAlt: "The KHA Logo"
+  },
+  {
+    name: 'Yoga and Meditation Event',
+    description: 'Join your friends and neighbors for a FREE Yoga and Meditation session lead by Gloria, instructor from Gin Yogi.',
+    date: new Date("2023-09-19T18:30"),
+    location: "Kendale Park",
+    photo: yogaFlyer,
+    photoAlt: "A flyer for the Yoga and Meditation event"
   }
 ];
 
