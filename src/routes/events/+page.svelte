@@ -5,7 +5,9 @@
 
 <svelte:head>
   <title>Events - KHA</title>
-  <meta name="description" content="Check out the latest events of the Kendale Homeowners Association. Join your neighbors in building a thriving, social community.">
+  <meta
+    name="description"
+    content="Check out the latest events of the Kendale Homeowners Association. Join your neighbors in building a thriving, social community." />
 </svelte:head>
 
 <h1 class="page-heading">Events</h1>

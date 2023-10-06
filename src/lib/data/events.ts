@@ -6,6 +6,8 @@ import khaLogo from "$lib/assets/logo-no-text.svg";
 import juneMovieNightPoster from "$lib/assets/events/june-movie-night-poster.jpeg";
 import yogaFlyer from "$lib/assets/events/yoga-flyer.jpeg";
 import septemberCommunityFitness from "$lib/assets/events/community-fitness-september-23.jpeg";
+import KHAGeneralMeetingOctober23 from "$lib/assets/events/kha_general_meeting_1023.png";
+import halloweenGoldCartParade from "$lib/assets/events/kha_halloween_golf_cart_parade.jpeg";
 
 export type Event = {
   name: string;
@@ -75,20 +77,70 @@ const events: Event[] = [
   },
   {
     name: "Community Volunteers and Committee Meeting",
-    description: "Join us for a community meeting on September 14th! Find out about our Volunteer opportunities and how you can help in keeping our community a wonderful place to live!",
+    description:
+      "Join us for a community meeting on September 14th! Find out about our Volunteer opportunities and how you can help in keeping our community a wonderful place to live!",
     date: new Date("2023-09-14T19:30"),
     location: "Regis HR Room - 10625 N Kendall Dr.",
     photo: khaLogo,
-    photoAlt: "The KHA Logo"
+    photoAlt: "The KHA Logo",
   },
   {
-    name: 'Yoga and Meditation Event',
-    description: 'Join your friends and neighbors for a FREE Yoga and Meditation session lead by Gloria, instructor from Gin Yogi.',
+    name: "Yoga and Meditation Event",
+    description: "Join your friends and neighbors for a FREE Yoga and Meditation session lead by Gloria, instructor from Gin Yogi.",
     date: new Date("2023-09-19T18:30"),
     location: "Kendale Park",
     photo: yogaFlyer,
-    photoAlt: "A flyer for the Yoga and Meditation event"
-  }
+    photoAlt: "A flyer for the Yoga and Meditation event",
+  },
+  {
+    name: "General Meeting and Elections",
+    description: "We will host our annual board elections and discuss the priorities for KHA going into 2024",
+    date: new Date("2023-10-24T19:30"),
+    location: "Ron Ehmann Park",
+    photo: KHAGeneralMeetingOctober23,
+    photoAlt: "A flyer for the KHA general meeting",
+  },
+  {
+    name: "Halloween Golf Cart Parade",
+    description: "Dress up and join us for a golf cart parade through our neighborhood!",
+    date: new Date("2023-10-29T18:00"),
+    location: "Kendale Park",
+    photo: halloweenGoldCartParade,
+    photoAlt: "A flyer for the KHA Halloween golf cart parade",
+  },
+  // {
+  //   name: "Community Garage Sale",
+  //   description: "Get ready to clear out your garage, or fill it up! We will be coordinating a garage sale day across our neighborhoods.",
+  //   date: new Date("2023-11-04T08:00"),
+  //   location: "All Neighborhoods",
+  //   photo: khaLogo,
+  //   photoAlt: "The KHA Logo",
+  // },
+  // {
+  //   name: "Winter Movie Night",
+  //   description: "Mark your calendar, we will be hosting our second annual Holiday Movie Night at the park!",
+  //   date: new Date("2023-12-02T18:00"),
+  //   location: "Kendale Park",
+  //   photo: khaLogo,
+  //   photoAlt: "The KHA Logo",
+  // },
+  // {
+  //   name: "Holiday Golf Cart Parade",
+  //   description:
+  //     "Join your neighbors for this family friendly event.  If you have a golf cart and want to join in the parade, be at Kendale Park at 6:30 p.m. with your decorated golf cart. Parade route will be announced week of event and all are welcomed to cheer them on throughout the route.",
+  //   date: new Date("2023-12-23T18:30"),
+  //   location: "Kendale Park",
+  //   photo: golfCartParade,
+  //   photoAlt: "A Christmas Tree",
+  // },
+  // {
+  //   name: "KHA Spring Festival",
+  //   description: "We will have food trucks, local merchants, and more!",
+  //   date: new Date("2024-03-16T10:30"),
+  //   location: "Kendale Park",
+  //   photo: khaLogo,
+  //   photoAlt: "The KHA Logo",
+  // },
 ];
 
 export default events;

@@ -3,8 +3,9 @@
   export let eventData: Event;
 </script>
 
-<div class="flex-row flex-justify-around flex-align-center card">
-  <img class="event-image" alt={eventData.photoAlt} src={eventData.photo} />
+<div class="flex-row flex-justify-around flex-align-center card" style="width: 100%;">
+  <a class="event-image-container" href={eventData.photo} target="_blank"
+    ><img class="event-image" alt={eventData.photoAlt} src={eventData.photo} /></a>
   <div class="event-text">
     <h4>{eventData.name}</h4>
     <div class="flex-row flex-justify-left">
@@ -30,10 +31,11 @@
 
 <style>
   .event-image {
+    width: 100%;
+  }
+  .event-image-container {
     width: 20%;
     min-width: 10rem;
-    /* object-fit: cover; */
-    /* height: fit-content; */
   }
   .event-text {
     width: 60%;
