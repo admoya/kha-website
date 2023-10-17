@@ -8,6 +8,7 @@ import yogaFlyer from "$lib/assets/events/yoga-flyer.jpeg";
 import septemberCommunityFitness from "$lib/assets/events/community-fitness-september-23.jpeg";
 import KHAGeneralMeetingOctober23 from "$lib/assets/events/kha_general_meeting_1023.png";
 import halloweenGoldCartParade from "$lib/assets/events/kha_halloween_golf_cart_parade.jpeg";
+import octoberYogaFlyer from "$lib/assets/events/yoga_10-23.jpeg";
 
 export type Event = {
   name: string;
@@ -99,6 +100,15 @@ const events: Event[] = [
     location: "Ron Ehmann Park",
     photo: KHAGeneralMeetingOctober23,
     photoAlt: "A flyer for the KHA general meeting",
+  },
+  {
+    name: "Yoga and Meditation",
+    description:
+      "Meet us on October 26th at Kendale Park for this wonderful community event. One hour class starts at 6 pm taught by instructor Gloria  of Gin Yoga. Don't miss it!",
+    date: new Date("2023-10-26T18:00"),
+    location: "Kendale Park",
+    photo: octoberYogaFlyer,
+    photoAlt: "A flyer for the Yoga and Meditation event",
   },
   {
     name: "Halloween Golf Cart Parade",
