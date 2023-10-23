@@ -25,7 +25,7 @@
       <span class="material-symbols-outlined">pin_drop</span>
       <p class="event-subtile">{eventData.location}</p>
     </div>
-    <p>{eventData.description}</p>
+    <p>{@html eventData.description}</p>
   </div>
 </div>
 
