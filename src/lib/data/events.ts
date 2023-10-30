@@ -120,6 +120,14 @@ const events: Event[] = [
     photo: halloweenGoldCartParade,
     photoAlt: "A flyer for the KHA Halloween golf cart parade",
   },
+  {
+    name: "Community Garage Sale Day",
+    description: `Clean out your closet, put up some signs, and make some money! November 4th is the KHA Community Garage Sale Day, and everyone is encouraged to participate by setting up their own garage sale or just driving around and shopping.`,
+    date: new Date("2023-11-04T08:00"),
+    location: "The Village, Kendale South, Kendale Country Club Estates",
+    photo: khaLogo,
+    photoAlt: "A flyer for the KHA Halloween golf cart parade",
+  },
 ];
 
 export default events;

@@ -9,8 +9,8 @@
   <div class="event-text">
     <h4>{eventData.name}</h4>
     <div class="flex-row flex-justify-left">
-      <span class="material-symbols-outlined">calendar_month</span>
       <p class="event-subtile">
+        <span class="material-symbols-outlined">calendar_month</span>
         {eventData.date.toLocaleDateString("en-us", {
           weekday: "long",
           year: "numeric",
@@ -22,14 +22,16 @@
       </p>
     </div>
     <div class="flex-row flex-justify-left">
-      <span class="material-symbols-outlined">pin_drop</span>
-      <p class="event-subtile">{eventData.location}</p>
+      <p class="event-subtile"><span class="material-symbols-outlined">pin_drop</span>{eventData.location}</p>
     </div>
     <p>{@html eventData.description}</p>
   </div>
 </div>
 
 <style>
+  .material-symbols-outlined {
+    vertical-align: bottom;
+  }
   .event-image {
     width: 100%;
   }
