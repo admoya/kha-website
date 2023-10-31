@@ -1,10 +1,10 @@
 <script lang="ts">
   import ernestoBascuas from "$lib/assets/avatars/Ernesto_Bascuas.jpeg";
   import migdyMoya from "$lib/assets/avatars/Migdy_Moya.jpeg";
-  import pattyGonzalez from "$lib/assets/avatars/Patty_Gonzalez.jpg";
+  import fatimaBoujarwah from "$lib/assets/avatars/fatima_boujarwah.jpg";
   import zurielCarbo from "$lib/assets/avatars/Zuriel_Carbo.jpg";
-  import monicaScudieri from "$lib/assets/avatars/Monica_Scudieri.jpg";
   import nancyLyons from "$lib/assets/avatars/Nancy_Lyons.jpg";
+  import josephLogan from "$lib/assets/avatars/joseph_logan.jpg";
   import Committee from "$lib/components/Committee.svelte";
   import TeamMember from "$lib/components/TeamMember.svelte";
   import committees from "$lib/data/committees";
@@ -12,7 +12,9 @@
 
 <svelte:head>
   <title>About - KHA</title>
-  <meta name="description" content="Learn about the Kendale Homeowners Association's mission, vision, board members, and committees. We aim to serve, inform, and promote a safe, engaging, and environmentally friendly community.">
+  <meta
+    name="description"
+    content="Learn about the Kendale Homeowners Association's mission, vision, board members, and committees. We aim to serve, inform, and promote a safe, engaging, and environmentally friendly community." />
 </svelte:head>
 
 <h1 class="page-heading">About KHA</h1>
@@ -35,8 +37,8 @@
       <TeamMember img={ernestoBascuas} position="President" name="Ernie Bascuas" />
       <TeamMember img={zurielCarbo} position="Vice President" name="Zuriel Carbo" />
       <TeamMember img={migdyMoya} position="Treasurer" name="Migdy Moya" />
-      <TeamMember img={pattyGonzalez} position="Corresponding Secretary" name="Patty Gonzalez" />
-      <TeamMember img={monicaScudieri} position="Recording Secretary" name="Monica Scudieri" />
+      <TeamMember img={josephLogan} position="Corresponding Secretary" name="Joseph Logan" />
+      <TeamMember img={fatimaBoujarwah} position="Recording Secretary" name="Fatima Boujarwah" />
       <TeamMember img={nancyLyons} position="Past President" name="Nancy Lyons" />
     </div>
     <div class="committees">

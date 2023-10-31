@@ -10,6 +10,7 @@ import KHAGeneralMeetingOctober23 from "$lib/assets/events/kha_general_meeting_1
 import halloweenGoldCartParade from "$lib/assets/events/kha_halloween_golf_cart_parade.jpeg";
 import octoberYogaFlyer from "$lib/assets/events/yoga_10-23.jpeg";
 import golfCartParadeRoute from "$lib/assets/events/golf_cart_parade_route.jpeg";
+import garageSalePoster from "$lib/assets/events/garage-sale-poster.jpeg";
 
 export type Event = {
   name: string;
@@ -125,7 +126,7 @@ const events: Event[] = [
     description: `Clean out your closet, put up some signs, and make some money! November 4th is the KHA Community Garage Sale Day, and everyone is encouraged to participate by setting up their own garage sale or just driving around and shopping.`,
     date: new Date("2023-11-04T08:00"),
     location: "The Village, Kendale South, Kendale Country Club Estates",
-    photo: khaLogo,
+    photo: garageSalePoster,
     photoAlt: "A flyer for the KHA Halloween golf cart parade",
   },
 ];
