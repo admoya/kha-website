@@ -1,5 +1,5 @@
 <script lang="ts">
-  import houseLogo from "$lib/assets/kha_logo_halloween_houses.png";
+  import houseLogo from "$lib/assets/logo-no-text.svg";
   import logoText from "$lib/assets/logo-text.svg";
   import { slide } from "svelte/transition";
   import { linear } from "svelte/easing";
