@@ -7,7 +7,7 @@
   const shrinkText = description.length > 128;
 </script>
 
-<div class="testimonial">
+<div class="testimonial card">
   {#if img}
     <img alt="headshot of the testimonial speaker" class="testimonial-photo" src={img} />
   {/if}
@@ -26,7 +26,8 @@
     flex-direction: row;
     margin-left: 1rem;
     margin-right: 1rem;
-    /* flex-wrap: wrap; */
+    padding: 15px;
+    padding-bottom: 0;
   }
 
   @media (min-width: 780px) {

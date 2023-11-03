@@ -3,13 +3,15 @@
   import AppBar from "$lib/components/AppBar.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import { browser } from "$app/environment";
+  import { page } from "$app/stores";
+  import { fade } from "svelte/transition";
 
   // Google Analytics
   if (browser) {
     // @ts-ignore
-    window.gtag = function() {
+    window.gtag = function () {
       window.dataLayer.push(arguments);
-    }
+    };
     window.dataLayer = window.dataLayer || [];
     gtag("js", new Date());
     gtag("config", "G-XCXG9SEF97");
@@ -21,9 +23,11 @@
 </svelte:head>
 
 <AppBar />
-<main>
-  <slot />
-</main>
+{#key $page}
+  <main in:fade={{ duration: 400 }}>
+    <slot />
+  </main>
+{/key}
 <Footer />
 
 <style>
