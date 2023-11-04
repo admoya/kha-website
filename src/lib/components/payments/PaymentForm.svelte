@@ -98,7 +98,7 @@
       </label>
       <label>
         <input type="radio" bind:group={paymentChoice} value="donation" />
-        Additional Contribution Only
+        Donation Only
       </label>
     </fieldset>
   </div>
@@ -112,8 +112,8 @@
     </div>
   {/if}
   <div class="form-row">
-    <label class="form-inline-label" for="donationInput">Additional Contribution:</label>
-    <span class="form-currency-container">
+    <label style="max-width: 45%" class="form-inline-label" for="donationInput">Maintenance and beautification donation:</label>
+    <span class="form-currency-container" style="display: flex;">
       <input
         name="Donation"
         class="form-currency-input"
