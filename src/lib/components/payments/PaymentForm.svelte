@@ -112,7 +112,7 @@
     </div>
   {/if}
   <div class="form-row">
-    <label style="max-width: 45%" class="form-inline-label" for="donationInput">Maintenance and beautification donation:</label>
+    <label style="max-width: 45%" class="form-inline-label" for="donationInput">Maintenance and Beautification Donation:</label>
     <span class="form-currency-container" style="display: flex;">
       <input
         name="Donation"
