@@ -9,7 +9,7 @@ export default [
   },
   {
     name: "Grounds",
-    members: ["Ralph Valdes-Brito", "James Nessl"],
+    members: ["Ralph Valdes-Brito", "James Nessl", "Nasser Aldaihani"],
   },
   {
     name: "Events",
@@ -26,5 +26,13 @@ export default [
   {
     name: "Zoning & Covenants",
     members: ["Catherine Christofis"],
+  },
+  {
+    name: "Golf Cart Parades",
+    members: ["Alana Sullivan", "Ady Benavente"],
+  },
+  {
+    name: "Social Media",
+    members: ["Nasser Aldaihani"],
   },
 ];
