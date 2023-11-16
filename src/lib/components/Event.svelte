@@ -3,7 +3,7 @@
   export let eventData: Event;
 </script>
 
-<div class="flex-row flex-justify-around flex-align-center card" style="width: 100%;">
+<div class="flex-row flex-justify-around flex-align-center card" style="width: 100%;" id={eventData.customId}>
   <a class="event-image-container" href={eventData.photo} target="_blank"
     ><img class="event-image" alt={eventData.photoAlt} src={eventData.photo} /></a>
   <div class="event-text">
@@ -28,7 +28,7 @@
   </div>
 </div>
 
-<style>
+<style >
   .material-symbols-outlined {
     vertical-align: bottom;
   }
@@ -56,4 +56,25 @@
     margin-top: 0.1rem;
     font-weight: 500;
   }
+
+  div:target {
+    border-width: 3px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1);
+    animation-delay: 250ms;
+    border-color: #30813f65;
+  }
+
+  @keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 var(--primary-green);
+	}
+
+	70% {
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
 </style>

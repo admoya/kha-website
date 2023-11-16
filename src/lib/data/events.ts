@@ -11,6 +11,7 @@ import halloweenGoldCartParade from "$lib/assets/events/kha_halloween_golf_cart_
 import octoberYogaFlyer from "$lib/assets/events/yoga_10-23.jpeg";
 import golfCartParadeRoute from "$lib/assets/events/golf_cart_parade_route.jpeg";
 import garageSalePoster from "$lib/assets/events/garage-sale-poster.jpeg";
+import marioMovie from "$lib/assets/events/mario-movie.png";
 
 export type Event = {
   name: string;
@@ -19,6 +20,7 @@ export type Event = {
   location: string;
   photo: string;
   photoAlt: string;
+  customId?: string;
 };
 
 const events: Event[] = [
@@ -128,6 +130,15 @@ const events: Event[] = [
     location: "The Village, Kendale South, Kendale Country Club Estates",
     photo: garageSalePoster,
     photoAlt: "A flyer for the KHA Halloween golf cart parade",
+  },
+  {
+    name: "Holiday Movie Night",
+    description: `Join us for a movie night at the park! We will be watching The Super Mario Bros Movie. There will be food trucks starting at 5 PM, and the movie begins at 7 PM.`,
+    date: new Date("2023-12-02T17:00"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: marioMovie,
+    photoAlt: "A flyer for the holiday movie night",
+    customId: "nextMovieNight",
   },
 ];
 
