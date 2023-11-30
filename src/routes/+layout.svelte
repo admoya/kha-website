@@ -3,8 +3,7 @@
   import AppBar from "$lib/components/AppBar.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import { browser } from "$app/environment";
-  import { page } from "$app/stores";
-  import { fade } from "svelte/transition";
+  import { onNavigate } from "$app/navigation";
 
   // Google Analytics
   if (browser) {
@@ -16,6 +15,17 @@
     gtag("js", new Date());
     gtag("config", "G-XCXG9SEF97");
   }
+
+  onNavigate((navigation) => {
+    if (!document.startViewTransition) return;
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
 </script>
 
 <svelte:head>
@@ -23,11 +33,9 @@
 </svelte:head>
 
 <AppBar />
-{#key $page}
-  <main in:fade={{ duration: 400 }}>
-    <slot />
-  </main>
-{/key}
+<main>
+  <slot />
+</main>
 <Footer />
 
 <style>
