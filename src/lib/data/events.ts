@@ -12,6 +12,7 @@ import octoberYogaFlyer from "$lib/assets/events/yoga_10-23.jpeg";
 import golfCartParadeRoute from "$lib/assets/events/golf_cart_parade_route.jpeg";
 import garageSalePoster from "$lib/assets/events/garage-sale-poster.jpeg";
 import marioMovie from "$lib/assets/events/mario-movie.png";
+import golfCardParade23 from "$lib/assets/events/golf-cart-parade-2023.png";
 
 export type Event = {
   name: string;
@@ -139,6 +140,14 @@ const events: Event[] = [
     photo: marioMovie,
     photoAlt: "A flyer for the holiday movie night",
     customId: "nextMovieNight",
+  },
+  {
+    name: "Holiday Golf Cart Parade",
+    description: `Join us for our Holiday Golf Cart Parade! Decorate your golf carts and join in the parade or line the route and cheer them on!`,
+    date: new Date("2023-12-23T18:00"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: golfCardParade23,
+    photoAlt: "A flyer for the holiday golf cart parade",
   },
 ];
 
