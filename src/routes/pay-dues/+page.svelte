@@ -37,7 +37,18 @@
   let paymentFormSubmitEvent: SubmitEvent;
   const handlePaymentCompleted = () => {
     submitFormToNetlify(paymentFormSubmitEvent);
-    gtag('event', 'payment_completed');
+    fetch("/api/payments/updateMember", {
+      method: "POST",
+      body: JSON.stringify({
+        people,
+        address,
+        neighborhood,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    gtag("event", "payment_completed");
     showSuccess = true;
   };
   const handlePaymentOffline = (message: string) => {
@@ -48,7 +59,9 @@
 
 <svelte:head>
   <title>Pay Dues - KHA</title>
-  <meta name="description" content="Pay your Kendale Homeowners Association dues and make additional contributions online via credit card, Paypal, or Venmo. Your generous contributions enable us to provide various benefits to our community.">
+  <meta
+    name="description"
+    content="Pay your Kendale Homeowners Association dues and make additional contributions online via credit card, Paypal, or Venmo. Your generous contributions enable us to provide various benefits to our community." />
 </svelte:head>
 
 <h1 class="page-heading">Pay Dues</h1>

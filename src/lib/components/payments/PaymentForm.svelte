@@ -54,7 +54,7 @@
       </label>
       <label class="form-label">
         Phone:
-        <input bind:value={people[idx].phone} type="tel" class="form-text-input" placeholder="305-123-4567" pattern={"[0-9-() ]{10,15}"} />
+        <input bind:value={people[idx].phone} type="tel" class="form-text-input" placeholder="305-123-4567" pattern={"[0-9\\-\\(\\) ]{10,15}"} />
       </label>
     </fieldset>
   {/each}
@@ -120,7 +120,8 @@
         id="donationInput"
         on:blur={cleanDonation}
         step="0.01"
-        min="0"
+        min={paymentChoice === "dues" ? "0" : "1"}
+        required={paymentChoice === "donation"}
         type="number"
         placeholder="0.00"
         bind:value={donationAmount} />

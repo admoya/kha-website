@@ -6,6 +6,8 @@ env:
   PAYPAL_BASE_URL: https://api-m.sandbox.paypal.com
   INSTAGRAM_TOKEN: Testing
   KHA_AUTH_HEADER: Testing
+  MEMBER_API_URL: https://test.com/api
+  MEMBER_ORGANIZATION: test
 
 on:
   push:
