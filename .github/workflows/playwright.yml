@@ -7,7 +7,8 @@ env:
   INSTAGRAM_TOKEN: Testing
   KHA_AUTH_HEADER: Testing
   MEMBER_API_URL: https://test.com/api
-  MEMBER_ORGANIZATION: test
+  MEMBER_ORGANIZATION: Testing
+  MEMBER_API_TOKEN: Testing
 
 on:
   push:

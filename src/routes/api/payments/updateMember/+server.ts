@@ -1,6 +1,6 @@
 import type { Person } from "$lib/components/payments/PaymentForm.svelte";
 import type { RequestHandler } from "./$types";
-import { MEMBER_API_URL, MEMBER_ORGANIZATION } from "$env/static/private";
+import { MEMBER_API_TOKEN, MEMBER_API_URL, MEMBER_ORGANIZATION } from "$env/static/private";
 import { error } from "@sveltejs/kit";
 
 type Member = {
@@ -14,6 +14,7 @@ export const POST: RequestHandler = async ({ request, fetch }) => {
   console.log(`Updating member with address: ${address} and neighborhood: ${neighborhood}`);
   const { houseNumber, streetName } = standardizeAddress(address);
   console.log(`Checking for existing member with house number: ${houseNumber} and street name: ${streetName}`);
+  const authToken = `Bearer ${MEMBER_API_TOKEN}`;
   const url = encodeURI(
     `\
 ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
@@ -21,9 +22,9 @@ ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
 &Street=${streetName}\
 `
   );
-  const response = await fetch(url);
+  const response = await fetch(url, { headers: { Authorization: authToken } });
   if (!response.ok) {
-    console.error(`Error fetching members from ${url}`);
+    console.error(`Error fetching members from ${url}: ${response.status}: ${response.statusText}`);
     throw error(500, response.statusText);
   }
   const existingMembers: Member[] = await response.json();
@@ -76,12 +77,12 @@ ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
           ? await fetch(`${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/member/${member.id}`, {
               method: "PUT",
               body: JSON.stringify(member),
-              headers: { "Content-Type": "application/json" },
+              headers: { "Content-Type": "application/json", Authorization: authToken },
             })
           : await fetch(`${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/member`, {
               method: "POST",
               body: JSON.stringify(member),
-              headers: { "Content-Type": "application/json" },
+              headers: { "Content-Type": "application/json", Authorization: authToken },
             })
       )
     );
