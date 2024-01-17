@@ -13,6 +13,7 @@ import golfCartParadeRoute from "$lib/assets/events/golf_cart_parade_route.jpeg"
 import garageSalePoster from "$lib/assets/events/garage-sale-poster.jpeg";
 import marioMovie from "$lib/assets/events/mario-movie.png";
 import golfCardParade23 from "$lib/assets/events/golf-cart-parade-2023.png";
+import crimeWatchFlyer from "$lib/assets/events/ccw_flyer.png";
 
 export type Event = {
   name: string;
@@ -148,6 +149,14 @@ const events: Event[] = [
     location: "Kendale Park - 10300 SW 93 Street",
     photo: golfCardParade23,
     photoAlt: "A flyer for the holiday golf cart parade",
+  },
+  {
+    name: "Citizens Crimewatch Meeting",
+    description: `The Kendale Homeowners Association has organized a Community Citizens Crimewatch Meeting. We urge residents from all 3 communities to come out, gather important program information and voice your concerns to the officers present. Be sure to bring a lawn chair!`,
+    date: new Date("2024-01-23T19:00"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: crimeWatchFlyer,
+    photoAlt: "A flyer for the Crimewatch meeting",
   },
 ];
 
