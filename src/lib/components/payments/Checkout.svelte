@@ -58,8 +58,10 @@
               });
             },
             onError(err) {
-              collectError("payment error", err);
-              dispatch("paymentError");
+              if (err.message !== "Detected popup close") {
+                collectError("payment error", err);
+                dispatch("paymentError");
+              }
             },
           })
           .render("#paypal-div");

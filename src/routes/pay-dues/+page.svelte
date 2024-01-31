@@ -37,16 +37,19 @@
   let paymentFormSubmitEvent: SubmitEvent;
   const handlePaymentCompleted = () => {
     submitFormToNetlify(paymentFormSubmitEvent);
+    const updateMemberBody = JSON.stringify({ people, address, neighborhood });
     fetch("/api/payments/updateMember", {
       method: "POST",
-      body: JSON.stringify({
-        people,
-        address,
-        neighborhood,
-      }),
+      body: updateMemberBody,
       headers: {
         "Content-Type": "application/json",
       },
+    }).then((response) => {
+      if (!response.ok) {
+        collectError("Failed to update member", `${response.status}: ${response.statusText}`, {
+          updateMemberBody,
+        });
+      }
     });
     gtag("event", "payment_completed");
     showSuccess = true;

@@ -23,6 +23,7 @@ export const submitFormToNetlify = async (e: Event) => {
       throw new Error(`${res.status} : ${res.statusText}`);
     }
   } catch (err) {
+    collectError("Error submitting form to Netlify", err);
     return getErrorMessage(err);
   }
 };
@@ -37,12 +38,15 @@ const extractErrorText = (error: any) => {
   return JSON.stringify(error);
 };
 
-export const collectError = (description: string, error?: any) => {
+export const collectError = (description: string, error?: any, additionalInformation?: { [name: string]: string }) => {
   if (browser) {
-    console.error(`Error: ${description}`);
     gtag("event", "exception", {
       description,
       errorText: error && extractErrorText(error),
+    });
+    fetch("/api/monitoring/error", {
+      method: "POST",
+      body: JSON.stringify({ description, error: extractErrorText(error), additionalInformation }),
     });
   }
 };

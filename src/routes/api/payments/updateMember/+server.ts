@@ -10,7 +10,16 @@ type Member = {
 };
 
 export const POST: RequestHandler = async ({ request, fetch }) => {
-  const { people, address, neighborhood }: { people: Person[]; address: string; neighborhood: string } = await request.json();
+  console.log("Received request to update member");
+  let people: Person[];
+  let address: string;
+  let neighborhood: string;
+  try {
+    ({ people, address, neighborhood } = await request.json());
+  } catch {
+    console.error(`Error parsing request body: ${await request.text()}`);
+    throw error(400, "Invalid request body");
+  }
   console.log(`Updating member with address: ${address} and neighborhood: ${neighborhood}`);
   const { houseNumber, streetName } = standardizeAddress(address);
   console.log(`Checking for existing member with house number: ${houseNumber} and street name: ${streetName}`);
