@@ -15,9 +15,9 @@ export const POST: RequestHandler = async ({ request, fetch }) => {
   let address: string;
   let neighborhood: string;
   try {
-    ({ people, address, neighborhood } = await request.json());
+    ({ people, address, neighborhood } = await request.clone().json());
   } catch {
-    console.error(`Error parsing request body: ${await request.text()}`);
+    console.error(`Error parsing request body: ${await request.clone().text()}`);
     throw error(400, "Invalid request body");
   }
   console.log(`Updating member with address: ${address} and neighborhood: ${neighborhood}`);
