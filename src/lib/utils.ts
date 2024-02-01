@@ -29,7 +29,6 @@ export const submitFormToNetlify = async (e: Event) => {
     }
   } catch (err) {
     collectError("Error submitting form to Netlify", err, {
-      url: browser ? window.location.href : "Server (Ruh roh, should only be running in browser)",
       body,
     });
     return getErrorMessage(err);
@@ -57,7 +56,11 @@ export const collectError = (description: string, error?: any, additionalInforma
       body: JSON.stringify({
         description,
         error: extractErrorText(error),
-        additionalInformation: { ...additionalInformation, ua: JSON.stringify(parser.getResult()) },
+        additionalInformation: {
+          url: window.location.href,
+          ua: JSON.stringify(parser.getResult()),
+          ...additionalInformation,
+        },
       }),
     });
   }
