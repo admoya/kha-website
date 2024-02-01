@@ -36,20 +36,27 @@
 
   let paymentFormSubmitEvent: SubmitEvent;
   const handlePaymentCompleted = () => {
-    submitFormToNetlify(paymentFormSubmitEvent);
     const updateMemberBody = JSON.stringify({ people, address, neighborhood });
-    fetch("/api/payments/updateMember", {
-      method: "POST",
-      body: updateMemberBody,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((response) => {
-      if (!response.ok) {
-        collectError("Failed to update member", `${response.status}: ${response.statusText}`, {
-          updateMemberBody,
-        });
-      }
+    /* 
+      Chaining these two requests even though they are not dependent because there seems to be a 
+      very insidious bug somewhere in Netlify+Sveltekit where if a Netlify form is submitted at
+      the same time as a POST request to a server route, the two requests may be swapped for one
+      another. Weird!
+    */
+    submitFormToNetlify(paymentFormSubmitEvent).finally(() => {
+      fetch("/api/payments/updateMember", {
+        method: "POST",
+        body: updateMemberBody,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((response) => {
+        if (!response.ok) {
+          collectError("Failed to update member", `${response.status}: ${response.statusText}`, {
+            updateMemberBody,
+          });
+        }
+      });
     });
     gtag("event", "payment_completed");
     showSuccess = true;
