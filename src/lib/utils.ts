@@ -13,17 +13,22 @@ export function getErrorMessage(error: unknown) {
 export const submitFormToNetlify = async (e: Event) => {
   e.preventDefault();
   const formData = new FormData(e.target as HTMLFormElement);
+  let body = "";
   try {
+    body = new URLSearchParams(formData as any).toString();
     const res = await fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString(),
+      body,
     });
     if (!res.ok) {
       throw new Error(`${res.status} : ${res.statusText}`);
     }
   } catch (err) {
-    collectError("Error submitting form to Netlify", err);
+    collectError("Error submitting form to Netlify", err, {
+      url: browser ? window.location.href : "Server (Ruh roh, should only be running in browser)",
+      body,
+    });
     return getErrorMessage(err);
   }
 };
