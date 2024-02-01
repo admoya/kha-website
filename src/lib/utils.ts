@@ -1,4 +1,7 @@
 import { browser } from "$app/environment";
+import { UAParser } from "ua-parser-js";
+
+const parser = new UAParser();
 
 export function getErrorMessage(error: unknown) {
   if (error instanceof Error) return error.message;
@@ -51,7 +54,11 @@ export const collectError = (description: string, error?: any, additionalInforma
     });
     fetch("/api/monitoring/error", {
       method: "POST",
-      body: JSON.stringify({ description, error: extractErrorText(error), additionalInformation }),
+      body: JSON.stringify({
+        description,
+        error: extractErrorText(error),
+        additionalInformation: { ...additionalInformation, ua: JSON.stringify(parser.getResult()) },
+      }),
     });
   }
 };
