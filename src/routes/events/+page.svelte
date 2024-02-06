@@ -1,6 +1,7 @@
 <script lang="ts">
   import events from "$lib/data/events";
   import Event from "$lib/components/Event.svelte";
+  $: eventsInLastYear = events.filter(({date}) => (new Date().getTime() - date.getTime() < (365 * 24 * 3600 * 1000)))
 </script>
 
 <svelte:head>
@@ -16,7 +17,7 @@
   <h2 class="page-subheading">KHA Events</h2>
   <p>Come join your community at our upcoming events!</p>
   <div class="events-container">
-    {#each events.filter(({ date }) => date > new Date()) as eventData}
+    {#each eventsInLastYear.filter(({ date }) => date > new Date()) as eventData}
       <Event {eventData} />
     {/each}
   </div>
@@ -25,7 +26,7 @@
 <div class="container">
   <h2 class="page-subheading">Past Events</h2>
   <div class="events-container">
-    {#each events.filter(({ date }) => date < new Date()).reverse() as eventData}
+    {#each eventsInLastYear.filter(({ date }) => date < new Date()).reverse() as eventData}
       <Event {eventData} />
     {/each}
   </div>

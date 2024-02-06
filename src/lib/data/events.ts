@@ -14,6 +14,7 @@ import garageSalePoster from "$lib/assets/events/garage-sale-poster.jpeg";
 import marioMovie from "$lib/assets/events/mario-movie.png";
 import golfCardParade23 from "$lib/assets/events/golf-cart-parade-2023.png";
 import crimeWatchFlyer from "$lib/assets/events/ccw_flyer.png";
+import khaSpringFestivalPlanningFlyer from "$lib/assets/events/kha_spring_festival_planning_flyer.jpeg";
 
 export type Event = {
   name: string;
@@ -157,6 +158,14 @@ const events: Event[] = [
     location: "Kendale Park - 10300 SW 93 Street",
     photo: crimeWatchFlyer,
     photoAlt: "A flyer for the Crimewatch meeting",
+  },
+  {
+    name: "Spring Festival Planning Meeting",
+    description: `Calling all KHA residents! We need your help to plan our biggest event of the year, our Spring Festival. The festival is scheduled to take place on April 13th. The Spring Festival is a fun-filled event that is free for all active residents. Come out and volunteer to help with the planning. Together we can make it the best festival yet.`,
+    date: new Date("2024-02-13T19:30"),
+    location: "Regis HR Room - 10625 N. Kendall Dr.",
+    photo: khaSpringFestivalPlanningFlyer,
+    photoAlt: "A flyer for the Spring Festival Planning meeting",
   },
 ];
 
