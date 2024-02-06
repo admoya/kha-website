@@ -14,7 +14,7 @@
 
 <script lang="ts">
   import khaLogo from "$lib/assets/logo-no-text.svg";
-  import { Carousel, CarouselControl, CarouselItem } from "sveltestrap";
+  import { Carousel, CarouselControl, CarouselItem } from "@sveltestrap/sveltestrap";
   import { Circle } from "svelte-loading-spinners";
   const interval = "5000";
   export let items: Post[] | undefined;

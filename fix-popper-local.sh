@@ -1,1 +1,0 @@
-sed -i '/2\.11\.8/a \ \ "type": "module",' node_modules/@popperjs/core/package.json

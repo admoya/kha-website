@@ -17,7 +17,7 @@ export const GET: RequestHandler = async () => {
           fields: fields,
           limit: limit,
           access_token: INSTAGRAM_TOKEN,
-        })
+        }),
     );
     const responseJson = await response.json();
     posts = responseJson.data;

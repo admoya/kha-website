@@ -3,7 +3,7 @@
 // export const { CLIENT_ID, APP_SECRET } = process.env; // pull from environment variables
 import { PAYPAL_CLIENT_ID as CLIENT_ID, PAYPAL_APP_SECRET as APP_SECRET, PAYPAL_BASE_URL as BASE_URL } from "$env/static/private";
 export { CLIENT_ID, APP_SECRET, BASE_URL };
-import type { CreateOrderRequestBody, PurchaseItem } from "@paypal/paypal-js";
+import type { CreateOrderRequestBody, PurchaseUnitItem } from "@paypal/paypal-js";
 
 // access token is used to authenticate all REST API requests
 export async function generateAccessToken() {
@@ -24,7 +24,7 @@ export async function generateAccessToken() {
 export async function createOrder(
   includesDues: boolean,
   donationAmount = 0,
-  description = "Annual dues and/or donation to Kendale Homeowners Association"
+  description = "Annual dues and/or donation to Kendale Homeowners Association",
 ) {
   console.log("Creating paypal order");
   const duesAmount = includesDues ? "60.00" : "0"; // TODO: pull amount from a database or session
@@ -70,7 +70,7 @@ export async function createOrder(
             },
             category: "DIGITAL_GOODS",
           },
-        ].filter((item) => item) as PurchaseItem[],
+        ].filter((item) => item) as PurchaseUnitItem[],
       },
     ],
   };

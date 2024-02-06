@@ -6,7 +6,7 @@
   import { enhance } from "$app/forms";
   import type { ActionData } from "./$types";
   import kha4thPicture from "$lib/assets/kha-4th-of-july.png";
-  import { Modal } from "sveltestrap";
+  import { Modal } from "@sveltestrap/sveltestrap";
 
   export let form: ActionData;
 

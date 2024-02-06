@@ -29,7 +29,7 @@ export const POST: RequestHandler = async ({ request, fetch }) => {
 ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
 ?House Number=${houseNumber}\
 &Street=${streetName}\
-`
+`,
   );
   const response = await fetch(url, { headers: { Authorization: authToken } });
   if (!response.ok) {
@@ -59,7 +59,7 @@ ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
       const newMemberEmail = newMember.attributes.Emails[0];
       const matchingMember = existingMembers.find(
         (existingMember) =>
-          existingMember.attributes.Emails.includes(newMemberEmail) || existingMember.attributes["Phone Numbers"].includes(newMemberPhoneNumber)
+          existingMember.attributes.Emails.includes(newMemberEmail) || existingMember.attributes["Phone Numbers"].includes(newMemberPhoneNumber),
       );
       if (matchingMember) {
         console.log(`Found matching member for ${newMember.name} with ID: ${matchingMember.id}`);
@@ -92,15 +92,15 @@ ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
               method: "POST",
               body: JSON.stringify(member),
               headers: { "Content-Type": "application/json", Authorization: authToken },
-            })
-      )
+            }),
+      ),
     );
     if (creationResponses.some((response) => !response.ok)) {
       console.error(`Error creating new members: ${creationResponses.find((response) => !response.ok)?.statusText}`);
       throw error(500, "Error creating new members");
     }
     const Ids = await Promise.all(
-      creationResponses.map(async (response) => (response.status === 200 ? (await response.json()).id : await response.text()))
+      creationResponses.map(async (response) => (response.status === 200 ? (await response.json()).id : await response.text())),
     );
     console.log(`Created new members with IDs: ${Ids}`);
     return new Response(JSON.stringify(Ids), { status: 201 });
@@ -157,7 +157,7 @@ function standardizeAddress(address: string) {
     return { houseNumber, streetName };
   } else {
     console.error(
-      `Address: ${address} does not match the regex to extract house number and street name. Returning the original address for both fields.`
+      `Address: ${address} does not match the regex to extract house number and street name. Returning the original address for both fields.`,
     );
     return { houseNumber: address, streetName: address };
   }
