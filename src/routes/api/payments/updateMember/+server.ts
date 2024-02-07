@@ -53,13 +53,21 @@ ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
     console.log(`No existing members found for address: ${address}. New ones will be created.`);
   } else {
     console.log(`Found ${existingMembers.length} existing members for address: ${address}. Attempting to match them based on email/phone`);
+    const extractNumbersFromString = (numString: string) =>
+      numString
+        .match(/\d*/g)
+        ?.filter((e) => e)
+        .join("") ?? numString;
+    const extractPhoneNumbers = (phoneData: string | string[]) =>
+      Array.isArray(phoneData) ? phoneData.map((p) => extractNumbersFromString(p)) : extractNumbersFromString(phoneData);
     newMembers = newMembers.map<Member>((newMember) => {
       // Note the new member will only have one email/phone since the form enforces it
-      const newMemberPhoneNumber = newMember.attributes["Phone Numbers"][0];
+      const newMemberPhoneNumber = extractNumbersFromString(newMember.attributes["Phone Numbers"][0]);
       const newMemberEmail = newMember.attributes.Emails[0];
       const matchingMember = existingMembers.find(
         (existingMember) =>
-          existingMember.attributes.Emails.includes(newMemberEmail) || existingMember.attributes["Phone Numbers"].includes(newMemberPhoneNumber),
+          existingMember.attributes.Emails.includes(newMemberEmail) ||
+          extractPhoneNumbers(existingMember.attributes["Phone Numbers"]).includes(newMemberPhoneNumber),
       );
       if (matchingMember) {
         console.log(`Found matching member for ${newMember.name} with ID: ${matchingMember.id}`);
