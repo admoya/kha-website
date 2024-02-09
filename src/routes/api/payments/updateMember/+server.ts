@@ -21,7 +21,7 @@ export const POST: RequestHandler = async ({ request, fetch }) => {
     throw error(400, "Invalid request body");
   }
   console.log(`Updating member with address: ${address} and neighborhood: ${neighborhood}`);
-  const { houseNumber, streetName } = standardizeAddress(address);
+  const { houseNumber, streetName, direction } = standardizeAddress(address);
   console.log(`Checking for existing member with house number: ${houseNumber} and street name: ${streetName}`);
   const authToken = `Bearer ${MEMBER_API_TOKEN}`;
   const url = encodeURI(
@@ -37,18 +37,22 @@ ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
     throw error(500, response.statusText);
   }
   const existingMembers: Member[] = await response.json();
-  let newMembers: Member[] = people.map((person) => ({
-    name: person.name,
-    attributes: {
-      "Last Name": person.name.split(" ").pop() ?? person.name,
-      "House Number": houseNumber,
-      Street: streetName,
-      Neighborhood: neighborhood,
-      "Phone Numbers": [person.phone],
-      Emails: [person.email],
-      "Years Paid": [new Date().getFullYear().toString()],
-    },
-  }));
+  let newMembers: Member[] = people.map((person) => {
+    const trimmedName = person.name.trim();
+    return {
+      name: trimmedName,
+      attributes: {
+        "Last Name": trimmedName.split(" ").pop() ?? "",
+        "House Number": houseNumber,
+        Street: streetName,
+        Neighborhood: neighborhood,
+        "Phone Numbers": [person.phone],
+        Emails: [person.email],
+        "Years Paid": [new Date().getFullYear().toString()],
+        "Full Address": `${houseNumber} ${direction ? `${direction} ` : ""}${streetName}`,
+      },
+    };
+  });
   if (existingMembers.length === 0) {
     console.log(`No existing members found for address: ${address}. New ones will be created.`);
   } else {
@@ -80,6 +84,7 @@ ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
             "Phone Numbers": Array.from(new Set([...matchingMember.attributes["Phone Numbers"], newMemberPhoneNumber])),
             Emails: Array.from(new Set([...matchingMember.attributes.Emails, newMemberEmail])),
             "Years Paid": Array.from(new Set([...matchingMember.attributes["Years Paid"], new Date().getFullYear().toString()])),
+            "Full Address": `${houseNumber} ${direction ? `${direction} ` : ""}${streetName}`,
           },
         };
       } else {
@@ -123,9 +128,9 @@ ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
  * Generated partially with ChatGPT, so examine carefully
  */
 
-function standardizeAddress(address: string) {
+function standardizeAddress(address: string): { houseNumber: string; streetName: string; direction: string | undefined } {
   // Regular expression to match the house number and street name
-  const regex = /(\d+)\s*(?:NW|NE|SW|SE)?\s*(\d+)?(?:st|nd|rd|th)?\s*(\w+)/i;
+  const regex = /^(?<houseNumber>\d+)\s*(?<direction>NW|NE|SW|SE)?\s*(?<streetName>\w+)?\s*(?<streetType>\w*)/i;
 
   // Dictionary to standardize common abbreviations (all in uppercase for case-insensitive matching)
   const abbreviations = {
@@ -149,24 +154,16 @@ function standardizeAddress(address: string) {
     return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
   }
 
-  // Extract and transform the address components
-  const match = address.match(regex);
-  if (match) {
-    const houseNumber = match[1];
-    let streetName = (match[2] ? match[2] + " " : "") + match[3];
-
-    // Standardize street abbreviations with case-insensitive matching and capitalize each word
-    streetName = streetName.replace(/\b(\w+)\b/g, (match) => {
-      const upperCaseMatch = match.toUpperCase();
+  const result = regex.exec(address);
+  if (result && result.groups) {
+    const { houseNumber, direction, streetName, streetType } = result.groups;
+    let combinedStreetName =
       // @ts-expect-error
-      return abbreviations[upperCaseMatch] || capitalizeWord(match);
-    });
-
-    return { houseNumber, streetName };
-  } else {
-    console.error(
-      `Address: ${address} does not match the regex to extract house number and street name. Returning the original address for both fields.`,
-    );
-    return { houseNumber: address, streetName: address };
+      `${capitalizeWord(streetName.replace(/(st|th|nd|rd)$/i, ""))} ${abbreviations[streetType.toUpperCase()] ?? capitalizeWord(streetType)}`.trim();
+    return { houseNumber, streetName: combinedStreetName, direction: direction?.toUpperCase() };
   }
+  console.error(
+    `Address: ${address} does not match the regex to extract house number and street name. Returning the original address for all fields.`,
+  );
+  return { houseNumber: address, streetName: address, direction: address };
 }
