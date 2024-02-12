@@ -154,7 +154,7 @@ function standardizeAddress(address: string): { houseNumber: string; streetName:
     return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
   }
 
-  const result = regex.exec(address);
+  const result = regex.exec(address.replaceAll(/[^\w\s]/g, "")); // Remove any non-word character from the input string, such that something like "S.W." becomes "SW"
   if (result && result.groups) {
     const { houseNumber, direction, streetName, streetType } = result.groups;
     let combinedStreetName =
