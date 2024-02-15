@@ -143,6 +143,7 @@ function standardizeAddress(address: string): { houseNumber: string; streetName:
     CT: "Court",
     PL: "Place",
     TER: "Terrace",
+    TERR: "Terrace",
     PKWY: "Parkway",
     CIR: "Circle",
     HWY: "Highway",
