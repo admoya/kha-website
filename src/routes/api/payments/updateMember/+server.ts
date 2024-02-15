@@ -130,7 +130,7 @@ ${MEMBER_API_URL}/organization/${MEMBER_ORGANIZATION}/members\
 
 function standardizeAddress(address: string): { houseNumber: string; streetName: string; direction: string | undefined } {
   // Regular expression to match the house number and street name
-  const regex = /^(?<houseNumber>\d+)\s*(?<direction>NW|NE|SW|SE)?\s*(?<streetName>\w+)?\s*(?<streetType>\w*)/i;
+  const regex = /^(?<houseNumber>\d+)\s*(?<direction>NW|NE|SW|SE)?\s*(?<streetName>\w+)?\s*(?<streetType>[\w\s]*)/i;
 
   // Dictionary to standardize common abbreviations (all in uppercase for case-insensitive matching)
   const abbreviations = {
@@ -146,6 +146,9 @@ function standardizeAddress(address: string): { houseNumber: string; streetName:
     PKWY: "Parkway",
     CIR: "Circle",
     HWY: "Highway",
+    "AVE RD": "Avenue Road",
+    "AVENUE RD": "Avenue Road",
+    "AVE ROAD": "Avenue Road",
     // Add more abbreviations as needed
   };
 
