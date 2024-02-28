@@ -8,8 +8,8 @@
     // Append -bullseye or -buster to pin to an OS version.
     // Use -bullseye variants on local on arm64/Apple Silicon.
     "args": {
-      "VARIANT": "18",
-    },
+      "VARIANT": "18"
+    }
   },
 
   // Configure tool-specific properties.
@@ -21,8 +21,11 @@
       "settings": {
         "eslint.validate": ["javascript", "javascriptreact", "svelte"],
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-      },
-    },
+        "[svelte]": {
+          "editor.defaultFormatter": "svelte.svelte-vscode"
+        }
+      }
+    }
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -32,5 +35,5 @@
   "postCreateCommand": "npm ci && npx playwright install && sudo npx playwright install-deps",
 
   // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "node",
+  "remoteUser": "node"
 }
