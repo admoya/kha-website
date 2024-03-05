@@ -15,6 +15,7 @@ import marioMovie from "$lib/assets/events/mario-movie.png";
 import golfCardParade23 from "$lib/assets/events/golf-cart-parade-2023.png";
 import crimeWatchFlyer from "$lib/assets/events/ccw_flyer.png";
 import khaSpringFestivalPlanningFlyer from "$lib/assets/events/kha_spring_festival_planning_flyer.jpeg";
+import yogaMeditationFlyer from "$lib/assets/events/kha_yoga_flyer_202403.jpeg";
 
 export type Event = {
   name: string;
@@ -166,6 +167,22 @@ const events: Event[] = [
     location: "Regis HR Room - 10625 N. Kendall Dr.",
     photo: khaSpringFestivalPlanningFlyer,
     photoAlt: "A flyer for the Spring Festival Planning meeting",
+  },
+  {
+    name: "Yoga and Meditation",
+    description: `Join us for a great evening of yoga at the park. Remember to bring your mat and water bottle!`,
+    date: new Date("2024-03-14T18:30"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: yogaMeditationFlyer,
+    photoAlt: "A flyer for the Yoga and Meditation event",
+  },
+  {
+    name: "Spring Festival",
+    description: `Join your fellow Kendale neighbors and friends for rides, food, and fun!`,
+    date: new Date("2024-04-13T14:00"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: khaLogo,
+    photoAlt: "A flyer for the Spring Festival",
   },
 ];
 
