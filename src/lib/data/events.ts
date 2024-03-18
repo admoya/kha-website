@@ -16,6 +16,7 @@ import golfCardParade23 from "$lib/assets/events/golf-cart-parade-2023.png";
 import crimeWatchFlyer from "$lib/assets/events/ccw_flyer.png";
 import khaSpringFestivalPlanningFlyer from "$lib/assets/events/kha_spring_festival_planning_flyer.jpeg";
 import yogaMeditationFlyer from "$lib/assets/events/kha_yoga_flyer_202403.jpeg";
+import springFestival2024 from "$lib/assets/events/spring-festival-2024.jpeg";
 
 export type Event = {
   name: string;
@@ -178,10 +179,10 @@ const events: Event[] = [
   },
   {
     name: "Spring Festival",
-    description: `Join your fellow Kendale neighbors and friends for rides, food, and fun!`,
+    description: `Mark your calendars  for this wonderful  community event! Join your neighbors and friends for an afternoon of music, food and rides! Sponsorship opportunities are available to not only support this wonderful community event but also promote your business/services. <a href="/stay-connected">Contact us</a> for more information.`,
     date: new Date("2024-04-13T14:00"),
     location: "Kendale Park - 10300 SW 93 Street",
-    photo: khaLogo,
+    photo: springFestival2024,
     photoAlt: "A flyer for the Spring Festival",
   },
 ];
