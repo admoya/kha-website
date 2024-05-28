@@ -17,6 +17,7 @@ import crimeWatchFlyer from "$lib/assets/events/ccw_flyer.png";
 import khaSpringFestivalPlanningFlyer from "$lib/assets/events/kha_spring_festival_planning_flyer.jpeg";
 import yogaMeditationFlyer from "$lib/assets/events/kha_yoga_flyer_202403.jpeg";
 import springFestival2024 from "$lib/assets/events/spring-festival-2024.jpeg";
+import yogaMeditationMay24 from "$lib/assets/events/yoga-meditation-may-24.png";
 
 export type Event = {
   name: string;
@@ -184,6 +185,22 @@ const events: Event[] = [
     location: "Kendale Park - 10300 SW 93 Street",
     photo: springFestival2024,
     photoAlt: "A flyer for the Spring Festival",
+  },
+  {
+    name: "Citizens Advisory Committee (CAC) Meeting",
+    description: `At the meeting, representatives from various communities will attend and voice their concerns. Officers will review crime trends, criminal cases, and meet our “rookie officer.” Join us to make sure your voice is heard!`,
+    date: new Date("2024-05-29T19:00"),
+    location: "Kendall District Conference Room - Kendall District Police - 7701 SW 117 Avenue",
+    photo: khaLogo,
+    photoAlt: "The KHA Logo",
+  },
+  {
+    name: "Yoga and Meditation",
+    description: `Join us for a great evening of yoga at the park. All fitness levels are welcome. Remember to bring your mat and water bottle!`,
+    date: new Date("2024-05-30T18:30"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: yogaMeditationMay24,
+    photoAlt: "A flyer for the Yoga and Meditation event",
   },
 ];
 
