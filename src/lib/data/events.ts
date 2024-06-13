@@ -203,14 +203,6 @@ const events: Event[] = [
     photo: yogaMeditationMay24,
     photoAlt: "A flyer for the Yoga and Meditation event",
   },
-  {
-    name: "Panthers Watch Party",
-    description: `Join us for a Panthers Watch Party! We will be showing the game on a big screen at the park (weather permitting). Food trucks will arrive at 6:30 PM. Please bring your own chairs and blankets. The game starts at 8 PM.`,
-    date: new Date("2024-06-13T19:00"),
-    location: "Kendale Park - 10300 SW 93 Street",
-    photo: panthersWatchParty,
-    photoAlt: "A flyer for the Panthers Watch Party",
-  },
 ];
 
 export default events;
