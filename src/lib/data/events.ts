@@ -18,7 +18,7 @@ import khaSpringFestivalPlanningFlyer from "$lib/assets/events/kha_spring_festiv
 import yogaMeditationFlyer from "$lib/assets/events/kha_yoga_flyer_202403.jpeg";
 import springFestival2024 from "$lib/assets/events/spring-festival-2024.jpeg";
 import yogaMeditationMay24 from "$lib/assets/events/yoga-meditation-may-24.png";
-import panthersWatchParty from "$lib/assets/events/panthers-watch-party.jpeg";
+import communityHangout from "$lib/assets/events/community-hangout.jpg";
 
 export type Event = {
   name: string;
@@ -202,6 +202,14 @@ const events: Event[] = [
     location: "Kendale Park - 10300 SW 93 Street",
     photo: yogaMeditationMay24,
     photoAlt: "A flyer for the Yoga and Meditation event",
+  },
+  {
+    name: "Community Hangout",
+    description: `Kick off your Summer with a community hangout at the park! We will have free popsicles and glow sticks while supplies last. Please bring your own seating and any games you would like to play. Bring your family and friends for a fun day out with your neighbors!`,
+    date: new Date("2024-06-30T18:00"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: communityHangout,
+    photoAlt: "A flyer for the Community Hangout event",
   },
 ];
 
