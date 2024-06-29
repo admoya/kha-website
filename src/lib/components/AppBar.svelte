@@ -12,15 +12,18 @@
 
   let bannerAlertsDismissed: Set<string>;
   let showBanner = false;
-  const bannerText = `We rely on your support! To pay your dues, click <a href="/pay-dues">here.</a>`;
+  // const bannerText = `We rely on your support! To pay your dues, click <a href="/pay-dues">here.</a>`;
+  // const currentBannerFlag = 'bannerAlertsDismissed';
+  const bannerText = `🎆 Happy 4th of July from KHA! Please enjoy the holiday safely. 🎆`;
+  const currentBannerFlag = "4thJuly2021Dismissed";
   onMount(() => {
-    bannerAlertsDismissed = new Set(JSON.parse(localStorage.getItem("bannerAlertsDismissed") || "[]"));
+    bannerAlertsDismissed = new Set(JSON.parse(localStorage.getItem(currentBannerFlag) || "[]"));
     showBanner = !bannerAlertsDismissed.has(bannerText);
   });
 
   const onBannerAlertClose = () => {
     bannerAlertsDismissed.add(bannerText);
-    localStorage.setItem("bannerAlertsDismissed", JSON.stringify(Array.from(bannerAlertsDismissed)));
+    localStorage.setItem(currentBannerFlag, JSON.stringify(Array.from(bannerAlertsDismissed)));
     showBanner = false;
   };
 </script>
@@ -31,6 +34,7 @@
       <img id="khaLogo" src={houseLogo} alt="The KHA logo" />
       <img id="khaLogo-text" src={logoText} alt="The KHA logo text" />
     </a>
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <ul on:click={toggleMenu} on:keypress={toggleMenu} class={`nav-links ${isMenuopen ? "" : "hide-menu"}`}>
       <li>
         <a href="/about">About</a>
@@ -189,7 +193,9 @@
       text-align: right;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      transition: opacity 600ms, visibility 600ms;
+      transition:
+        opacity 600ms,
+        visibility 600ms;
     }
     #khaLogo-text {
       max-width: 60%;
