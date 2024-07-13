@@ -12,10 +12,8 @@
 
   let bannerAlertsDismissed: Set<string>;
   let showBanner = false;
-  // const bannerText = `We rely on your support! To pay your dues, click <a href="/pay-dues">here.</a>`;
-  // const currentBannerFlag = 'bannerAlertsDismissed';
-  const bannerText = `🎆 Happy 4th of July from KHA! Please enjoy the holiday safely. 🎆`;
-  const currentBannerFlag = "4thJuly2021Dismissed";
+  const bannerText = `We rely on your support! To pay your dues, click <a href="/pay-dues">here.</a>`;
+  const currentBannerFlag = "bannerAlertsDismissed";
   onMount(() => {
     bannerAlertsDismissed = new Set(JSON.parse(localStorage.getItem(currentBannerFlag) || "[]"));
     showBanner = !bannerAlertsDismissed.has(bannerText);
