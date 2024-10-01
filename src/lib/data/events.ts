@@ -19,6 +19,7 @@ import yogaMeditationFlyer from "$lib/assets/events/kha_yoga_flyer_202403.jpeg";
 import springFestival2024 from "$lib/assets/events/spring-festival-2024.jpeg";
 import yogaMeditationMay24 from "$lib/assets/events/yoga-meditation-may-24.png";
 import communityHangout from "$lib/assets/events/community-hangout.jpg";
+import bikeRideFlyer from "$lib/assets/events/bike-ride-flyer.jpeg";
 
 export type Event = {
   name: string;
@@ -210,6 +211,17 @@ const events: Event[] = [
     location: "Kendale Park - 10300 SW 93 Street",
     photo: communityHangout,
     photoAlt: "A flyer for the Community Hangout event",
+  },
+  {
+    name: "Community Bike Ride and Park Hangout",
+    description: `We’re excited to invite you to a Community Bike Ride and Hangout at Kendale Park on <strong>Sunday, October 6th, 2024, from 5:00 to 7:00 PM</strong>!
+<br><br>Bring your bikes and helmets to join in on the ride, or simply come by to relax and enjoy great conversations at the park.
+It's a fantastic opportunity to meet new neighbors and reconnect with familiar faces. Let’s make the most of this beautiful fall evening together!
+<br><br>We can’t wait to see you there!`,
+    date: new Date("2024-10-06T17:00"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: bikeRideFlyer,
+    photoAlt: "A flyer for the Community Bike Ride event",
   },
 ];
 
