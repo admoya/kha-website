@@ -20,6 +20,7 @@ import springFestival2024 from "$lib/assets/events/spring-festival-2024.jpeg";
 import yogaMeditationMay24 from "$lib/assets/events/yoga-meditation-may-24.png";
 import communityHangout from "$lib/assets/events/community-hangout.jpg";
 import bikeRideFlyer from "$lib/assets/events/bike-ride-flyer.jpeg";
+import fullMoonYoga from "$lib/assets/events/full-moon-yoga.jpeg";
 
 export type Event = {
   name: string;
@@ -222,6 +223,14 @@ It's a fantastic opportunity to meet new neighbors and reconnect with familiar f
     location: "Kendale Park - 10300 SW 93 Street",
     photo: bikeRideFlyer,
     photoAlt: "A flyer for the Community Bike Ride event",
+  },
+  {
+    name: "Full Moon Yoga",
+    description: `Enjoy a FREE Yoga Class taught by instructor Gloria Navarro from Gin Yogi. It will be an amazing outdoor experience under the full moon. Please bring your own mat and water bottle.`,
+    date: new Date("2024-10-17T18:30"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: fullMoonYoga,
+    photoAlt: "A flyer for the Full Moon Yoga event",
   },
 ];
 
