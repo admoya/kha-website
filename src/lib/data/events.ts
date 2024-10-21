@@ -21,6 +21,8 @@ import yogaMeditationMay24 from "$lib/assets/events/yoga-meditation-may-24.png";
 import communityHangout from "$lib/assets/events/community-hangout.jpg";
 import bikeRideFlyer from "$lib/assets/events/bike-ride-flyer.jpeg";
 import fullMoonYoga from "$lib/assets/events/full-moon-yoga.jpeg";
+import golfCartParade2024 from "$lib/assets/events/golf-cart-parade-2024.jpeg";
+import costumeContest2024 from "$lib/assets/events/costume-contest-2024.png";
 
 export type Event = {
   name: string;
@@ -231,6 +233,22 @@ It's a fantastic opportunity to meet new neighbors and reconnect with familiar f
     location: "Kendale Park - 10300 SW 93 Street",
     photo: fullMoonYoga,
     photoAlt: "A flyer for the Full Moon Yoga event",
+  },
+  {
+    name: "Halloween Golf Cart Parade",
+    description: `Join us for our annual Holiday Golf Cart Parade! Decorate your golf carts and join in the parade or line the route and cheer them on!`,
+    date: new Date("2024-10-27T18:30"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: golfCartParade2024,
+    photoAlt: "A flyer for the holiday golf cart parade",
+  },
+  {
+    name: "Halloween Costume Contest",
+    description: `Come with your best Halloween costume and win a prize! Be sure to be bring your treat  bag as we will have music, candy and fun!`,
+    date: new Date("2024-10-27T17:00"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: costumeContest2024,
+    photoAlt: "A flyer for the Costume Contest",
   },
 ];
 
