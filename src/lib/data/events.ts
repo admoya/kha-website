@@ -236,7 +236,7 @@ It's a fantastic opportunity to meet new neighbors and reconnect with familiar f
   },
   {
     name: "Halloween Golf Cart Parade",
-    description: `Join us for our annual Holiday Golf Cart Parade! Decorate your golf carts and join in the parade or line the route and cheer them on!`,
+    description: `Join us for our third annual Holiday Golf Cart Parade!<br><br>To join the parade, decorate your golf carts and line up at Kendale Park by 6:30.<br><br>To cheer on the parade, line <a href="https://communications.kendalehoa.org/uploads/golf-cart-parade-route.jpeg" target="_blank">the route</a> and enjoy the festive carts as they pass by!`,
     date: new Date("2024-10-27T18:30"),
     location: "Kendale Park - 10300 SW 93 Street",
     photo: golfCartParade2024,
