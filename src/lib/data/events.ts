@@ -23,6 +23,7 @@ import bikeRideFlyer from "$lib/assets/events/bike-ride-flyer.jpeg";
 import fullMoonYoga from "$lib/assets/events/full-moon-yoga.jpeg";
 import golfCartParade2024 from "$lib/assets/events/golf-cart-parade-2024.jpeg";
 import costumeContest2024 from "$lib/assets/events/costume-contest-2024.png";
+import communityBikeRide2024 from "$lib/assets/events/community-bike-ride-2024.jpeg";
 
 export type Event = {
   name: string;
@@ -249,6 +250,14 @@ It's a fantastic opportunity to meet new neighbors and reconnect with familiar f
     location: "Kendale Park - 10300 SW 93 Street",
     photo: costumeContest2024,
     photoAlt: "A flyer for the Costume Contest",
+  },
+  {
+    name: "Community Bike Ride",
+    description: `Let’s ride! Join us on Sunday for a wonderful ride around The Village community. Bring your bikes, scooters or skates! All are welcome!`,
+    date: new Date("2024-11-03T17:15"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: communityBikeRide2024,
+    photoAlt: "A flyer for the Community Bike Ride",
   },
 ];
 
