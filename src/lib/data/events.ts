@@ -24,6 +24,7 @@ import fullMoonYoga from "$lib/assets/events/full-moon-yoga.jpeg";
 import golfCartParade2024 from "$lib/assets/events/golf-cart-parade-2024.jpeg";
 import costumeContest2024 from "$lib/assets/events/costume-contest-2024.png";
 import communityBikeRide2024 from "$lib/assets/events/community-bike-ride-2024.jpeg";
+import holidayToyDrive2024 from "$lib/assets/events/holiday-toy-drive-2024.jpeg";
 
 export type Event = {
   name: string;
@@ -258,6 +259,20 @@ It's a fantastic opportunity to meet new neighbors and reconnect with familiar f
     location: "Kendale Park - 10300 SW 93 Street",
     photo: communityBikeRide2024,
     photoAlt: "A flyer for the Community Bike Ride",
+  },
+  {
+    name: "Holiday Toy Drive",
+    description: `Please join in spreading joy this holiday season! We will be collecting new, unwrapped toys for boys and girls ages 6 & 7 y/o at Riverside Elementary School. <br/>Drop off dates are:
+<br/>Sunday, Nov 17   3-5 pm
+<br/>Sunday, Nov 24  3-5 pm
+<br/>Sunday, Dec 01   3-5 pm
+<br/><br/>Donation Drop Off Location:
+<br/>D’Arce Home
+<br/>10251 SW 91 Street`,
+    date: new Date("2024-12-01T17:00"),
+    location: "D’Arce Home - 10251 SW 91 Street",
+    photo: holidayToyDrive2024,
+    photoAlt: "A flyer for the Holiday Toy Drive",
   },
 ];
 
