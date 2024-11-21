@@ -274,6 +274,17 @@ It's a fantastic opportunity to meet new neighbors and reconnect with familiar f
     photo: holidayToyDrive2024,
     photoAlt: "A flyer for the Holiday Toy Drive",
   },
+  {
+    name: "General Meeting and Elections",
+    description: `Join us for our General Meeting and Elections of the 2025 Board. 
+    <br/>Important issues affecting our community and upcoming 2025 plans/events will be discussed.
+    <br/><br/>Board positions are open. Email us at <a href="mailto:kha@kendalehoa.org">kha@kendalehoa.org</a> if you would like to be nominated.
+    <br/><br/>Get involved! We want to hear from you!`,
+    date: new Date("2024-12-03T19:00"),
+    location: "Ron Ehmann Park - 10995 SW 97 Avenue",
+    photo: khaLogo,
+    photoAlt: "The KHA Logo",
+  },
 ];
 
 export default events;
