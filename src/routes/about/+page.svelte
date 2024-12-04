@@ -1,7 +1,7 @@
 <script lang="ts">
   import ernestoBascuas from "$lib/assets/avatars/Ernesto_Bascuas.jpeg";
   import migdyMoya from "$lib/assets/avatars/Migdy_Moya.jpeg";
-  import fatimaBoujarwah from "$lib/assets/avatars/fatima_boujarwah.jpg";
+  import dannyMiranda from "$lib/assets/avatars/Danny_Miranda.jpeg";
   import zurielCarbo from "$lib/assets/avatars/Zuriel_Carbo.jpg";
   import nancyLyons from "$lib/assets/avatars/Nancy_Lyons.jpg";
   import josephLogan from "$lib/assets/avatars/joseph_logan.jpg";
@@ -86,8 +86,8 @@
       <TeamMember img={ernestoBascuas} position="President" name="Ernie Bascuas" />
       <TeamMember img={zurielCarbo} position="Vice President" name="Zuriel Carbo" />
       <TeamMember img={migdyMoya} position="Treasurer" name="Migdy Moya" />
-      <TeamMember img={josephLogan} position="Corresponding Secretary" name="Joseph Logan" />
-      <TeamMember img={fatimaBoujarwah} position="Recording Secretary" name="Fatima Boujarwah" />
+      <TeamMember img={dannyMiranda} position="Corresponding Secretary" name="Danny Miranda" />
+      <TeamMember img={josephLogan} position="Recording Secretary" name="Joseph Logan" />
       <TeamMember img={nancyLyons} position="Past President" name="Nancy Lyons" />
     </div>
     <div class="committees">
