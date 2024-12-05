@@ -8,7 +8,9 @@
 
 <svelte:head>
   <title>Member Info - KHA</title>
-  <meta name="description" content="Get information for members of the Kendale Homeowners Association. Read the latest letter from our president, learn about our neighborhood's laws and covenants, and join us in preserving our community.">
+  <meta
+    name="description"
+    content="Get information for members of the Kendale Homeowners Association. Read the latest letter from our president, learn about our neighborhood's laws and covenants, and join us in preserving our community." />
 </svelte:head>
 
 <h1 class="page-heading">Member Info</h1>
@@ -18,7 +20,7 @@
   <p>Dear Neighbors and families of KHA,</p>
   <p>
     I hope this letter finds you and your families well. I am pleased to announce our new Board of Directors and their respective positions. Ernie
-    Bascuas, President; Zuriel Carbo Vice-President; Migdy Moya, Treasurer; Monica Scudieri, Recording Secretary; Patty Gonzalez, Corresponding
+    Bascuas, President; Zuriel Carbo, Vice-President; Migdy Moya, Treasurer; Joe Logan, Recording Secretary; and Danny Miranda, Corresponding
     Secretary. It is an honor to represent YOUR community. We are excited to get to work on bringing in innovative ideas to create a more connected
     and active community for us all. While also staying true to the history and character that has made our community an amenable and desirable place
     to live.
@@ -29,9 +31,10 @@
     ask each one of you to please reach out with your feedback, ideas, and/or concerns.
   </p>
   <p>
-    I am very happy and grateful to neighbors who have already stepped forward to continue community traditions as Movie Night at Kendale Park, and
-    others who have started wonderful new traditions such as The Village of Kendale's Halloween and Christmas Golf Cart Parades. Volunteers are the
-    foundation of this great Kendale Community Association.
+    I am very happy and grateful to neighbors who have already stepped forward to continue community traditions at Kendale Park such as Movie Nights
+    with Food Trucks, Yoga Class in the Park, Community Bike Ride and The Village of Kendale's Halloween and Christmas Golf Cart Parades. We hope to
+    expand our parades to Kendale South and KCCE. Volunteers are the foundation of this great Kendale Community Association and we appreciate all
+    those that step up to make these events the wonderful success they are.
   </p>
   <p>
     Your support and involvement are critical in achieving our goal of making KHA a more connected and active community. We ask you all to please get
