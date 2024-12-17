@@ -25,6 +25,8 @@ import golfCartParade2024 from "$lib/assets/events/golf-cart-parade-2024.jpeg";
 import costumeContest2024 from "$lib/assets/events/costume-contest-2024.png";
 import communityBikeRide2024 from "$lib/assets/events/community-bike-ride-2024.jpeg";
 import holidayToyDrive2024 from "$lib/assets/events/holiday-toy-drive-2024.jpeg";
+import holidayGolfCartParade2024 from "$lib/assets/events/holiday-golf-cart-parade-2024.jpeg";
+import holidayGolfCartParadeRoute2024 from "$lib/assets/events/holiday-golf-cart-parade-route-2024.jpeg";
 
 export type Event = {
   name: string;
@@ -284,6 +286,14 @@ It's a fantastic opportunity to meet new neighbors and reconnect with familiar f
     location: "Ron Ehmann Park - 10995 SW 97 Avenue",
     photo: khaLogo,
     photoAlt: "The KHA Logo",
+  },
+  {
+    name: "Holiday Golf Cart Parade",
+    description: `Join us on Sunday, Dec 22 for our 3rd Annual Holiday Golf Cart Parade. Join in the parade with your decorated golf cart or line up along the route and cheer them on! <br/>To see the route, <a href=${holidayGolfCartParadeRoute2024} target="_blank">click here.</a>`,
+    date: new Date("2024-12-22T18:30"),
+    location: "Kendale Park - 10300 SW 93 Street",
+    photo: holidayGolfCartParade2024,
+    photoAlt: "A flyer for the holiday golf cart parade",
   },
 ];
 
