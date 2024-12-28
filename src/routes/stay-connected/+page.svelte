@@ -1,7 +1,7 @@
 <script lang="ts">
   import FormContainer from "$lib/components/FormContainer.svelte";
   import { submitFormToNetlify } from "$lib/utils";
-  import InstagramPreview, { type Post } from "$lib/components/InstagramPreview.svelte";
+  // import InstagramPreview, { type Post } from "$lib/components/InstagramPreview.svelte";
   import { onMount } from "svelte";
   import { enhance } from "$app/forms";
   import type { ActionData } from "./$types";
@@ -10,20 +10,20 @@
 
   export let form: ActionData;
 
-  let items: Post[];
+  // let items: Post[];
 
   let showModal = false;
   const toggleModal = () => (showModal = !showModal) || localStorage.setItem("popupCleared", "yes");
-  onMount(async () => {
-    const res = await fetch("/stay-connected/instagramData");
-    items = await res.json();
+  // onMount(async () => {
+  //   const res = await fetch("/stay-connected/instagramData");
+  //   items = await res.json();
 
-    // Temporary logic for 4th of July popup
-    const isWithinWindow = new Date() >= new Date(2023, 6, 1) && new Date() <= new Date(2023, 6, 4);
-    if (isWithinWindow && location.href.endsWith("#subscribeForm") && !localStorage.getItem("popupCleared")) {
-      showModal = true;
-    }
-  });
+  //   // Temporary logic for 4th of July popup
+  //   const isWithinWindow = new Date() >= new Date(2023, 6, 1) && new Date() <= new Date(2023, 6, 4);
+  //   if (isWithinWindow && location.href.endsWith("#subscribeForm") && !localStorage.getItem("popupCleared")) {
+  //     showModal = true;
+  //   }
+  // });
 
   let contactFormStatus: FormStatus = "active";
   let serviceFormStatus: FormStatus = "active";
@@ -173,7 +173,7 @@
         target="_blank"
         href="https://www.instagram.com/kendale_hoa"><strong>@kendale_hoa</strong></a>
     </p>
-    <InstagramPreview {items} />
+    <!-- <InstagramPreview {items} /> -->
   </section>
 </section>
 
