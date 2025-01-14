@@ -23,6 +23,10 @@
   export let address = "";
   export let neighborhood = "";
 
+  export let addressSuggestions: string[] = [];
+  export let validateAddress: (input: string) => boolean;
+  export let onAddressInput: (event: Event) => void;
+
   const cleanDonation = () => {
     donationAmount = Number(donationAmount).toFixed(2);
   };
@@ -31,7 +35,16 @@
 
   const handleSubmit = (e: SubmitEvent) => {
     e.preventDefault();
+    if (!validateAddress(address)) {
+      alert("Please select a valid address from the suggestions.");
+      return;
+    }
     dispatch("nextPressed", e);
+  };
+
+  const handleAddressSelection = (suggestion: string) => {
+    address = suggestion;
+    addressSuggestions = [];
   };
 
   $: peopleInfo = people.map(({ email, name, phone }) => `${name} (${email}, ${phone})`).join("\n");
@@ -77,7 +90,14 @@
   <div class="form-row">
     <label class="form-label">
       Address:
-      <input required name="Address" bind:value={address} class="form-text-input" placeholder="123 Main Street" type="text" />
+      <input required name="Address" bind:value={address} class="form-text-input" placeholder="123 Main Street" type="text" on:input={onAddressInput} />
+      {#if addressSuggestions.length > 0}
+        <div class="suggestions">
+          {#each addressSuggestions as suggestion}
+            <div class="suggestion" on:click={() => handleAddressSelection(suggestion)}>{suggestion}</div>
+          {/each}
+        </div>
+      {/if}
     </label>
     <label class="form-label">
       Neighborhood:
@@ -164,5 +184,20 @@
     border-bottom: none;
     border-top: none;
     padding: 0;
+  }
+  .suggestions {
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+  }
+  .suggestion {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  .suggestion:hover {
+    background-color: #f0f0f0;
   }
 </style>
