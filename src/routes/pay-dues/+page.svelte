@@ -65,6 +65,58 @@
     successMessage = message;
     showSuccess = true;
   };
+
+  // Add an array of addresses to the script section (Pca14)
+  const addresses = [
+    {
+      "number": 8930,
+      "direction": "SW",
+      "street": "102 CT",
+      "city": "MIAMI, FL 33176"
+    },
+    {
+      "number": 8935,
+      "direction": "SW",
+      "street": "102 CT",
+      "city": "MIAMI, FL 33176"
+    },
+    // Add more addresses as needed
+  ];
+
+  // Add a function to format addresses in natural casing (Pefb1)
+  const formatAddress = (address) => {
+    const { number, direction, street, city } = address;
+    const formattedDirection = direction ? `${direction} ` : "";
+    const formattedStreet = street.split(" ").map(word => word.charAt(0) + word.slice(1).toLowerCase()).join(" ");
+    const formattedCity = city.split(", ").map(part => part.charAt(0) + part.slice(1).toLowerCase()).join(", ");
+    return `${number} ${formattedDirection}${formattedStreet}, ${formattedCity}`;
+  };
+
+  // Add a function to filter and suggest addresses based on user input (P2886)
+  const suggestAddresses = (input) => {
+    if (input.length < 4) return [];
+    const lowerInput = input.toLowerCase();
+    return addresses.filter(address => {
+      const combinedAddress = `${address.number} ${address.direction} ${address.street} ${address.city}`.toLowerCase();
+      return combinedAddress.includes(lowerInput);
+    }).map(formatAddress);
+  };
+
+  // Add an event listener to the address input field to trigger suggestions (P1f7e)
+  let addressSuggestions = [];
+  const onAddressInput = (event) => {
+    const input = event.target.value;
+    addressSuggestions = suggestAddresses(input);
+  };
+
+  // Update the form submission to validate the address against the array (Pb6e0)
+  const validateAddress = (input) => {
+    const lowerInput = input.toLowerCase();
+    return addresses.some(address => {
+      const combinedAddress = `${address.number} ${address.direction} ${address.street} ${address.city}`.toLowerCase();
+      return combinedAddress === lowerInput;
+    });
+  };
 </script>
 
 <svelte:head>
@@ -104,7 +156,10 @@
           on:nextPressed={({ detail }) => {
             isCheckingOut = true;
             paymentFormSubmitEvent = detail;
-          }} />
+          }}
+          on:addressInput={onAddressInput}
+          addressSuggestions={addressSuggestions}
+          validateAddress={validateAddress} />
       </div>
     {:else}
       <div class="fixedGridItem" in:fly|local={{ x: 100, duration: 400, delay: 150 }} out:fly|local={{ x: 100, duration: 400 }}>
